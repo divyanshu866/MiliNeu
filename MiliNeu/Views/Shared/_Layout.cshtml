@@ -1,0 +1,135 @@
+﻿
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Milineu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MiliNeu.styles.css" asp-append-version="true" />
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+
+
+            <div class="navbar-links">
+                <ul>
+                    <li><a asp-area="" asp-controller="Collections" asp-action="Index">NEW IN</a></li>
+                    <li><a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a></li>
+                    <li><a asp-area ="" asp-controller="Collections" asp-action="Index">About</a></li>
+                    <li><a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Manage Products</a></li>
+                    }
+                   
+                    
+                </ul>
+            </div>
+            <div class="brand-title">
+                <img src="/Resources/Logo/LogoSimp.jpg" alt="">
+            </div>
+            <div class="navbar-links">
+                @if (SignInManager.IsSignedIn(Context.User))
+                {
+                    var user = await UserManager.GetUserAsync(Context.User);
+                    <ul>
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>Basket</a></li>
+
+                    </ul>
+                    
+                }
+                else
+                {
+                    <ul>
+                        <li><a href="/Identity/Account/Login" class="nav-link text-dark">Basket</a></li
+                    </ul>
+                    }
+                <partial name="_LoginPartial" />
+            </div>
+
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </nav>
+        @* <div class="nav">
+            <div class="nav-left">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Collections" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Manage Products</a>
+                    </li>
+                }
+                @if (SignInManager.IsSignedIn(Context.User))
+                {
+                    var user = await UserManager.GetUserAsync(Context.User);
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>Basket</a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a href="Identity/Account/Login" class="nav-link text-dark">Basket</a>
+                    </li>
+                }
+            </div>
+            <div class="nav-middle">
+                MiliNeu
+            </div>
+            <div class="nav-right">
+                <partial name="_LoginPartial" />
+            </div>
+
+            <ul>
+                
+
+            </ul>
+        </div> *@
+
+
+
+
+
+
+
+
+
+
+        
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            &copy; 2023 - MiliNeu - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/nav.js"></script>
+    <script async src="~/js/sizeSelector.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

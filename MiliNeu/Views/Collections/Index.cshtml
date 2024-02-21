@@ -1,0 +1,177 @@
+﻿@model IEnumerable<MiliNeu.Models.Collection>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@*
+<h1>Index</h1>
+*@
+@* <body> *@
+
+    
+        @* <div class="loading navbar navbar-brand">
+            <div class="loading-text">
+                <span class="loading-text-words">M</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">N</span>
+                <span class="loading-text-words">e</span>
+                <span class="loading-text-words">u</span>
+
+                <span class="loading-text-words"></span>
+                <span class="loading-text-words">c</span>
+                <span class="loading-text-wordsvvvvvvvvvv">o</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">e</span>
+                <span class="loading-text-words">c</span>
+                <span class="loading-text-words">t</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">o</span>
+                <span class="loading-text-words">n</span>
+                <span class="loading-text-words">s</span>
+
+            </div>
+
+
+
+        </div> *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row carousel">
+    <div class="header">
+        @* <h3 class="title">Latest</h3> *@
+        <div class="progress-bar"></div>
+    </div>
+    <div class="container-xl banner">
+        <button class="handle left-handle">
+            <div>&#8249;</div>
+        </button>
+        <div class="slider slider-bg">
+            <a href="/Carts/Index">
+            <img class="img-lg" href="#" src="~/resources/banner/BloomB.PNG"     />
+            </a>
+
+                <a href="#">
+                <img class="img-lg" href="#" src="~/resources/banner/TribalT.PNG" />
+            </a>
+
+                    @* <a href="#">
+                <img class="img-lg" href="#" src="~/resources/banner/alyssa.jpg"  />
+            </a>
+
+                        <a href="#">
+                <img class="img-lg" href="#" src="~/resources/banner/angela-bailey.jpg"  />
+            </a> *@
+
+        </div>
+        <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+        </button>
+    </div>
+</div>
+
+
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Add Item</a>
+    </p>
+
+}
+
+@foreach (var collection in Model)
+{
+    <div class="collection-name">
+        <h1>@collection.Name</h1>
+    </div>
+    
+    <div class="gallery">
+            
+                @foreach (var product in collection.Products)
+                {
+
+
+
+
+                    <div class="card-wrapper"  >
+                        <div class="image-wrapper">
+                         <a href="/products/Details/@Html.DisplayFor(modelItem => product.Id)">
+                        <img src="\Resources\Items\@product.Path">
+                        </a>
+                               
+
+                        </div>
+                        <div class="description-wrapper">
+                            <p>@product.Name</p>
+                        </div>
+                        
+                        <div class="price-wrapper">
+                            <p>Rs.@product.Price</p>
+                        </div>
+                        
+                    </div>
+                    
+
+                
+
+
+
+
+
+
+
+
+
+
+                   @*  <div class="card">
+                        <div class="row">
+                            <div class="product-image">
+                                <a href="/products/Details/@Html.DisplayFor(modelItem => product.Id)">
+                                <img src="\Resources\Items\@product.Path">
+                                </a>
+                            </div>
+                            <div class="product-title">
+                                <p>@product.Name</p>
+                            </div>
+                        </div>
+
+                    </div> *@
+                }
+    </div>
+                
+          
+  
+   
+
+               
+
+           
+}
+
+@* </body> *@

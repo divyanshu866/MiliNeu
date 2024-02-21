@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "Milineu.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "..\\MiliNeu.DataAccess\\MiliNeu.DataAccess.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "..\\MiliNeu.Models\\MiliNeu.Models.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
