@@ -1,0 +1,361 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Milineu.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Milineu.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\BloomB.png",
+      "PackagePath": "staticwebassets\\Resources\\Banner\\BloomB.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\TribalT.PNG",
+      "PackagePath": "staticwebassets\\Resources\\Banner\\TribalT.PNG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\alyssa.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Banner\\alyssa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\angela-bailey.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Banner\\angela-bailey.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\1.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\1.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\11.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\11.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\12.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\12.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\13.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\13.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\14.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\14.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\15.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\15.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\2.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\2.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\3.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\3.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\4.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Items\\4.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Asymmetric-hem slip dress.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Items\\Asymmetric-hem slip dress.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Blazer.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Items\\Blazer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Draped jersey dress.webp",
+      "PackagePath": "staticwebassets\\Resources\\Items\\Draped jersey dress.webp"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Lace top.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Items\\Lace top.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Suite.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Items\\Suite.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Logo\\LogoSimp.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Logo\\LogoSimp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Screenshots\\Milineu-Home.png",
+      "PackagePath": "staticwebassets\\Screenshots\\Milineu-Home.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Screenshots\\Milineu-Home2.png",
+      "PackagePath": "staticwebassets\\Screenshots\\Milineu-Home2.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Screenshots\\Product-Overview.png",
+      "PackagePath": "staticwebassets\\Screenshots\\Product-Overview.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\js\\nav.js",
+      "PackagePath": "staticwebassets\\js\\nav.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\js\\sizeSelector.js",
+      "PackagePath": "staticwebassets\\js\\sizeSelector.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Milineu.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Milineu.props",
+      "PackagePath": "build\\Milineu.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Milineu.props",
+      "PackagePath": "buildMultiTargeting\\Milineu.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Milineu.props",
+      "PackagePath": "buildTransitive\\Milineu.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
