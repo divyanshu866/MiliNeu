@@ -1,0 +1,165 @@
+﻿@model MiliNeu.Models.Product
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+</head>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-5 col-md-4 col-6 mb-1">
+            <div @*class="card h-100"*@ style="height: 88%; content-visibility: auto">
+                <img src="\Resources\Items\@Model.Path" alt="Image" class="img-fluid">
+            </div>
+        </div>
+
+
+        <div class="col-lg-7 col-md-8 col-sm-12 mb-4">
+            <h3>@Model.Name</h3>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">Category:</dt>
+                <dd class="col-sm-9">@Model.Category</dd>
+
+                <dt class="col-sm-3">Description:</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
+
+                <dt class="col-sm-3">Price:</dt>
+                <dd class="col-sm-9">₹@Model.Price</dd>
+
+                <hr class="mt-3" />
+
+             <html>
+                <head>
+                    <title>Select Size</title>
+                </head>
+                <body>
+                    <!-- Add this form to your HTML -->
+                    <form id="addToCartForm">
+                        <!-- Your product details (replace "your_product_id_here" with the actual product ID) -->
+                        <input type="hidden" name="id" value="@Model.Id">
+
+                        
+
+                        <!-- Size selector -->
+                        <div class="size-selector mb-3">
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="XS" id="sizeXS">
+                                <label for="sizeXS">XS</label>
+                            </div>
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="S" id="sizeS">
+                                <label for="sizeS">S</label>
+                            </div>
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="M" id="sizeM">
+                                <label for="sizeM">M</label>
+                            </div>
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="L" id="sizeL">
+                                <label for="sizeL">L</label>
+                            </div>
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="XL" id="sizeXL">
+                                <label for="sizeXL">XL</label>
+                            </div>
+                            <div class="size-box">
+                                <input type="radio" name="sizeSelected" value="XXL" id="sizeXXL">
+                                <label for="sizeXXL">XXL</label>
+                            </div>
+                        </div>
+
+                       @if (SignInManager.IsSignedIn(Context.User))
+                        {
+                            <!-- Submit button -->
+                            <input type="submit" value="Add to Cart">
+                        }
+                        else{
+
+                            @*  <li><a href="/Identity/Account/Login" class="btn">Basket</a></li> *@
+                            <a href="/Identity/Account/Login">Add to Cart</a>
+                            }
+                        </form>
+
+                    
+
+
+                </body>
+            </html>
+
+
+
+
+       
+
+            
+
+
+
+            <div class="loading col-sm-4">
+                <div class="loading-text">
+                    <span class="loading-text-words">M</span>
+                    <span class="loading-text-words">i</span>
+                    <span class="loading-text-words">l</span>
+                    <span class="loading-text-words">i</span>
+                    <span class="loading-text-words">N</span>
+                    <span class="loading-text-words">e</span>
+                    <span class="loading-text-words">u</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="card-footer">
+                <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+                @*}*@
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

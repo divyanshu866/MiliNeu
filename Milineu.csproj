@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-MiliNeu-f15b726c-49d4-424c-88ac-90647dd50fda</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Resources\Items\Blazer.jpg" />
+    <None Include="wwwroot\Resources\Items\Asymmetric-hem slip dress.jpg" />
+    <None Include="wwwroot\Resources\Items\Draped jersey dress.webp" />
+    <None Include="wwwroot\Resources\Items\Lace top.jpg" />
+    <None Include="wwwroot\Resources\Items\Suite.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.20" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiliNeu.DataAccess\MiliNeu.DataAccess.csproj" />
+    <ProjectReference Include="..\MiliNeu.Models\MiliNeu.Models.csproj" />
+  </ItemGroup>
+
+</Project>
