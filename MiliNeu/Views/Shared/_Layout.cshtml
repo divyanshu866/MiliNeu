@@ -12,19 +12,89 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MiliNeu.styles.css" asp-append-version="true" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 </head>
 <body>
     <header>
+        @* SideBar-------------- *@
+        <div class="main_box">
+           <input type="checkbox" name="" id="check">
+        
+       
+        <div class="sidebar_menu">
+          @*   <div class="logo">
+                <a href="">CodingLab</a>
+            </div>
+             *@
+            <div class="menu">
+                 <div class="btn_two">
+                <label for="check">
+                    <i class="fas fa-times"></i>
+                </label>
+            </div>
+            <ul>
+                @if (SignInManager.IsSignedIn(Context.User))
+                {
+                    var user = await UserManager.GetUserAsync(Context.User);
+                    <ul>
+                        <li><a  asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId><i class="fas fa-qrcode"></i> Basket</a></li>
+
+                    </ul>
+                    
+                }
+                else
+                {
+                    <ul>
+                        <li><a href="/Identity/Account/Login"><i class="fas fa-qrcode"></i> Basket</a></li
+                    </ul>
+                }
+                <partial name="_LoginPartial.cshtml" />
+                @* <li><a href="#"><i class="fas fa-qrcode"></i>
+                    Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-link"></i>
+                    Shortcut</a></li>
+                <li><a href="#"><i class="fas fa-qrcode"></i>
+                    OverView</a></li>
+                <li><a href="#"><i class="fas fa-qrcode"></i>
+                    Login</a></li>
+                <li><a href="#"><i class="fas fa-qrcode"></i>
+                    Logout</a></li> *@
+            </ul>
+        </div>
+        <div class="social_media">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+        </div>
+        </div>
+        
+    </div>
+
+    @* NavBar-------------- *@
         <nav class="navbar">
-
-
+            <div class="nav-left">
+                <div class="navbar-burger">
+                <ul>
+                    <li>
+                         <div class="btn_one">
+            <label for="check">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+                    </li>
+                </ul>
+       </div>
+                    
             <div class="navbar-links">
                 <ul>
+                    
+                   
                     <li><a asp-area="" asp-controller="Collections" asp-action="Index">NEW IN</a></li>
                     <li><a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a></li>
-                    <li><a asp-area ="" asp-controller="Collections" asp-action="Index">About</a></li>
-                    <li><a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                @*     <li><a asp-area ="" asp-controller="Collections" asp-action="Index">About</a></li>
+                    <li><a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li> *@
                     @if (User.IsInRole("Admin"))
                     {
                         <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Manage Products</a></li>
@@ -33,15 +103,26 @@
                     
                 </ul>
             </div>
-            <div class="brand-title">
-                <img src="/Resources/Logo/LogoSimp.jpg" alt="">
             </div>
-            <div class="navbar-links">
+            <div class="nav-middle">
+                <div class="brand-title">
+                <img src="/Resources/Logo/LogoSimp.jpg" alt="">
+               @*  <div class="profile-pic">
+                 <img src="/images/user.png"  onclick="toggleMenu()" alt="">
+            </div>
+ *@
+           
+            </div>
+            </div>
+            <div class="nav-right"> 
+                <div class="navbar-links">
                 @if (SignInManager.IsSignedIn(Context.User))
                 {
                     var user = await UserManager.GetUserAsync(Context.User);
                     <ul>
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>Basket</a></li>
+                        <li><a  asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>Orders</a></li>
+
+                        <li><a  asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>Basket</a></li>
 
                     </ul>
                     
@@ -49,17 +130,22 @@
                 else
                 {
                     <ul>
-                        <li><a href="/Identity/Account/Login" class="nav-link text-dark">Basket</a></li
+                        <li><a href="/Identity/Account/Login">Basket</a></li
                     </ul>
-                    }
-                <partial name="_LoginPartial" />
+                }
+                 @* <partial name="_LoginPartial.cshtml" /> *@
+                
             </div>
+            </div>
+            
 
-            <a href="#" class="toggle-button">
+          @*   <a href="#" class="toggle-button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </a>
+            </a> *@
+            
+            
         </nav>
         @* <div class="nav">
             <div class="nav-left">
@@ -111,7 +197,7 @@
 
 
 
-
+        
         
     </header>
     <div class="container-fluid">

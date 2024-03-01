@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiliNeu.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3355c48c7e7a2f35fa755acb11dd4f53b77a11a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9db74a65f9f43f2fe6ef8270f59f2e8a68f8608")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiliNeu.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiliNeu.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

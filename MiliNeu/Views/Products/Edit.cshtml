@@ -39,14 +39,14 @@
                 <span asp-validation-for="Path" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CollectionId" class="control-label"></label>
-                <select asp-for="CollectionId" class="form-control" asp-items="ViewBag.CollectionId"></select>
-                <span asp-validation-for="CollectionId" class="text-danger"></span>
+                <label asp-for="Collection.Name" class="control-label"></label>
+                <select asp-for="Collection.Name" class="form-control" asp-items="ViewBag.CollectionId"></select>
+                <span asp-validation-for="Collection.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CollectionName" class="control-label"></label>
-                <input asp-for="CollectionName" class="form-control" />
-                <span asp-validation-for="CollectionName" class="text-danger"></span>
+                <label asp-for="Collection.Name" class="control-label"></label>
+                <input asp-for="Collection.Name" class="form-control" />
+                <span asp-validation-for="Collection.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -28,8 +28,7 @@ namespace MiliNeu.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ApplictaionUserId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -45,7 +44,7 @@ namespace MiliNeu.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Path = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -115,10 +114,9 @@ namespace MiliNeu.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Path = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CollectionId = table.Column<int>(type: "int", nullable: false),
-                    CollectionName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CollectionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -217,6 +215,28 @@ namespace MiliNeu.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Order",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DateTimeCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PaymentStatus = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Order_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CartItem",
                 columns: table => new
                 {
@@ -225,7 +245,8 @@ namespace MiliNeu.DataAccess.Migrations
                     CartId = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
                     SelectedSize = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -244,31 +265,60 @@ namespace MiliNeu.DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Collection",
-                columns: new[] { "Id", "Category", "Description", "Name", "Path", "Price" },
-                values: new object[] { 1, "Summer", "Description", "Bloom & Breeze", "", 50000 });
+            migrationBuilder.CreateTable(
+                name: "OrderItem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SelectedSize = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    DateTimeCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderItem_Order_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Order",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_OrderItem_Product_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.InsertData(
                 table: "Collection",
                 columns: new[] { "Id", "Category", "Description", "Name", "Path", "Price" },
-                values: new object[] { 2, "Winter", "Description", "Tribal Terra", "", 65000 });
+                values: new object[] { 1, "Summer", "Description", "Bloom & Breeze", "", 50000.34765m });
+
+            migrationBuilder.InsertData(
+                table: "Collection",
+                columns: new[] { "Id", "Category", "Description", "Name", "Path", "Price" },
+                values: new object[] { 2, "Winter", "Description", "Tribal Terra", "", 65000.7894m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "Id", "Category", "CollectionId", "CollectionName", "Description", "Name", "Path", "Price" },
+                columns: new[] { "Id", "Category", "CollectionId", "Description", "Name", "Path", "Price" },
                 values: new object[,]
                 {
-                    { 1, "Summer", 1, "Bloom & Breeze", "Description", "Asymmetric Hem Slip Dress", "11.JPG", 12000 },
-                    { 2, "Summer", 1, "Bloom & Breeze", "Description", "Draped Jersey Dress", "12.JPG", 13000 },
-                    { 3, "Summer", 1, "Bloom & Breeze", "Description", "Blazer", "13.JPG", 24000 },
-                    { 4, "Summer", 1, "Bloom & Breeze", "Description", "Lace Top", "14.JPG", 16000 },
-                    { 5, "Summer", 1, "Bloom & Breeze", "Description", "Suite", "15.JPG", 34000 },
-                    { 6, "Winter", 2, "Tribal Terra", "Description", "Suite", "1.JPG", 34000 },
-                    { 7, "Winter", 2, "Tribal Terra", "Description", "Lace Top", "2.JPG", 16000 },
-                    { 8, "Winter", 2, "Tribal Terra", "Description", "Blazer", "3.JPG", 24000 },
-                    { 9, "Winter", 2, "Tribal Terra", "Description", "Draped Jersey Dress", "4.JPG", 13000 },
-                    { 10, "Winter", 2, "Tribal Terra", "Description", "Asymmetric Hem Slip Dress", "1.JPG", 12000 }
+                    { 1, "Summer", 1, "Description", "Asymmetric Hem Slip Dress", "11.JPG", 12000.6789m },
+                    { 2, "Summer", 1, "Description", "Draped Jersey Dress", "12.JPG", 13000.98765m },
+                    { 3, "Summer", 1, "Description", "Blazer", "13.JPG", 24000.5678m },
+                    { 4, "Summer", 1, "Description", "Lace Top", "14.JPG", 16000.6543m },
+                    { 5, "Summer", 1, "Description", "Suite", "15.JPG", 34000.87654m },
+                    { 6, "Winter", 2, "Description", "Suite", "1.JPG", 34000.76543m },
+                    { 7, "Winter", 2, "Description", "Lace Top", "2.JPG", 16000.9876m },
+                    { 8, "Winter", 2, "Description", "Blazer", "3.JPG", 24000.87654m },
+                    { 9, "Winter", 2, "Description", "Draped Jersey Dress", "4.JPG", 13000.9349m },
+                    { 10, "Winter", 2, "Description", "Asymmetric Hem Slip Dress", "1.JPG", 12000.6723m }
                 });
 
             migrationBuilder.CreateIndex(
@@ -327,6 +377,21 @@ namespace MiliNeu.DataAccess.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Order_ApplicationUserId",
+                table: "Order",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItem_OrderId",
+                table: "OrderItem",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItem_ProductId",
+                table: "OrderItem",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Product_CollectionId",
                 table: "Product",
                 column: "CollectionId");
@@ -353,19 +418,25 @@ namespace MiliNeu.DataAccess.Migrations
                 name: "CartItem");
 
             migrationBuilder.DropTable(
+                name: "OrderItem");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Order");
 
             migrationBuilder.DropTable(
                 name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Cart");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Collection");
+
+            migrationBuilder.DropTable(
+                name: "Cart");
         }
     }
 }

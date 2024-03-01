@@ -6,6 +6,7 @@ namespace MiliNeu.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
 
@@ -16,19 +17,16 @@ namespace MiliNeu.Models
         public string Description { get; set; }
 
         [Required]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         public string Path { get; set; }
 
-        // Nav Prop Right
-        public List<CartItem> CartItems { get; set; }
-
         //Nav Prop Left
+        [Required]
+        public Collection Collection { get; set; }
+        [Required]
         public int CollectionId { get; set; }
-        public string CollectionName { get; set; }
-        public Collection? Collection { get; set; }
-        /*public List<Cart>? Cart { get; set; }*/
         public Product()
         {
 

@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiliNeu.DataAccess.Data;
+
 #nullable disable
 
 namespace MiliNeu.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240221000646_initial")]
+    [Migration("20240221202243_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -239,10 +240,6 @@ namespace MiliNeu.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ApplictaionUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Cart");
@@ -258,6 +255,9 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.Property<int>("CartId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -302,8 +302,8 @@ namespace MiliNeu.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -317,7 +317,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Bloom & Breeze",
                             Path = "",
-                            Price = 50000
+                            Price = 50000.34765m
                         },
                         new
                         {
@@ -326,8 +326,72 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Tribal Terra",
                             Path = "",
-                            Price = 65000
+                            Price = 65000.7894m
                         });
+                });
+
+            modelBuilder.Entity("MiliNeu.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DateTimeCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("PaymentStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("MiliNeu.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("DateTimeCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SelectedSize")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("MiliNeu.Models.Product", b =>
@@ -345,10 +409,6 @@ namespace MiliNeu.DataAccess.Migrations
                     b.Property<int>("CollectionId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CollectionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -361,8 +421,8 @@ namespace MiliNeu.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -376,110 +436,100 @@ namespace MiliNeu.DataAccess.Migrations
                             Id = 1,
                             Category = "Summer",
                             CollectionId = 1,
-                            CollectionName = "Bloom & Breeze",
                             Description = "Description",
                             Name = "Asymmetric Hem Slip Dress",
                             Path = "11.JPG",
-                            Price = 12000
+                            Price = 12000.6789m
                         },
                         new
                         {
                             Id = 2,
                             Category = "Summer",
                             CollectionId = 1,
-                            CollectionName = "Bloom & Breeze",
                             Description = "Description",
                             Name = "Draped Jersey Dress",
                             Path = "12.JPG",
-                            Price = 13000
+                            Price = 13000.98765m
                         },
                         new
                         {
                             Id = 3,
                             Category = "Summer",
                             CollectionId = 1,
-                            CollectionName = "Bloom & Breeze",
                             Description = "Description",
                             Name = "Blazer",
                             Path = "13.JPG",
-                            Price = 24000
+                            Price = 24000.5678m
                         },
                         new
                         {
                             Id = 4,
                             Category = "Summer",
                             CollectionId = 1,
-                            CollectionName = "Bloom & Breeze",
                             Description = "Description",
                             Name = "Lace Top",
                             Path = "14.JPG",
-                            Price = 16000
+                            Price = 16000.6543m
                         },
                         new
                         {
                             Id = 5,
                             Category = "Summer",
                             CollectionId = 1,
-                            CollectionName = "Bloom & Breeze",
                             Description = "Description",
                             Name = "Suite",
                             Path = "15.JPG",
-                            Price = 34000
+                            Price = 34000.87654m
                         },
                         new
                         {
                             Id = 6,
                             Category = "Winter",
                             CollectionId = 2,
-                            CollectionName = "Tribal Terra",
                             Description = "Description",
                             Name = "Suite",
                             Path = "1.JPG",
-                            Price = 34000
+                            Price = 34000.76543m
                         },
                         new
                         {
                             Id = 7,
                             Category = "Winter",
                             CollectionId = 2,
-                            CollectionName = "Tribal Terra",
                             Description = "Description",
                             Name = "Lace Top",
                             Path = "2.JPG",
-                            Price = 16000
+                            Price = 16000.9876m
                         },
                         new
                         {
                             Id = 8,
                             Category = "Winter",
                             CollectionId = 2,
-                            CollectionName = "Tribal Terra",
                             Description = "Description",
                             Name = "Blazer",
                             Path = "3.JPG",
-                            Price = 24000
+                            Price = 24000.87654m
                         },
                         new
                         {
                             Id = 9,
                             Category = "Winter",
                             CollectionId = 2,
-                            CollectionName = "Tribal Terra",
                             Description = "Description",
                             Name = "Draped Jersey Dress",
                             Path = "4.JPG",
-                            Price = 13000
+                            Price = 13000.9349m
                         },
                         new
                         {
                             Id = 10,
                             Category = "Winter",
                             CollectionId = 2,
-                            CollectionName = "Tribal Terra",
                             Description = "Description",
                             Name = "Asymmetric Hem Slip Dress",
                             Path = "1.JPG",
-                            Price = 12000
+                            Price = 12000.6723m
                         });
                 });
 
@@ -548,18 +598,44 @@ namespace MiliNeu.DataAccess.Migrations
             modelBuilder.Entity("MiliNeu.Models.CartItem", b =>
                 {
                     b.HasOne("MiliNeu.Models.Cart", "Cart")
-                        .WithMany("CartItems")
+                        .WithMany("Items")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MiliNeu.Models.Product", "Product")
-                        .WithMany("CartItems")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cart");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MiliNeu.Models.Order", b =>
+                {
+                    b.HasOne("MiliNeu.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("UserOrders")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("MiliNeu.Models.OrderItem", b =>
+                {
+                    b.HasOne("MiliNeu.Models.Order", null)
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("MiliNeu.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
                 });
@@ -575,9 +651,14 @@ namespace MiliNeu.DataAccess.Migrations
                     b.Navigation("Collection");
                 });
 
+            modelBuilder.Entity("MiliNeu.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("UserOrders");
+                });
+
             modelBuilder.Entity("MiliNeu.Models.Cart", b =>
                 {
-                    b.Navigation("CartItems");
+                    b.Navigation("Items");
 
                     b.Navigation("User")
                         .IsRequired();
@@ -588,9 +669,9 @@ namespace MiliNeu.DataAccess.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("MiliNeu.Models.Product", b =>
+            modelBuilder.Entity("MiliNeu.Models.Order", b =>
                 {
-                    b.Navigation("CartItems");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

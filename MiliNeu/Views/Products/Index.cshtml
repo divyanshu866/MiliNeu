@@ -27,9 +27,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Path)
             </th>
-            <th>
+           @*  <th>
                 @Html.DisplayNameFor(model => model.CollectionName)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Collection)
             </th>
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.Path)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CollectionName)
+                    @Html.DisplayFor(modelItem => item.Collection.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Collection.Id)

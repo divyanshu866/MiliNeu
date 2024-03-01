@@ -12,6 +12,7 @@ namespace MiliNeu.DataAccess.Data
         public DbSet<Product>? Product { get; set; }
         public DbSet<Collection>? Collection { get; set; }
         public DbSet<Cart>? Cart { get; set; }
+        public DbSet<Order>? Order { get; set; }
 
         //Seed Initial Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,8 +32,8 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Bloom & Breeze",
                     Category = "Summer",
                     Description = "Description",
-                    Price = 50000,
-                    Path=""
+                    Price = (decimal)50000.34765,
+                    Path = ""
 
                 },
                 new Models.Collection
@@ -41,10 +42,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Tribal Terra",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 65000,
+                    Price = (decimal)65000.7894,
                     Path = ""
                 }
-                ) ;
+                );
 
             //Seed Products
             modelBuilder.Entity<Product>().HasData(
@@ -54,33 +55,33 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Asymmetric Hem Slip Dress",
                     Category = "Summer",
                     Description = "Description",
-                    Price = 12000,
+                    Price = (decimal)12000.6789,
                     Path = "11.JPG",
-                    CollectionId=1,
-                    CollectionName= "Bloom & Breeze"
+                    CollectionId = 1,
+                    /*CollectionName = "Bloom & Breeze"*/
 
-                }, 
-                new Product
-                {
-                    Id= 2,
-                    Name = "Draped Jersey Dress",
-                    Category = "Summer",
-                    Description = "Description",
-                    Price = 13000,
-                    Path = "12.JPG",
-                    CollectionId =1,
-                    CollectionName = "Bloom & Breeze"
                 },
                 new Product
                 {
-                    Id=3,
+                    Id = 2,
+                    Name = "Draped Jersey Dress",
+                    Category = "Summer",
+                    Description = "Description",
+                    Price = (decimal)13000.98765,
+                    Path = "12.JPG",
+                    CollectionId = 1,
+                    /*CollectionName = "Bloom & Breeze"*/
+                },
+                new Product
+                {
+                    Id = 3,
                     Name = "Blazer",
                     Category = "Summer",
                     Description = "Description",
-                    Price = 24000,
+                    Price = (decimal)24000.5678,
                     Path = "13.JPG",
-                    CollectionId =1,
-                    CollectionName = "Bloom & Breeze"
+                    CollectionId = 1,
+                    //CollectionName = "Bloom & Breeze"
                 },
                 new Product
                 {
@@ -88,10 +89,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Lace Top",
                     Category = "Summer",
                     Description = "Description",
-                    Price = 16000,
+                    Price = (decimal)16000.6543,
                     Path = "14.JPG",
-                    CollectionId =1,
-                    CollectionName = "Bloom & Breeze"
+                    CollectionId = 1,
+                    //CollectionName = "Bloom & Breeze"
                 },
                 new Product
                 {
@@ -99,10 +100,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Suite",
                     Category = "Summer",
                     Description = "Description",
-                    Price = 34000,
+                    Price = (decimal)34000.87654,
                     Path = "15.JPG",
-                    CollectionId =1,
-                    CollectionName = "Bloom & Breeze"
+                    CollectionId = 1,
+                    //CollectionName = "Bloom & Breeze"
                 },
                 new Product
                 {
@@ -110,10 +111,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Suite",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 34000,
+                    Price = (decimal)34000.76543,
                     Path = "1.JPG",
-                    CollectionId =2,
-                    CollectionName = "Tribal Terra"
+                    CollectionId = 2,
+                    //CollectionName = "Tribal Terra"
                 },
                 new Product
                 {
@@ -121,10 +122,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Lace Top",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 16000,
+                    Price = (decimal)16000.9876,
                     Path = "2.JPG",
-                    CollectionId =2,
-                    CollectionName = "Tribal Terra"
+                    CollectionId = 2,
+                    //CollectionName = "Tribal Terra"
                 },
                 new Product
                 {
@@ -132,10 +133,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Blazer",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 24000,
+                    Price = (decimal)24000.87654,
                     Path = "3.JPG",
-                    CollectionId =2,
-                    CollectionName = "Tribal Terra"
+                    CollectionId = 2,
+                    //CollectionName = "Tribal Terra"
                 },
                 new Product
                 {
@@ -143,10 +144,10 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Draped Jersey Dress",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 13000,
+                    Price = (decimal)13000.9349,
                     Path = "4.JPG",
-                    CollectionId =2,
-                    CollectionName = "Tribal Terra"
+                    CollectionId = 2,
+                    //CollectionName = "Tribal Terra"
                 },
                 new Product
                 {
@@ -154,15 +155,15 @@ namespace MiliNeu.DataAccess.Data
                     Name = "Asymmetric Hem Slip Dress",
                     Category = "Winter",
                     Description = "Description",
-                    Price = 12000,
+                    Price = (decimal)12000.6723,
                     Path = "1.JPG",
-                    CollectionId =2,
-                    CollectionName = "Tribal Terra"
+                    CollectionId = 2,
+                    //CollectionName = "Tribal Terra"
                 }
                 );
         }
 
-       
+
     }
-    
+
 }

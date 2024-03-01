@@ -4,11 +4,109 @@
     ViewData["Title"] = "Details";
 }
 
-    <div class="basket-header">
+<div class="page-header cart-background">
         <h1 class="">Your Basket</h1>
     </div>
 
-    <div class="cart-page">
+    @* new cart html--------------------- *@
+
+<div class="cart-wrapper">
+
+    
+            @if (Model.Items.Count == 0)
+            {
+        <h2>@* Cart items will be visible here *@Your cart is empty &#x1F614</h2>
+    }
+            else
+            {
+        <div class="project">
+            <div class="shop">
+                <div class="content">
+                    <div class="table">
+                        <p class="table-item table-item-product">Product</p>
+                        <p class="table-item table-item-size">Size</p>
+                        <p class="table-item table-item-quantity">Quantity</p>
+                        <p class="table-item table-item-edit">Remove</p>
+
+                    </div>
+
+
+                </div>
+                @foreach (var cartitem in Model.Items)
+                {
+                    <div class="box">
+                        <a href="/products/details/@cartitem.Product.Id">
+                            <img href="/products/details/@cartitem.Product.Id" src="/Resources/Items/@cartitem.Product.Path" alt="">
+
+                        </a>
+                        
+                        <div class="content">
+                            <div class="prof-name-price">
+                                <h3>@cartitem.Product.Name</h3>
+                                <h4>Rs.@cartitem.Product.Price</h4>
+
+                            </div>
+                            <p>@cartitem.SelectedSize</p>
+                            <p class="unit"><input type="number" value="@cartitem.Quantity"></p>
+
+                            <a class="btn-area" asp-action="Delete" asp-controller="Carts" asp-route-productId="@cartitem.Product.Id" asp-route-cartId="@Model.Id">
+                                <i class="fas fa-trash"></i>
+
+                            </a>
+
+
+
+
+                        </div>
+                    </div>
+                    <hr />
+                }
+
+
+            </div>
+            <div class="right-bar">
+                <p><span>Subtotal</span><span>$80</span></p>
+                <hr>
+                <p><span>Tax (5%)</span><span>$1</span></p>
+                <hr>
+                <p><span>Shipping</span><span>$15</span></p>
+                <hr>
+                <p><span>Total</span><span>$96</span></p>
+
+                <a asp-action="Checkout" asp-controller="Orders" asp-route-cartId="@Model.Id"  >Checkout</a>
+            </div>
+        </div>
+            }
+           
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @* Old cart html------------------------ *@
+   @*  <div class="cart-page">
 
         <table>
             <tr>
@@ -27,7 +125,7 @@
 
 
 
-                @foreach (var cartitem in Model.CartItems)
+                @foreach (var cartitem in Model.Items)
                 {
 
                     var product = cartitem.Product;
@@ -63,8 +161,9 @@
                 }
 
         </table>
-
-        @* <div class="total-price">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
+       @* commented----------- *@
+    @* <div class="total-price">
             <table>
 
                 <tr>
@@ -94,11 +193,11 @@
 
             </table>
         </div> *@
-
-    </div>
+        @* -----commented *@
+   @*  </div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
-
+ *@
 @* 
 
 <div>

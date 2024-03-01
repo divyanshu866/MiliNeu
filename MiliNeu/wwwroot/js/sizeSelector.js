@@ -16,7 +16,7 @@ $(document).ready(function () {
                 console.log(response);
             },
             error: function (error) {
-                console.log("Error:", error);
+                console.log("Error:", error);   
             }
         });
     });

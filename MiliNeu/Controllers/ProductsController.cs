@@ -62,15 +62,15 @@ namespace MiliNeu.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Category,Description,Price,Path,CollectionId,CollectionName")] Product product)
         {
-            Collection col = _context.Collection.FirstOrDefault(p => p.Name == product.CollectionName);
-            product.CollectionId = col.Id;
+            Collection col = _context.Collection.FirstOrDefault(p => p.Name == product.Collection.Name);
+            /*product.CollectionId = col.Id;*/
             if (ModelState.IsValid)
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.CollectionId);
+            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.Collection.Name);
             return View(product);
         }
 
@@ -87,7 +87,7 @@ namespace MiliNeu.Controllers
             {
                 return NotFound();
             }
-            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.CollectionId);
+            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.Collection.Id);
             return View(product);
         }
 
@@ -123,7 +123,7 @@ namespace MiliNeu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.CollectionId);
+            ViewData["CollectionId"] = new SelectList(_context.Collection, "Id", "Id", product.Collection.Id);
             return View(product);
         }
 
