@@ -21,10 +21,11 @@ Implemented IEmailSender interface for email confirmation using SendGrid service
 Api keys in appsettings.json:
 <br>
 <br>
+<pre>
   "SendGridSettings": {
     "FromEmail": "email@email.com",
     "EmailName": "emailname",
     "ApiKey": "SendGridAPIKey"
   },
-
+<pre>
 </p>
