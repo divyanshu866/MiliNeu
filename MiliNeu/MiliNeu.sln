@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.DataAccess", "..\Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.Models", "..\MiliNeu.Models\MiliNeu.Models.csproj", "{CE6DC30D-5DCD-4CB0-A866-D32612F5C816}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.Utility", "..\MiliNeu.Utility\MiliNeu.Utility.csproj", "{22331467-288D-4B1C-B583-45AF6ADFE9A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CE6DC30D-5DCD-4CB0-A866-D32612F5C816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE6DC30D-5DCD-4CB0-A866-D32612F5C816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE6DC30D-5DCD-4CB0-A866-D32612F5C816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22331467-288D-4B1C-B583-45AF6ADFE9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22331467-288D-4B1C-B583-45AF6ADFE9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22331467-288D-4B1C-B583-45AF6ADFE9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22331467-288D-4B1C-B583-45AF6ADFE9A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

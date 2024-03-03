@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 
-namespace MiliNeu.Areas.Identity.Pages.Account
+namespace Milineu.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
@@ -102,20 +102,22 @@ namespace MiliNeu.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-
+                //create new user
                 var user = CreateUser();
+                //create new cart for new user
                 Cart newCart = new Cart();
 
+                //Add references
                 user.Cart = newCart;
-                /*  newCart.ApplictaionUserId = user.Id;*/
+                newCart.ApplicationUserId = user.Id;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)

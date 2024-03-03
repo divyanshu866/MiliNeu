@@ -5,76 +5,136 @@
       "PackagePath": "staticwebassets\\Milineu.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\BloomB.png",
-      "PackagePath": "staticwebassets\\Resources\\Banner\\BloomB.png"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\BloomB.png",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Banner\\BloomB.png"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\TribalT.PNG",
-      "PackagePath": "staticwebassets\\Resources\\Banner\\TribalT.PNG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\TribalT.PNG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Banner\\TribalT.PNG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\alyssa.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Banner\\alyssa.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\alyssa.jpg",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Banner\\alyssa.jpg"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\angela-bailey.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Banner\\angela-bailey.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\angela-bailey.jpg",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Banner\\angela-bailey.jpg"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\1.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\1.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\BloomB.png",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Collections\\BloomB.png"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\11.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\11.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\TribalT.png",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Collections\\TribalT.png"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\12.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\12.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\1.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\1.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\13.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\13.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\11.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\11.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\14.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\14.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\12.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\12.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\15.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\15.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\13.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\13.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\2.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\2.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\14.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\14.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\3.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\3.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\15.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\15.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\4.JPG",
-      "PackagePath": "staticwebassets\\Resources\\Items\\4.JPG"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\2.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\2.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Asymmetric-hem slip dress.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Items\\Asymmetric-hem slip dress.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\3.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\3.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Blazer.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Items\\Blazer.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\4.JPG",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Images\\Products\\4.JPG"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Draped jersey dress.webp",
-      "PackagePath": "staticwebassets\\Resources\\Items\\Draped jersey dress.webp"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Logo\\LogoSimp.jpg",
+      "PackagePath": "staticwebassets\\ResourcesBackup\\Resources\\Logo\\LogoSimp.jpg"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Lace top.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Items\\Lace top.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\BloomB.png",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Banner\\BloomB.png"
     },
     {
-      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Suite.jpg",
-      "PackagePath": "staticwebassets\\Resources\\Items\\Suite.jpg"
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\TribalT.PNG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Banner\\TribalT.PNG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\alyssa.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Banner\\alyssa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\angela-bailey.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Banner\\angela-bailey.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\2395bb8f-1642-4d81-a105-733a38e24190.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Collections\\2395bb8f-1642-4d81-a105-733a38e24190.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\BloomB.png",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Collections\\BloomB.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\TribalT.png",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Collections\\TribalT.png"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Common\\Image-Placeholder.jpg",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Common\\Image-Placeholder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\1.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\1.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\11.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\11.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\12.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\12.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\13.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\13.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\14.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\14.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\15.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\15.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\2.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\2.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\3.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\3.JPG"
+    },
+    {
+      "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\4.JPG",
+      "PackagePath": "staticwebassets\\Resources\\Images\\Products\\4.JPG"
     },
     {
       "Id": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Logo\\LogoSimp.jpg",

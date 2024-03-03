@@ -128,6 +128,80 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.20, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\MiliNeu.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\MiliNeu.Utility.csproj",
+        "projectName": "MiliNeu.Utility",
+        "projectPath": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\MiliNeu.Utility.csproj",
+        "packagesPath": "C:\\Users\\divya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\divya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.2, )"
             }
           },
           "imports": [
@@ -179,6 +253,9 @@
               },
               "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Models\\MiliNeu.Models.csproj": {
                 "projectPath": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Models\\MiliNeu.Models.csproj"
+              },
+              "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\MiliNeu.Utility.csproj": {
+                "projectPath": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu.Utility\\MiliNeu.Utility.csproj"
               }
             }
           }
@@ -202,9 +279,13 @@
               "target": "Package",
               "version": "[6.0.19, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.20, )"
+              "version": "[6.0.27, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -229,6 +310,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "SendGrid.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

@@ -8,12 +8,6 @@ namespace MiliNeu.Models
         public int Id { get; set; }
 
         [Required]
-        public ApplicationUser ApplicationUser { get; set; }
-
-        [Required]
-        public List<OrderItem> Items { get; set; }
-
-        [Required]
         public decimal Price { get; set; }
 
         [Required]
@@ -21,6 +15,15 @@ namespace MiliNeu.Models
 
         [Required]
         public bool PaymentStatus { get; set; }
+        //Nav prop left
+
+        [Required]
+        public ApplicationUser ApplicationUser { get; set; }
+
+        [Required]
+        public List<OrderItem> Items { get; set; }
+
+
         public Order()
         {
             DateTimeCreated = DateTime.UtcNow;

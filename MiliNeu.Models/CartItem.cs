@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
@@ -23,10 +24,12 @@ namespace MiliNeu.Models
 
         // Nav Prop Left
         [Required]
+        [ForeignKey("CartId")]
         public Cart Cart { get; set; }
 
         // Nav Prop Right
         [Required]
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
         public CartItem()
         {

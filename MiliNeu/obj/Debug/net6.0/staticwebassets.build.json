@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/8B028XmzUc4zl8FKSjtlEgAsohKJhlWMYfsuj1mxfY=",
+  "Hash": "HwF2ClKwRWRiG3ScWWDWoW7lj65Ri8tISPx6y6MoWfc=",
   "Source": "Milineu",
   "BasePath": "_content/Milineu",
   "Mode": "Default",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\css\\site.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\favicon.ico",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\js\\site.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\js\\site.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -299,13 +299,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -318,13 +318,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -356,13 +356,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -375,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -394,13 +394,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -432,13 +432,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -451,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -470,13 +470,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -489,13 +489,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -508,13 +508,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -527,13 +527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -546,13 +546,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -565,13 +565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -584,13 +584,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -603,13 +603,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -622,13 +622,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -641,13 +641,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -679,13 +679,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -698,13 +698,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -717,13 +717,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -736,13 +736,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -755,13 +755,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -774,13 +774,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -793,13 +793,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -812,13 +812,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -831,13 +831,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -850,13 +850,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -869,13 +869,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -888,13 +888,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -907,13 +907,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -926,13 +926,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -945,13 +945,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -964,13 +964,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1002,13 +1002,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1021,13 +1021,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1040,13 +1040,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1059,13 +1059,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1078,13 +1078,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1097,13 +1097,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1116,13 +1116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1135,13 +1135,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1154,7 +1154,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.20\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\divya\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.27\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
       "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Milineu.styles.css",
@@ -2563,12 +2563,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\alyssa.jpg",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\alyssa.jpg",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Banner/alyssa.jpg",
+      "RelativePath": "Resources/Images/Banner/alyssa.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2579,15 +2579,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Banner\\alyssa.jpg"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Banner\\alyssa.jpg"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\angela-bailey.jpg",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\angela-bailey.jpg",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Banner/angela-bailey.jpg",
+      "RelativePath": "Resources/Images/Banner/angela-bailey.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2598,15 +2598,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Banner\\angela-bailey.jpg"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Banner\\angela-bailey.jpg"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\BloomB.png",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\BloomB.png",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Banner/BloomB.png",
+      "RelativePath": "Resources/Images/Banner/BloomB.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2617,15 +2617,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Banner\\BloomB.png"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Banner\\BloomB.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Banner\\TribalT.PNG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Banner\\TribalT.PNG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Banner/TribalT.PNG",
+      "RelativePath": "Resources/Images/Banner/TribalT.PNG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2636,15 +2636,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Banner\\TribalT.PNG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Banner\\TribalT.PNG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\1.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\2395bb8f-1642-4d81-a105-733a38e24190.jpg",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/1.JPG",
+      "RelativePath": "Resources/Images/Collections/2395bb8f-1642-4d81-a105-733a38e24190.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2655,15 +2655,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\1.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Collections\\2395bb8f-1642-4d81-a105-733a38e24190.jpg"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\11.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\BloomB.png",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/11.JPG",
+      "RelativePath": "Resources/Images/Collections/BloomB.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2674,15 +2674,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\11.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Collections\\BloomB.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\12.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Collections\\TribalT.png",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/12.JPG",
+      "RelativePath": "Resources/Images/Collections/TribalT.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2693,15 +2693,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\12.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Collections\\TribalT.png"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\13.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Common\\Image-Placeholder.jpg",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/13.JPG",
+      "RelativePath": "Resources/Images/Common/Image-Placeholder.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2712,15 +2712,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\13.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Common\\Image-Placeholder.jpg"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\14.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\1.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/14.JPG",
+      "RelativePath": "Resources/Images/Products/1.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2731,15 +2731,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\14.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\1.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\15.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\11.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/15.JPG",
+      "RelativePath": "Resources/Images/Products/11.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2750,15 +2750,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\15.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\11.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\2.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\12.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/2.JPG",
+      "RelativePath": "Resources/Images/Products/12.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2769,15 +2769,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\2.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\12.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\3.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\13.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/3.JPG",
+      "RelativePath": "Resources/Images/Products/13.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2788,15 +2788,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\3.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\13.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\4.JPG",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\14.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/4.JPG",
+      "RelativePath": "Resources/Images/Products/14.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2807,15 +2807,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\4.JPG"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\14.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Asymmetric-hem slip dress.jpg",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\15.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/Asymmetric-hem slip dress.jpg",
+      "RelativePath": "Resources/Images/Products/15.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2826,15 +2826,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\Asymmetric-hem slip dress.jpg"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\15.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Blazer.jpg",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\2.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/Blazer.jpg",
+      "RelativePath": "Resources/Images/Products/2.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2845,15 +2845,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\Blazer.jpg"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\2.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Draped jersey dress.webp",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\3.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/Draped jersey dress.webp",
+      "RelativePath": "Resources/Images/Products/3.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2864,15 +2864,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\Draped jersey dress.webp"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\3.JPG"
     },
     {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Lace top.jpg",
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Images\\Products\\4.JPG",
       "SourceId": "Milineu",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
       "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/Lace top.jpg",
+      "RelativePath": "Resources/Images/Products/4.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2883,26 +2883,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\Lace top.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Items\\Suite.jpg",
-      "SourceId": "Milineu",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
-      "BasePath": "_content/Milineu",
-      "RelativePath": "Resources/Items/Suite.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\Items\\Suite.jpg"
+      "OriginalItemSpec": "wwwroot\\Resources\\Images\\Products\\4.JPG"
     },
     {
       "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Resources\\Logo\\LogoSimp.jpg",
@@ -2922,6 +2903,310 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\Logo\\LogoSimp.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\alyssa.jpg",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Banner/alyssa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\alyssa.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\angela-bailey.jpg",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Banner/angela-bailey.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\angela-bailey.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\BloomB.png",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Banner/BloomB.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\BloomB.png"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\TribalT.PNG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Banner/TribalT.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Banner\\TribalT.PNG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\BloomB.png",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Collections/BloomB.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\BloomB.png"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\TribalT.png",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Collections/TribalT.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Collections\\TribalT.png"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\1.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/1.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\1.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\11.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/11.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\11.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\12.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/12.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\12.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\13.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/13.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\13.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\14.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/14.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\14.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\15.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/15.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\15.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\2.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/2.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\2.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\3.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/3.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\3.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\4.JPG",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Images/Products/4.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Images\\Products\\4.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\ResourcesBackup\\Resources\\Logo\\LogoSimp.jpg",
+      "SourceId": "Milineu",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\",
+      "BasePath": "_content/Milineu",
+      "RelativePath": "ResourcesBackup/Resources/Logo/LogoSimp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ResourcesBackup\\Resources\\Logo\\LogoSimp.jpg"
     },
     {
       "Identity": "C:\\Users\\divya\\source\\repos\\MiliNeu\\MiliNeu\\wwwroot\\Screenshots\\Milineu-Home.png",

@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 using MiliNeu.DataAccess.Data;
 using MiliNeu.Models;
+using MiliNeu.Utility;
+using SendGrid.Extensions.DependencyInjection;
 namespace WebApp
 {
     class Program
@@ -17,12 +20,23 @@ namespace WebApp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            /*builder.Services.AddRazorPages();*/
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 //Add role func
                 .AddRoles<IdentityRole>()
 
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            //Email
+            builder.Services.Configure<SendGridSettings>(builder.Configuration.GetSection("SendGridSettings"));
+            builder.Services.AddSendGrid(option =>
+            {
+                option.ApiKey = builder.Configuration.GetSection("SendGridSettings").GetValue<string>("ApiKey");
+            });
+            builder.Services.AddScoped<IEmailSender, EmailSenderService>();
+
+
 
             var app = builder.Build();
 
@@ -45,11 +59,11 @@ namespace WebApp
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.MapRazorPages();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Collections}/{action=Index}/{id?}");
-            app.MapRazorPages();
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
             using (var scope = app.Services.CreateScope())
             {
@@ -82,6 +96,7 @@ namespace WebApp
                     Cart cart = new Cart(); // Create a new cart
 
                     cart.User = user;
+                    cart.ApplicationUserId = user.Id;
                     user.Cart = cart;
                     user.CartId = cart.Id;
 

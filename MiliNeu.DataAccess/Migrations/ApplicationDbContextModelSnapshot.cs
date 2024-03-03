@@ -238,6 +238,10 @@ namespace MiliNeu.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Cart");
@@ -314,7 +318,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Category = "Summer",
                             Description = "Description",
                             Name = "Bloom & Breeze",
-                            Path = "",
+                            Path = "\\Resources\\Images\\Collections\\BloomB.png",
                             Price = 50000.34765m
                         },
                         new
@@ -323,7 +327,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Category = "Winter",
                             Description = "Description",
                             Name = "Tribal Terra",
-                            Path = "",
+                            Path = "\\Resources\\Images\\Collections\\TribalT.png",
                             Price = 65000.7894m
                         });
                 });
@@ -436,7 +440,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 1,
                             Description = "Description",
                             Name = "Asymmetric Hem Slip Dress",
-                            Path = "11.JPG",
+                            Path = "\\Resources\\Images\\Products\\11.JPG",
                             Price = 12000.6789m
                         },
                         new
@@ -446,7 +450,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 1,
                             Description = "Description",
                             Name = "Draped Jersey Dress",
-                            Path = "12.JPG",
+                            Path = "\\Resources\\Images\\Products\\12.JPG",
                             Price = 13000.98765m
                         },
                         new
@@ -456,7 +460,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 1,
                             Description = "Description",
                             Name = "Blazer",
-                            Path = "13.JPG",
+                            Path = "\\Resources\\Images\\Products\\13.JPG",
                             Price = 24000.5678m
                         },
                         new
@@ -466,7 +470,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 1,
                             Description = "Description",
                             Name = "Lace Top",
-                            Path = "14.JPG",
+                            Path = "\\Resources\\Images\\Products\\14.JPG",
                             Price = 16000.6543m
                         },
                         new
@@ -476,7 +480,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 1,
                             Description = "Description",
                             Name = "Suite",
-                            Path = "15.JPG",
+                            Path = "\\Resources\\Images\\Products\\15.JPG",
                             Price = 34000.87654m
                         },
                         new
@@ -486,7 +490,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 2,
                             Description = "Description",
                             Name = "Suite",
-                            Path = "1.JPG",
+                            Path = "\\Resources\\Images\\Products\\1.JPG",
                             Price = 34000.76543m
                         },
                         new
@@ -496,7 +500,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 2,
                             Description = "Description",
                             Name = "Lace Top",
-                            Path = "2.JPG",
+                            Path = "\\Resources\\Images\\Products\\2.JPG",
                             Price = 16000.9876m
                         },
                         new
@@ -506,7 +510,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 2,
                             Description = "Description",
                             Name = "Blazer",
-                            Path = "3.JPG",
+                            Path = "\\Resources\\Images\\Products\\3.JPG",
                             Price = 24000.87654m
                         },
                         new
@@ -516,7 +520,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 2,
                             Description = "Description",
                             Name = "Draped Jersey Dress",
-                            Path = "4.JPG",
+                            Path = "\\Resources\\Images\\Products\\4.JPG",
                             Price = 13000.9349m
                         },
                         new
@@ -526,7 +530,7 @@ namespace MiliNeu.DataAccess.Migrations
                             CollectionId = 2,
                             Description = "Description",
                             Name = "Asymmetric Hem Slip Dress",
-                            Path = "1.JPG",
+                            Path = "\\Resources\\Images\\Products\\1.JPG",
                             Price = 12000.6723m
                         });
                 });

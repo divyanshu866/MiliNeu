@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
@@ -19,13 +21,13 @@ namespace MiliNeu.Models
         [Required]
         public decimal Price { get; set; }
 
-        [Required]
+        [ValidateNever]
         public string Path { get; set; }
 
+        [ValidateNever]
         //Nav Prop Left
-        [Required]
+        [ForeignKey("CollectionId")]
         public Collection Collection { get; set; }
-        [Required]
         public int CollectionId { get; set; }
         public Product()
         {

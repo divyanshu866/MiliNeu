@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiliNeu.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9db74a65f9f43f2fe6ef8270f59f2e8a68f8608")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1021a17ace2e37e01856d6d0487148372e724ce6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiliNeu.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiliNeu.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

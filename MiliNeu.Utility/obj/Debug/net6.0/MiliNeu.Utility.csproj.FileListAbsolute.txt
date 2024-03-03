@@ -1,0 +1,13 @@
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\bin\Debug\net6.0\MiliNeu.Utility.deps.json
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\bin\Debug\net6.0\MiliNeu.Utility.dll
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\bin\Debug\net6.0\MiliNeu.Utility.pdb
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.csproj.AssemblyReference.cache
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.AssemblyInfoInputs.cache
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.AssemblyInfo.cs
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.csproj.CoreCompileInputs.cache
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.sourcelink.json
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.dll
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\refint\MiliNeu.Utility.dll
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\MiliNeu.Utility.pdb
+C:\Users\divya\source\repos\MiliNeu\MiliNeu.Utility\obj\Debug\net6.0\ref\MiliNeu.Utility.dll

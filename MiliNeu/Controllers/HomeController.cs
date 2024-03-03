@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MiliNeu.DataAccess.Data;
 using MiliNeu.Models;
+using System.Diagnostics;
 
 namespace MiliNeu.Controllers
 {
@@ -9,18 +10,29 @@ namespace MiliNeu.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            /*Collection collection = new Collection();*/
+
+            return _context.Collection != null ?
+                        View(await _context.Collection.Include(c => c.Products).ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Collection'  is null.");
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Manage()
         {
             return View();
         }

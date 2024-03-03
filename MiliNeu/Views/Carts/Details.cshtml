@@ -15,7 +15,7 @@
     
             @if (Model.Items.Count == 0)
             {
-        <h2>@* Cart items will be visible here *@Your cart is empty &#x1F614</h2>
+        <h2>Your cart is empty &#x1F614</h2>
     }
             else
             {
@@ -36,7 +36,7 @@
                 {
                     <div class="box">
                         <a href="/products/details/@cartitem.Product.Id">
-                            <img href="/products/details/@cartitem.Product.Id" src="/Resources/Items/@cartitem.Product.Path" alt="">
+                            <img href="/products/details/@cartitem.Product.Id" src="@cartitem.Product.Path" alt="">
 
                         </a>
                         

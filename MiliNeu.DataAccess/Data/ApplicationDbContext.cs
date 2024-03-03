@@ -33,7 +33,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)50000.34765,
-                    Path = ""
+                    Path = "\\Resources\\Images\\Collections\\BloomB.png"
 
                 },
                 new Models.Collection
@@ -43,7 +43,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)65000.7894,
-                    Path = ""
+                    Path = "\\Resources\\Images\\Collections\\TribalT.png"
                 }
                 );
 
@@ -56,7 +56,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)12000.6789,
-                    Path = "11.JPG",
+                    Path = "\\Resources\\Images\\Products\\11.JPG",
                     CollectionId = 1,
                     /*CollectionName = "Bloom & Breeze"*/
 
@@ -68,7 +68,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)13000.98765,
-                    Path = "12.JPG",
+                    Path = "\\Resources\\Images\\Products\\12.JPG",
                     CollectionId = 1,
                     /*CollectionName = "Bloom & Breeze"*/
                 },
@@ -79,7 +79,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)24000.5678,
-                    Path = "13.JPG",
+                    Path = "\\Resources\\Images\\Products\\13.JPG",
                     CollectionId = 1,
                     //CollectionName = "Bloom & Breeze"
                 },
@@ -90,7 +90,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)16000.6543,
-                    Path = "14.JPG",
+                    Path = "\\Resources\\Images\\Products\\14.JPG",
                     CollectionId = 1,
                     //CollectionName = "Bloom & Breeze"
                 },
@@ -101,7 +101,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Summer",
                     Description = "Description",
                     Price = (decimal)34000.87654,
-                    Path = "15.JPG",
+                    Path = "\\Resources\\Images\\Products\\15.JPG",
                     CollectionId = 1,
                     //CollectionName = "Bloom & Breeze"
                 },
@@ -112,7 +112,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)34000.76543,
-                    Path = "1.JPG",
+                    Path = "\\Resources\\Images\\Products\\1.JPG",
                     CollectionId = 2,
                     //CollectionName = "Tribal Terra"
                 },
@@ -123,7 +123,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)16000.9876,
-                    Path = "2.JPG",
+                    Path = "\\Resources\\Images\\Products\\2.JPG",
                     CollectionId = 2,
                     //CollectionName = "Tribal Terra"
                 },
@@ -134,7 +134,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)24000.87654,
-                    Path = "3.JPG",
+                    Path = "\\Resources\\Images\\Products\\3.JPG",
                     CollectionId = 2,
                     //CollectionName = "Tribal Terra"
                 },
@@ -145,7 +145,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)13000.9349,
-                    Path = "4.JPG",
+                    Path = "\\Resources\\Images\\Products\\4.JPG",
                     CollectionId = 2,
                     //CollectionName = "Tribal Terra"
                 },
@@ -156,7 +156,7 @@ namespace MiliNeu.DataAccess.Data
                     Category = "Winter",
                     Description = "Description",
                     Price = (decimal)12000.6723,
-                    Path = "1.JPG",
+                    Path = "\\Resources\\Images\\Products\\1.JPG",
                     CollectionId = 2,
                     //CollectionName = "Tribal Terra"
                 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 namespace MiliNeu.Models
 {
     public class Collection
@@ -7,6 +9,7 @@ namespace MiliNeu.Models
         public int Id { get; set; }
 
         [Required]
+        [DisplayName("Collection Name")]
         public string Name { get; set; }
 
         [Required]
@@ -17,7 +20,7 @@ namespace MiliNeu.Models
 
         public decimal Price { get; set; }
 
-
+        [ValidateNever]
         public string Path { get; set; }
 
         //Nav Prop

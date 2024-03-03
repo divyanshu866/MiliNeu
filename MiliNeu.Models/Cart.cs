@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
@@ -9,7 +10,9 @@ namespace MiliNeu.Models
 
         //Nav Prop Left
         [Required]
+        [ForeignKey("ApplicationUserId")]
         public ApplicationUser User { get; set; }
+        public string ApplicationUserId { get; set; }
 
         // Nav Prop Right
         public List<CartItem>? Items { get; set; }

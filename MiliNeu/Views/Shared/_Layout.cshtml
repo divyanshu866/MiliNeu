@@ -65,8 +65,7 @@
         <div class="social_media">
             <a href=""><i class="fab fa-facebook-f"></i></a>
             <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
+         
         </div>
         </div>
         
@@ -91,13 +90,13 @@
                 <ul>
                     
                    
-                    <li><a asp-area="" asp-controller="Collections" asp-action="Index">NEW IN</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">NEW IN</a></li>
                     <li><a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a></li>
                 @*     <li><a asp-area ="" asp-controller="Collections" asp-action="Index">About</a></li>
                     <li><a  asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li> *@
                     @if (User.IsInRole("Admin"))
                     {
-                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Manage Products</a></li>
+                        <li><a class="nav-link text-dark" asp-area="" asp-action="Manage" asp-controller="Home">Manage</a></li>
                     }
                    
                     

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
@@ -10,9 +11,11 @@ namespace MiliNeu.Models
 
         //Nav Prop Right
         [Required]
+        [ForeignKey("CartId")]
         public Cart Cart { get; set; }
 
         //Nav Prop Right
+
         public List<Order>? UserOrders { get; set; }
 
         public ApplicationUser()

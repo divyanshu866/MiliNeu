@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-lg-5 col-md-4 col-6 mb-1">
             <div @*class="card h-100"*@ style="height: 88%; content-visibility: auto">
-                <img src="\Resources\Items\@Model.Path" alt="Image" class="img-fluid">
+                <img src="@Model.Path" alt="Image" class="img-fluid">
             </div>
         </div>
 
@@ -85,7 +85,7 @@
                             }
                         </form>
 
-                    
+                    <partial name="_ValidationScriptsPartial" />
 
 
                 </body>

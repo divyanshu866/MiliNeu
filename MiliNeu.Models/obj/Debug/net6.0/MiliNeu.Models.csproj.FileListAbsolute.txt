@@ -10,6 +10,32 @@ C:\Users\divya\source\repos\CurrentWorkingProj\MiliNeu.Models\obj\Debug\net6.0\M
 C:\Users\divya\source\repos\CurrentWorkingProj\MiliNeu.Models\obj\Debug\net6.0\refint\MiliNeu.Models.dll
 C:\Users\divya\source\repos\CurrentWorkingProj\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.pdb
 C:\Users\divya\source\repos\CurrentWorkingProj\MiliNeu.Models\obj\Debug\net6.0\ref\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.deps.json
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.pdb
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.csproj.AssemblyReference.cache
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.AssemblyInfoInputs.cache
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.AssemblyInfo.cs
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.csproj.CoreCompileInputs.cache
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.sourcelink.json
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\refint\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.pdb
+C:\Users\divya\source\repos\MilBackup\2nd march 2024 Mili\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\ref\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.deps.json
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.pdb
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.csproj.AssemblyReference.cache
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.AssemblyInfoInputs.cache
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.AssemblyInfo.cs
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.csproj.CoreCompileInputs.cache
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.sourcelink.json
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\refint\MiliNeu.Models.dll
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\MiliNeu.Models.pdb
+C:\Users\divya\source\repos\MiliResCur\MiliNeu\MiliNeu.Models\obj\Debug\net6.0\ref\MiliNeu.Models.dll
 C:\Users\divya\source\repos\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.deps.json
 C:\Users\divya\source\repos\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.dll
 C:\Users\divya\source\repos\MiliNeu\MiliNeu.Models\bin\Debug\net6.0\MiliNeu.Models.pdb
