@@ -5,7 +5,7 @@
 <p>Add your connection string in the "appsettings.json" file and Run Command "update-database" in the package manager console of Visual studio to create the database and run the website 
 <br>
 <br>
-Login Credentials:
+Admin Login Credentials:
 <br>
 
   <h4> Email: admin@admin <h4>
