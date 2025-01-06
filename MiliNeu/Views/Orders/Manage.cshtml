@@ -1,0 +1,200 @@
+﻿@model MiliNeu.Models.ViewModels.PagerVM<Order>
+
+@{
+    ViewData["Title"] = "Manage Orders";
+}
+
+<p class="page-title">Manage Orders</p>
+<section class="manage-orders">
+    <div class="filters">
+
+        <ul>
+            @if (ViewBag.filter == "All")
+            {
+                <li class="active"><a asp-action="Manage" asp-route-filter="All">All Orders</a></li>
+
+            }else
+            {
+                <li><a asp-action="Manage" asp-route-filter="All">All Orders</a></li>
+
+            }
+            @foreach (var status in ViewBag.FulfilmentStatusOptions)
+            {
+                var isActive = ViewBag.filter == status ? "active" : "";
+                
+               <li class="@isActive"><a asp-action="Manage" asp-route-filter="@status">@status</a></li>
+
+              
+            }
+            
+        </ul>
+
+    </div>
+
+    <div class="action-search-container">
+        <div class="status-container">
+            <input type="hidden" name="orderId" />
+            <select id="new-status" name="newStatus">
+                <option value="" disabled selected>Select Delivery Status</option>
+                @foreach (var status in ViewBag.FulfilmentStatusOptions)
+                {
+
+                    <option value="@status">
+                        @status
+                    </option>
+
+
+                }
+            </select>
+            <button type="button" onclick="submitForm()"  class="btn btn-primary">Update</button>
+
+            
+        </div>
+        <div class="payment-status-container">
+            <button type="button" class="btn-payment-status">Payment Status</button>
+
+            <!-- Hidden Dialog -->
+            <div id="paymentStatusDialog" class="hidden">
+
+                <select id="newPaymentStatus">
+                    <option value="" disabled selected>Select Payment Status</option>
+                    @foreach (var status in ViewBag.PaymentStatusOptions)
+                    {
+
+                        <option value="@status">
+                            @status
+                        </option>
+
+
+                    }
+                </select>
+                <button type="button" onclick="updatePaymentStatus()">Confirm</button>
+            </div>
+        </div>
+        
+        
+           
+        <form class="order-search-form" asp-controller="Orders" asp-action="Manage" method="get">
+            <input type="hidden" name="filter" value="@ViewBag.filter" />
+            <input type="search" name="searchTerm" value="@ViewBag.searchTerm" placeholder="Search order" aria-label="Search">
+            <button type="submit"><i class="material-icons">search</i></button>
+        </form>
+    </div>
+    <div id="preview">
+        @* @await Html.PartialAsync("_Orders") *@
+
+
+        <form id="orderForm" asp-action="UpdateStatus" method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Order ID</th>
+                        <th>Razor pay Order ID</th>
+                        <th>Username</th>
+                        <th>Payment</th>
+                        <th>Amount</th>
+                        <th>Discount Applied</th>
+                        <th>Created At</th>
+                        <th>Fulfilment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @await Html.PartialAsync("_OrderRows", Model.Items)
+                </tbody>
+            </table>
+        </form>
+
+
+
+    </div>
+
+    
+</section>
+
+@await Html.PartialAsync("_Pagination",Model)
+
+<script>
+
+
+        const dialog = document.getElementById("paymentStatusDialog");
+        const toggleButton = document.getElementsByClassName("btn-payment-status")[0];
+
+        toggleButton.addEventListener("click", function () {
+            if (dialog.classList.contains("active")) {
+                // Open dialog
+                dialog.classList.add("hidden");
+
+                dialog.classList.remove("active");
+            }
+            else{
+                dialog.classList.add("active");
+                dialog.classList.remove("hidden");
+            }
+            
+
+        });
+    
+
+
+    function updatePaymentStatus() {
+          // Get the selected orders
+    const selectedOrders = Array.from(document.querySelectorAll('input[name="selectedOrders"]:checked'))
+        .map(checkbox => checkbox.value);
+        // Get the new status
+        const status = document.getElementById('newPaymentStatus').value;
+        // Check if there are selected orders and a status selected
+    if (selectedOrders.length === 0 || !status) {
+        alert('Please select at least one order and a status.');
+        return;
+    }
+        
+        $.ajax({
+            url: '@Url.Action("UpdatePaymentStatus", "Orders")',
+            type: 'POST',
+            data: {
+                selectedOrders: selectedOrders,
+                newStatus: status
+            },
+            success: function(response) {
+                alert("Payment status updated successfully.");
+                closePaymentStatusDialog(); // Hide dialog after update
+            },
+            error: function() {
+                alert("Error updating payment status.");
+            }
+        });
+    }
+
+
+
+
+
+    function getFilteredOrders(text) {
+
+        $.ajax({
+            url: '@Url.Action("getFilteredOrders", "Orders")',
+            type: 'GET',
+
+            data: { 
+                filter: text,
+
+            },
+
+            success: function (response) {
+                $('tbody').html(response);  // Insert the HTML into the container
+                console.log("Orders recieved");
+
+            },
+            error: function (xhr, status, error) {
+                console.log("Failed");
+            }
+        });
+        // Update the active class for the clicked link
+        // First, remove the 'active' class from all <li> elements
+        $('.filters ul li').removeClass('active');
+
+        // Then, add the 'active' class to the clicked <li>
+        $(event.target).closest('li').addClass('active');
+    }
+</script>

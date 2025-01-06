@@ -1,0 +1,42 @@
+﻿
+
+.cta-product-all {
+    margin: 3rem auto 1rem auto;
+    text-align: center;
+}
+    .cta-product-all a {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing:0.05rem;
+        text-decoration: none;
+        color: #5c5c5c;
+        background-color: white;
+        border: 2px solid #5c5c5c;
+        border-radius: 25px;
+        transition-duration: 0.3s;
+        padding: 1rem 1.5rem;
+    }
+    .cta-product-all :hover {
+        color: white;
+        transition-duration: 0.3s;
+        background-color: #5c5c5c;
+    }
+::-webkit-scrollbar {
+    display: none;
+}
+
+.section-heading {
+    font-size:2.1rem;
+    font-weight:500;
+    color:black;
+    margin:3rem auto 0 auto;
+    max-width:1240px;
+    text-align:center;
+}
+
+
+@media (max-width: 768px) {
+    .category-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,50 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Milineu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/ruang-admin.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ProductEdit.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ProductDetails.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Nav.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/SideBar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Carousel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/VariantOption.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Card.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Search.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ManageOrder.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Checkout.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/OrderDetails.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/AddressSelector.css" rel="stylesheet" asp-append-version="true" />
+
+
+    <link rel="stylesheet" href="~/css/SizeChart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MiliNeu.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+ </head>
+
+<body>
+    <header>
+        @await Html.PartialAsync("_Nav");
+
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+
+    <script src="/js/nav.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+﻿/* Carousel container */
+.carousel {
+    position: relative;
+    max-width: 100vw;
+    overflow: hidden;  /*Important for hiding excess image content */
+/*    top: -97px;*/
+    height: 100vh;
+}
+
+.carousel-images {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel .item-carousel {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+}
+.carousel img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel video {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel div .cta {
+    position: absolute;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    width:100vw;
+    left: 0;
+    top: 50%;
+}
+.carousel .cta p {
+    font-weight:700;
+    font-size:2rem;
+    width:100%;
+    text-transform:uppercase;
+    color:white;
+
+}
+.carousel .cta a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: #18189e;
+    color: white;
+    border-radius: 25px;
+    margin-top:1rem;
+    padding: 0.7rem 1.4rem;
+
+}
+    .carousel div a:hover {
+        /*background-color: white;
+        color: #18189e;
+        transition: .2s ease;*/
+    }
+/*
+ Navigation buttons */
+.carousel .prev,
+.carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #ffffff29;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    border-radius: 0%;
+    user-select: none;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.carousel .prev {
+    left: 0px;
+    text-decoration: none;
+}
+
+.carousel .next {
+    right: 0px;
+    text-decoration: none;
+}
+
+.carousel .prev:hover {
+    color: black;
+}
+
+.carousel .next:hover {
+    color:black;
+}
+/* Hide buttons on small screens */
+@media (max-width: 768px) {
+
+    .carousel .prev,
+    .carousel .next {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

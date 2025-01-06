@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MiliNeu.Models.PaymentStatusAudit>
+@{
+
+}
+<p class="page-title">Audits Log</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Old Status</th>
+            <th>New Status</th>
+            <th>Date Changed</th>
+            <th>Changed By</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.OldStatus</td>
+                <td>@log.NewStatus</td>
+                <td>@log.DateChanged.ToString("g")</td>
+                <td>@log.ChangedBy</td>
+            </tr>
+        }
+    </tbody>
+</table>

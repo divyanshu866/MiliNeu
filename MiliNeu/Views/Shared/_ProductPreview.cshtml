@@ -1,0 +1,271 @@
+﻿@model ProductDetailsViewModel
+@using Microsoft.AspNetCore.Identity;
+@using MiliNeu.Models.ViewModels;
+@inject SignInManager<ApplicationUser> SignInManager;
+
+@{
+    ViewData["Title"] = "Details";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+
+}
+
+
+
+
+<div class="product-view">
+
+    <div class="product-preview">
+
+
+        <!-- Thumbnails -->
+        <div class="image-thumbnails">
+            @foreach (var image in Model.SelectedVariant.Images)
+            {
+                if (image.IsMain)
+                {
+                    <img class="thumbnail active" src="@($"{imageBasePath}{image.Path}")" alt="@Model.Product.Name" onclick="changeImage('@($"{imageBasePath}{image.Path}")')">
+                }else
+                {
+                    <img class="thumbnail" src="@($"{imageBasePath}{image.Path}")" alt="@Model.Product.Name" onclick="changeImage('@($"{imageBasePath}{image.Path}")')">
+
+                }
+                @* <img class="thumbnail active" src="\Resources\Images\Common\Image-Placeholder.jpg" alt="@imagePath.Product.Name" onclick="changeImage('\\Resources\\Images\\Common\\Image-Placeholder.jpg')"> *@
+
+
+            }
+        </div>
+        <!-- Main Image Viewer -->
+        <div class="image-viewer">
+            <img id="mainImage" src="@($"{imageBasePath}{Model.SelectedVariant.Images.FirstOrDefault(i=>i.IsMain).Path}")" alt="Product Image">
+            <div class="image-grid">
+                @foreach(var image in Model.SelectedVariant.Images)
+                {
+                    <img class="thumbnail" src="@($"{imageBasePath}{image.Path}")" alt="@Model.Product.Name" onclick="changeImage('@($"{imageBasePath}{image.Path}")')">
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="product-details">
+        <div class="details-container">
+            <div class="title-product">
+
+                <h2>@Model.Product.Name</h2>
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Add this form to your HTML -->
+            <form action="/Carts/AddToCart" method="post">
+                <!-- Your product details (replace "your_product_id_here" with the actual product ID) -->
+                <input type="hidden" name="productId" value="@Model.Product.Id">
+                <input type="hidden" name="selectedVariantId" value=@Model.SelectedVariant.Id>
+
+
+                <div class="variants-container">
+
+                    <label>COLOR</label>
+
+
+                    <div class="variant-btns">
+
+
+                        @foreach (var variant in Model.ProductVariants)
+                        {
+                            <div class="variant-option">
+
+
+                                @if (variant.Id == Model.SelectedVariant.Id)
+                                {
+                                    <input id="@variant.ColorId" checked type="radio" name="selectedColorId" value=@variant.Id onclick="GetProductVariant(@Model.Product.Id,@variant.Id)" />
+                                }
+                                else
+                                {
+                                    <input id="@variant.ColorId" type="radio" name="selectedColorId" value=@variant.Id onclick="GetProductVariant(@Model.Product.Id,@variant.Id)" />
+
+                                }
+
+
+                                <label for="@variant.ColorId">@variant.Color.Name</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                @if (Model.Product.IsDiscontinued || Model.SelectedVariant.IsDiscontinued)
+                {
+                    <H3>This Variant Is Discontinued.</H3>
+                }
+
+                <div class="size-container">
+                    <div class="size-header">
+                        <label>SIZE</label>
+                        <button type="button" onclick="showChart()">Size Chart</button>
+                    </div>
+
+                    <!-- Hidden overlay for size chart -->
+                    <div id="sizeChartOverlay" class="size-overlay chart-hide">
+                        <div class="overlay-content">
+                            @if (!string.IsNullOrEmpty(Model.Product.SizeChartPath))
+                            {
+                                <img src="@("/Resources/Images/SizeCharts/"+Model.Product.SizeChartPath)" alt="Size Chart" />
+                            }
+                            else
+                            {
+                                <img src="@("/Resources/Images/SizeCharts/"+"SizeChartDefault.Webp")" alt="Size Chart" />
+                            }
+                            <button type="button" onclick="closeChart()">
+                                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" aria-labelledby="closeIconTitle" stroke="#000" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000"> <title id="closeIconTitle">Close</title> <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575" /> </svg>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Size selector -->
+                    <div class="size-box">
+
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize=="XS" || string.IsNullOrEmpty(Model.SelectedSize)?"checked":"") name="SelectedSize" value="XS" id="sizeXS" required>
+                            <label for="sizeXS">XS</label>
+                        </div>
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize == "S" ? "checked" : "") name="SelectedSize" value="S" id="sizeS">
+                            <label for="sizeS">S</label>
+                        </div>
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize == "M" ? "checked" : "") name="SelectedSize" value="M" id="sizeM">
+                            <label for="sizeM">M</label>
+                        </div>
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize == "L" ? "checked" : "") name="SelectedSize" value="L" id="sizeL">
+                            <label for="sizeL">L</label>
+                        </div>
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize == "XL" ? "checked" : "") name="SelectedSize" value="XL" id="sizeXL">
+                            <label for="sizeXL">XL</label>
+                        </div>
+                        <div class="size-btn">
+                            <input type="radio" @(Model.SelectedSize == "XXL" ? "checked" : "") name="SelectedSize" value="XXL" id="sizeXXL">
+                            <label for="sizeXXL">XXL</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-container">
+                    @if (Model.SelectedVariant.Product.DiscountedPrice != 0 && Model.SelectedVariant.Product.DiscountedPrice != null)
+                    {
+
+                        <div class="discounted-price">
+                            <p>INR @Model.SelectedVariant.Product.DiscountedPrice</p>
+                        </div>
+                        <div class="original-price">
+                            <p>INR @Model.SelectedVariant.Product.Price</p>
+                        </div>
+
+
+
+
+                    }
+                    else
+                    {
+                        <p> INR @Model.SelectedVariant.Product.Price</p>
+                    }
+
+                </div>
+                <div class="tax-container">
+                    <p>Tax included</p>
+                </div>
+                <div class="quantity-container">
+                    <label>QTY.</label>
+                    <div class="quantity-toggler">
+                        <button type="button" class="quantity-decrement deactive" onclick="decrementQuantity()">-</button>
+                        <input type="text" name="quantity" class="quantity-input" value="1" readonly />
+                        <button type="button" class="quantity-increment" onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>
+
+                @if (!Model.Product.IsDiscontinued && !Model.SelectedVariant.IsDiscontinued)
+                {
+                    <!-- Submit button -->
+
+                    <input class="add-to-cart-btn" type="submit" value="ADD TO CART" />
+                    <input class="buy-now-btn" type="submit" value="BUY IT NOW" />
+                }
+                else 
+                {
+                    <input class="add-to-cart-btn" disabled type="submit" value="ADD TO CART" />
+                    <input class="buy-now-btn" disabled type="submit" value="BUY IT NOW" />
+                }
+
+                @* @if (!Model.Product.IsDiscontinued && !Model.SelectedVariant.IsDiscontinued)
+                {
+                    <!-- Submit button -->
+
+                    <input class="add-to-cart-btn" type="submit" value="ADD TO CART"  />
+                    <input class="buy-now-btn" type="submit" value="BUY IT NOW"  />
+                }
+                else if ((Model.Product.IsDiscontinued || Model.SelectedVariant.IsDiscontinued))
+                {
+                    <input class="add-to-cart-btn" disabled type="submit" value="ADD TO CART"  />
+                    <input class="buy-now-btn" disabled type="submit" value="BUY IT NOW"  />
+                } *@
+  
+                @* <details>
+                <summary>Size Chart</summary>
+                <article>
+                    <img height="200px" width="200px" src="@("/Resources/Images/SizeCharts/"+Model.Product.SizeChartPath)" alt="Size Chart" />
+
+                </article>
+            </details> *@
+                <div class="details-footer">
+                    <a asp-action="Edit" asp-route-productId="@Model.Product.Id">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
+
+
+            </form>
+            </div>
+            
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

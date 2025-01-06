@@ -1,0 +1,56 @@
+﻿@model ProductDetailsViewModel
+@using Microsoft.AspNetCore.Identity;
+@using MiliNeu.Models.ViewModels;
+@inject SignInManager<ApplicationUser> SignInManager;
+
+
+
+
+<section id="preview">
+    @await Html.PartialAsync("_ProductPreview")
+
+</section>
+<section>
+
+    @await Html.PartialAsync("_Collections", Model.Collection)
+</section>
+<section>
+    @await Html.PartialAsync("_Socials")
+</section>
+    
+
+
+
+
+@section scripts{
+    <script async src="/js/FetchVariant.js"></script>
+
+    <script async src="~/js/sizeSelector.js"></script>
+    <script async src="~/js/IncrementDecrementToggge.js"></script>
+    <script async src="~/js/SizeChart.js"></script>
+    <script async src="~/js/ProductViewer.js"></script>
+
+    @* Fetch Variant------- *@
+  <script>
+        function GetProductVariant(productId, variantId) {
+
+            $.ajax({
+                url: '@Url.Action("GetProductVariant", "Products")',
+                type: 'GET',
+
+                data: {
+                    productId: productId,
+                    variantId: variantId
+                },
+
+                success: function (response) {
+                    $('#preview').html(response);  // Insert the HTML into the container
+                    console.log("Images recieved");
+                },
+                error: function (xhr, status, error) {
+                    console.log("Failed");
+                }
+            })
+        }
+  </script>
+}

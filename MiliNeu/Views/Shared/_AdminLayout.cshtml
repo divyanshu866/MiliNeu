@@ -1,0 +1,177 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+    @inject UserManager<ApplicationUser> UserManager;
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>@ViewData["Title"] - Milineu</title>
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/ruang-admin.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/AdminNavBar.css" asp-append-version="true" />
+            
+            <link rel="stylesheet" href="~/css/Dashboard.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/ManageOrder.css" asp-append-version="true" />
+            
+
+            <link rel="stylesheet" href="~/css/SizeChart.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/MiliNeu.styles.css" asp-append-version="true" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+
+
+
+ 
+        @* SideBar-------------- *@
+        <div class="sidebar-wrapper sidebar-show">
+            <div class="sidebar-head">
+            <div class="sidebar-img">
+                <img src="/Resources/Logo/LogoSimp.png" alt="Alternate Text" />
+            </div>
+            <p>Dashboard</p>
+
+            </div>
+            <div class="item-group">
+                <ul>
+                    <li>
+                        <a asp-controller="Products" asp-action="Index">
+                        <i class="material-icons">dashboard</i>
+                        Products
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Collections" asp-action="Index" >
+                        <i class="material-icons">assessment</i>
+                        Collections
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="item-group">
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="material-icons">inventory</i>
+                        Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <i class="material-icons">assessment</i>
+                        Collections
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="admin-wrapper">
+            <input type="checkbox" hidden name="" id="sidebarToggle">
+
+        @* NavBar-------------- *@
+        <nav class="navbar navbar-white">
+                        <div class="nav-left">
+                            <div class="navbar-burger">
+                                <ul>
+                                    <li>
+                                        <div class="btn_one">
+                                            <label for="sidebarToggle">
+                                                <i class="fas fa-bars"></i>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="navbar-links">
+                                <ul>
+
+
+                                    <li><a asp-area="" asp-controller="Home" asp-action="Index">NEW IN</a></li>
+                                    <li><a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
+                                    </li>
+                                 
+                                    <li><a asp-area="" asp-action="Index"
+                                            asp-controller="Products">PRODUCTS</a></li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <a asp-area="" asp-action="Manage" asp-controller="Home">Manage</a>
+                                        </li>
+                                        <li>
+                                <a asp-area="" asp-action="Dashboard" asp-controller="Dashboard">DASHBOARD</a>
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav-middle">
+                            <div class="brand-title">
+                                @* <img src="/Resources/Logo/LogoSimp.png" alt=""> *@
+
+                            </div>
+
+                        </div>
+                        <div class="nav-right">
+                           
+                            <div class="navbar-links">
+                                @if (SignInManager.IsSignedIn(Context.User))
+                                {
+                                var user = await UserManager.GetUserAsync(Context.User);
+                                <ul>
+                                    <li class="nav-item">
+                                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name</a>
+                                    </li>
+                                    
+
+                                </ul>
+
+                                }
+                              
+                                    
+                                    <partial name="_LoginPartial.cshtml" />
+
+                            </div>
+                        </div>
+
+
+                      
+
+                    </nav>
+                    
+                        @RenderBody()
+
+                   
+
+        </div>
+                    
+
+
+
+@* @await Html.PartialAsync("_Footer") *@
+
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/js/nav.js"></script>
+            <script src="~/js/AdminSidebar.js"></script>
+          
+            @await RenderSectionAsync("Scripts", required: false)
+        </body>
+
+        </html>

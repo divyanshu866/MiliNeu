@@ -1,0 +1,244 @@
+﻿
+.manage-orders {
+    width:100%;
+    max-width: 1440px;
+    margin: 0px auto 0 auto;
+    border: 0px solid #c5c5c5;
+    border-radius:10px;
+    border-bottom: none;
+    background-color: white;
+}
+    .manage-orders .filters {
+        background-color: transparent;
+        border-bottom: 1px solid #c5c5c5;
+    }
+        .manage-orders .filters ul {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 4rem;
+            margin: 0;
+            list-style: none;
+            gap: 2rem;
+        }
+    .manage-orders .filters ul li a {
+        text-decoration:none;
+        color:black;
+        cursor:pointer;
+
+    }
+        .manage-orders .filters .active {
+            text-decoration: underline 1px rgb(92, 92, 92);
+            text-underline-offset: 5px;
+        }
+
+    .manage-orders .action-search-container {
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+    }
+
+    .manage-orders .order-search-form {
+        display: flex;
+        width: 90%;
+        padding: 0 0 0 1rem;
+        max-width: 400px;
+        border-left: 1px solid #c5c5c5;
+    }
+        .manage-orders .order-search-form input {
+            height: 100%;
+            width: 85%;
+            border: none;
+            background-color: transparent;
+        }
+        .manage-orders .order-search-form button {
+            border: none;
+            width: 15%;
+            height: 100%;
+            background-color: transparent;
+        }
+        
+        .manage-orders .order-search-form input:focus {
+            outline: none;
+        }
+
+
+    .manage-orders .status-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
+        max-width: 400px;
+        border-right: 1px solid #c5c5c5;
+    }
+
+        .manage-orders .status-container select {
+            height: 100%;
+            width: 80%;
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+        }
+            .manage-orders .status-container select:focus {
+                height: 100%;
+                width: 80%;
+                border-radius: 0;
+                outline: none;
+                background-color: transparent;
+            }
+
+        .manage-orders .status-container button {
+            border: none;
+            width: 20%;
+            border-radius: 0;
+            margin-right: -1rem;
+            background-color: #2e7cfc;
+        }
+.manage-orders .payment-status-container {
+    display:flex;
+    justify-content:start;
+    height:100%;
+    width:100%;
+
+}
+.manage-orders .payment-status-container .btn-payment-status {
+    background-color: black;
+    color: white;
+    width:max-content;
+    font-size: 1rem;
+    border: none;
+    padding:1rem;
+    z-index:50;
+    transition:all 1s;
+}
+#paymentStatusDialog {
+    height: 100%;
+    width: max-content;
+    z-index: 1;
+}
+    /* Slide-in class */
+    #paymentStatusDialog.active {
+        animation: slide-in 0.2s forwards;
+        display:block;
+    }
+    /* Slide-in class */
+    #paymentStatusDialog.hidden {
+        animation: slide-out 0.2s forwards;
+    }
+
+
+    #paymentStatusDialog select {
+        height: 100%;
+        border: none;
+        transition: all 0.5s;
+        height: 100%;
+        border-radius: 0;
+        outline: none;
+        background-color: transparent;
+        padding:1rem;
+    }
+        #paymentStatusDialog button {
+            background-color: #2e7cfc;
+            color: white;
+            font-size: 1rem;
+            height: 100%;
+            padding: 1rem 1rem;
+            border: none;
+        }
+        .manage-orders .status-container .btn-payment-status:hover {
+            background-color: grey;
+        }
+    /* General table styling */
+    .manage-orders .table {
+        width: 100%;
+        max-width: 1600px;
+        border-collapse: collapse;
+        margin: 0 auto 0 auto;
+        font-size: 16px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .manage-orders table form{
+        display:flex;
+        width:100%;
+        height:100%;
+    }
+    .manage-orders table input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+        background:red;
+        cursor: pointer;
+    }
+       
+    .manage-orders .table th,
+    .manage-orders .table td {
+        padding: 5px 15px;
+        font-size:1rem;
+        text-align:center;
+    }
+
+    .manage-orders .table thead tr {
+        background-color: #f2f2f2;
+    }
+
+    .manage-orders .table tbody tr {
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+        .manage-orders .table tbody tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+
+        .manage-orders .table tbody tr:last-of-type {
+        }
+
+    /* Table headings styling */
+    .manage-orders .table th {
+        background-color: #333333;
+        color: white;
+        font-weight: 600;
+    }
+
+/* Status dropdown styling */
+.manage-orders .form-control {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+    .manage-orders .form-control:focus {
+        border-color: #5a5a5a;
+        box-shadow: 0 0 5px rgba(90, 90, 90, 0.5);
+    }
+
+/* Button styling */
+.manage-orders .btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .manage-orders .btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Responsive table styling */
+@media (max-width: 768px) {
+    .manage-orders .table {
+        font-size: 14px;
+    }
+
+        .manage-orders .table th, .manage-orders .table td {
+            padding: 10px;
+        }
+
+    .manage-orders .btn {
+        font-size: 12px;
+    }
+}

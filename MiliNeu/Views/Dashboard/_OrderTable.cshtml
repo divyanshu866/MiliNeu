@@ -1,0 +1,214 @@
+﻿@model MiliNeu.Models.ViewModels.PagerVM<Order>
+@{
+   
+}<div class="manage-orders">
+    <div class="filters">
+
+
+
+
+
+
+        <ul>
+            @if (ViewBag.filter == "All")
+            {
+                <li class="active"><a asp-action="Manage" asp-route-filter="All">All Orders</a></li>
+
+            }
+            else
+            {
+                <li><a asp-action="Manage" asp-route-filter="All">All Orders</a></li>
+
+            }
+            @foreach (var status in ViewBag.StatusOptions)
+            {
+
+
+                if (ViewBag.filter == status)
+                {
+                    <li class="active"><a asp-action="Manage" asp-route-filter="@status">@status</a></li>
+
+                }
+                else
+                {
+                    <li><a asp-action="Manage" asp-route-filter="@status">@status</a></li>
+
+                }
+            }
+
+        </ul>
+
+    </div>
+
+    <div class="action-search">
+        <div class="bulk-update-status">
+            <input type="hidden" name="orderId" />
+            <select id="newbulkStatus" name="newbulkStatus">
+                @foreach (var status in ViewBag.StatusOptions)
+                {
+
+                    <option value="@status">
+                        @status
+                    </option>
+
+
+                }
+            </select>
+            <button type="button" onclick="submitForm()" class="btn btn-primary">Update</button>
+
+        </div>
+
+        <form class="search-form" asp-controller="Orders" asp-action="Manage" method="get">
+            <input type="hidden" name="filter" value="@ViewBag.filter" />
+            <input type="search" name="searchTerm" value="@ViewBag.searchTerm" placeholder="Search order" aria-label="Search">
+            <button type="submit"><i class="material-icons">search</i></button>
+        </form>
+    </div>
+    <div id="preview">
+        @* @await Html.PartialAsync("_Orders") *@
+
+
+        <form id="orderForm" asp-action="BulkUpdateStatus" method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Order ID</th>
+                        <th>Razor pay Order ID</th>
+                        <th>Payment</th>
+                        <th>Receipt ID</th>
+                        <th>Amount</th>
+                        <th>Discount Applied</th>
+                        <th>Created At</th>
+                        <th>Fulfilment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Items.Count() > 0)
+                    {
+
+
+                        @foreach (var order in Model.Items)
+                        {
+                            var backgroundColor = "";
+                            switch (order.DeliveryStatus.ToString())
+                            {
+                                case "Pending":
+                                    backgroundColor = "background-color: yellow;";
+                                    break;
+                                case "Delivered":
+                                    backgroundColor = "background-color: #5bff5b;";
+                                    break;
+                                case "Processing":
+                                    backgroundColor = "background-color: #2d51cdc;";
+                                    break;
+                                case "Failed":
+                                    backgroundColor = "background-color: #ff2424aa;";
+                                    break;
+                                default:
+                                    backgroundColor = "background-color: white;";
+                                    break;
+                            }
+
+                            <tr id="@order.Id">
+
+                                <td>
+                                    <input class="order-select" type="checkbox" name="selectedOrders" value="@order.Id" />
+                                </td>
+                                <td>@order.Id</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "Orders", new { orderId = order.Id })">
+                                        @order.RazorOrderId
+                                    </a>
+                                </td>
+                                <td>@order.User.UserName</td>
+                                <td>@order.PaymentStatus</td>
+
+
+
+                                <td>@order.Amount</td>
+                                <td>@order.DiscountApplied</td>
+                                <td>@order.CreatedAt.ToString("g")</td>
+                                <td style="@backgroundColor">@order.DeliveryStatus</td>
+
+
+
+                            </tr>
+
+                        }
+
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center">No orders found.</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </form>
+
+
+
+    </div>
+
+
+</div>
+<div class="pagination">
+    @if (Model.CurrentPage > 1)
+    {
+        <a asp-action="Manage" asp-route-filter="@ViewBag.filter" asp-route-searchTerm="@ViewBag.searchTerm" asp-route-pageNumber="1">First</a>
+        <a asp-action="Manage" asp-route-filter="@ViewBag.filter" asp-route-searchTerm="@ViewBag.searchTerm" asp-route-pageNumber="@(Model.CurrentPage - 1)">Previous</a>
+    }
+
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        if (i == Model.CurrentPage)
+        {
+            <strong>@i</strong>
+        }
+        else
+        {
+            <a asp-action="Manage" asp-route-filter="@ViewBag.filter" asp-route-searchTerm="@ViewBag.searchTerm" asp-route-pageNumber="@i">@i</a>
+        }
+    }
+
+    @if (Model.CurrentPage < Model.TotalPages)
+    {
+        <a asp-action="Manage" asp-route-filter="@ViewBag.filter" asp-route-searchTerm="@ViewBag.searchTerm" asp-route-pageNumber="@(Model.CurrentPage + 1)">Next</a>
+        <a asp-action="Manage" asp-route-filter="@ViewBag.filter" asp-route-searchTerm="@ViewBag.searchTerm" asp-route-pageNumber="@Model.TotalPages">Last</a>
+    }
+</div>
+
+
+<script>
+    function getFilteredOrders(text) {
+
+        $.ajax({
+            url: '@Url.Action("getFilteredOrders", "Orders")',
+            type: 'GET',
+
+            data: {
+                filter: text,
+
+            },
+
+            success: function (response) {
+                $('tbody').html(response);  // Insert the HTML into the container
+                console.log("Orders recieved");
+
+            },
+            error: function (xhr, status, error) {
+                console.log("Failed");
+            }
+        });
+        // Update the active class for the clicked link
+        // First, remove the 'active' class from all <li> elements
+        $('.filters ul li').removeClass('active');
+
+        // Then, add the 'active' class to the clicked <li>
+        $(event.target).closest('li').addClass('active');
+    }
+</script>

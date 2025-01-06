@@ -1,0 +1,103 @@
+﻿@model IEnumerable<MiliNeu.Models.Product>
+
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+@*
+@{
+    ViewData["Title"] = "Home Page";
+}
+*@
+<div class="text-center">
+    <h1 class="display-4">
+        <div class="loading navbar-brand">
+            <div class="loading-text navbar-brand">
+                <span class="loading-text-words">M</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">N</span>
+                <span class="loading-text-words">e</span>
+                <span class="loading-text-words">u</span>
+
+                <span class="loading-text-words"></span>
+                <span class="loading-text-words">c</span>
+                <span class="loading-text-words">o</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">l</span>
+                <span class="loading-text-words">e</span>
+                <span class="loading-text-words">c</span>
+                <span class="loading-text-words">t</span>
+                <span class="loading-text-words">i</span>
+                <span class="loading-text-words">o</span>
+                <span class="loading-text-words">n</span>
+                <span class="loading-text-words">s</span>
+               
+            </div>
+         
+           
+         
+        </div>
+    </h1>
+</div>
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Add Item</a>
+    </p>
+
+}
+<div class="container">
+@*    <h3>Collections</h3>*@
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="/products/Details/@Html.DisplayFor(modelItem => item.Id)">
+                <div class="card h-100">
+                        <img src="@Html.DisplayFor(modelItem => item.Variants[0].Images[0])" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                        <p class="card-text">Category: @Html.DisplayFor(modelItem => item.Category)</p>
+                        <p class="card-text">Price: @Html.DisplayFor(modelItem => item.Price)</p>
+                    </div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="card-footer">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </div>
+                    }
+                </div>
+                </a>
+            </div>
+            
+        }
+        <p><code>wrapAround: true</code></p>
+
+        <!-- Flickity HTML init -->
+        <div class="gallery js-flickity"
+             data-flickity-options='{ "wrapAround": true }'>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+</div>

@@ -1,0 +1,136 @@
+﻿@model MiliNeu.Models.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+
+@*
+<div class="loading">
+    <div class="loading-text">
+        <span class="loading-text-words">M</span>
+        <span class="loading-text-words">i</span>
+        <span class="loading-text-words">l</span>
+        <span class="loading-text-words">i</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">e</span>
+        <span class="loading-text-words">u</span>
+
+        <span class="loading-text-words"></span>
+        <span class="loading-text-words">c</span>
+        <span class="loading-text-words">o</span>
+        <span class="loading-text-words">l</span>
+        <span class="loading-text-words">l</span>
+        <span class="loading-text-words">e</span>
+        <span class="loading-text-words">c</span>
+        <span class="loading-text-words">t</span>
+        <span class="loading-text-words">i</span>
+        <span class="loading-text-words">o</span>
+        <span class="loading-text-words">n</span>
+        <span class="loading-text-words">s</span>
+
+    </div>
+ *@
+
+
+
+
+
+
+
+
+
+
+<section class="carousel fade-out">
+
+    <div class="carousel-images">
+        @if (Model.HeroSections==null|| !Model.HeroSections.Any(c=>c.IsActive))
+        {
+            @foreach (var collection in Model.AllCollections)
+            {
+                <div class="item-carousel">
+                    <img loading="lazy" src="/Resources/Images/Collections/@(collection.Images.FirstOrDefault(i=>i.IsMain).Path)" alt="Image 1">
+                    <div class="cta">
+                        <p>BESTSELLERS</p>
+                        <a href="/Products/BestSellers">SHOP NOW</a>
+                    </div>
+                    
+                </div>
+
+
+
+            }
+        }
+        else
+        {
+            
+            @foreach (var heroSection in Model.HeroSections)
+            {
+                if (heroSection.IsActive==true)
+                {
+                    <div class="item-carousel">
+                        <img loading="lazy" src="/Resources/Images/HeroSection/@(heroSection.Image.Path)" alt="@(heroSection.Image.Path)">
+                        <div class="cta">
+                            <p>@heroSection.Title</p>
+                            <a href="@heroSection.Link">SHOP NOW</a>
+                        </div>
+                    </div>
+                }
+                
+
+
+
+            }
+            @* <div class="item-carousel">
+                <video src="/Resources/video/BellaHadid2.mp4" autoplay muted loop></video>
+                <div class="cta">
+                    <p>BestSellers</p>
+                    <a href="/Products/BestSellers">SHOP NOW</a>
+                </div>
+            </div> *@
+        }
+        
+
+
+    </div>
+
+    <!-- Carousel navigation -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</section>
+
+
+
+<section>
+    <p class="section-heading">BESTSELLERS</p>
+    @await Html.PartialAsync("_gallery", Model.BestSellers)
+
+    <div class="cta-product-all">
+        <a href="/Products">VIEW ALL</a>
+    </div>
+</section>
+
+
+
+
+<section>
+    @await Html.PartialAsync("_CategorySelection")
+</section>
+
+
+
+<section>
+    @await Html.PartialAsync("_Socials")
+</section>
+
+
+
+
+
+
+@section scripts {
+    <script async src="~/js/Carousel.js"></script>
+}
+
+

@@ -1,0 +1,331 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
+
+
+
+<nav class="" id="navbar">
+
+
+    <div class="content">
+        @* content/1 *@
+        <div class="menu">
+            <label for="sidebar-toggle">
+                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="hamburgerIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="hamburgerIconTitle">Menu</title> <path d="M6 7L18 7M6 12L18 12M6 17L18 17" /> </svg><span>MENU</span>
+            </label>
+        </div>
+
+        @* content/2 *@
+        <div class="logo">
+
+
+
+
+            <a href="/Home/Index">
+                <img src="/Resources/Logo/LogoSimp.png" alt="">
+
+            </a>
+        </div>
+
+        @* content/3 *@
+        <ul class="navbar-nav">
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="Index">Shop</a>
+            </li>
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+
+                var user = await UserManager.GetUserAsync(Context.User);
+
+                <li class="nav-item nav-item-orders">
+                    <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>Orders</a>
+                </li>
+            }
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="Sale">Sale</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="BestSellers">BestSellers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Collections" asp-action="Index">Collections</a>
+            </li>
+            
+        </ul>
+
+        @* content/4 *@
+        <ul class="navbar-nav">
+
+
+
+            <!-- Admin-only links -->
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-action="Manage" asp-controller="Home">
+                        <svg width="26px" height="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="controlsVerticalAltIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" color="#000000"> <title id="controlsVerticalAltIconTitle">Controls</title> <circle cx="18" cy="9" r="2" transform="rotate(90 18 9)" /> <path d="M18 4L18 7" /> <path d="M18 11L18 20" /> <circle cx="6" cy="9" r="2" transform="rotate(90 6 9)" /> <path d="M6 4L6 7" /> <path d="M6 11L6 20" /> <circle cx="12" cy="15" r="2" transform="rotate(90 12 15)" /> <path d="M12 4L12 13" /> <path d="M12 17L12 20" /> </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-action="Dashboard" asp-controller="Dashboard">
+                        <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="appsIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#fff"> <title id="appsIconTitle">Apps drawer</title> <circle cx="6" cy="6" r="1" /> <circle cx="12" cy="6" r="1" /> <circle cx="18" cy="6" r="1" /> <circle cx="6" cy="12" r="1" /> <circle cx="12" cy="12" r="1" /> <circle cx="18" cy="12" r="1" /> <circle cx="6" cy="18" r="1" /> <circle cx="12" cy="18" r="1" /> <circle cx="18" cy="18" r="1" /> </svg>
+                    </a>
+                </li>
+            }
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+
+                var user = await UserManager.GetUserAsync(Context.User);
+
+                <li class="nav-item nav-item-orders">
+                    <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="personIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="personIconTitle">Person</title> <path d="M4,20 C4,17 8,17 10,15 C11,14 8,14 8,9 C8,5.667 9.333,4 12,4 C14.667,4 16,5.667 16,9 C16,14 13,14 14,15 C16,17 20,17 20,20" /> </svg>
+
+                    </a>
+                </li>
+                <li class="nav-item nav-item-settings">
+                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="settingsIconTitle" stroke="#000" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000"> <title id="settingsIconTitle">Settings</title> <path d="M5.03506429,12.7050339 C5.01187484,12.4731696 5,12.2379716 5,12 C5,11.7620284 5.01187484,11.5268304 5.03506429,11.2949661 L3.20577137,9.23205081 L5.20577137,5.76794919 L7.9069713,6.32070904 C8.28729123,6.0461342 8.69629298,5.80882212 9.12862533,5.61412402 L10,3 L14,3 L14.8713747,5.61412402 C15.303707,5.80882212 15.7127088,6.0461342 16.0930287,6.32070904 L18.7942286,5.76794919 L20.7942286,9.23205081 L18.9649357,11.2949661 C18.9881252,11.5268304 19,11.7620284 19,12 C19,12.2379716 18.9881252,12.4731696 18.9649357,12.7050339 L20.7942286,14.7679492 L18.7942286,18.2320508 L16.0930287,17.679291 C15.7127088,17.9538658 15.303707,18.1911779 14.8713747,18.385876 L14,21 L10,21 L9.12862533,18.385876 C8.69629298,18.1911779 8.28729123,17.9538658 7.9069713,17.679291 L5.20577137,18.2320508 L3.20577137,14.7679492 L5.03506429,12.7050339 Z" /> <circle cx="12" cy="12" r="1" /> </svg>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-search">
+                    <label class="search-toggle nav-link" for="search-toggle">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#ffffff"> <title id="searchIconTitle">Search</title> <path color="white" d="M14.4121122,14.4121122 L20,20" /> <circle cx="10" cy="10" r="6" /> </svg>
+                    </label>
+                </li>
+                @* <li class="nav-item nav-item-cart">
+                    <a class="nav-link" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="bagIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="bagIconTitle">Bag</title> <rect width="14" height="12" x="5" y="7" /> <path d="M8 7a4 4 0 1 1 8 0" /> </svg>
+                    </a>
+
+                </li> *@
+              
+                 
+                  
+                       
+
+
+                    
+
+                
+
+            }
+            else
+            {
+
+                <li class="nav-item account">
+                    <a class="nav-link" href="/Identity/Account/Login">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="personIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="personIconTitle">Person</title> <path d="M4,20 C4,17 8,17 10,15 C11,14 8,14 8,9 C8,5.667 9.333,4 12,4 C14.667,4 16,5.667 16,9 C16,14 13,14 14,15 C16,17 20,17 20,20" /> </svg>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <label class="search-toggle nav-link" for="search-toggle">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="searchIconTitle">Search</title> <path d="M14.4121122,14.4121122 L20,20" /> <circle cx="10" cy="10" r="6" /> </svg>
+                    </label>
+                </li>
+
+                
+
+                
+            }
+            <li class="nav-item nav-item-cart">
+                <a class="nav-link" asp-area="" asp-controller="Carts" asp-action="Details">@* <i class="material-icons">shopping_basket</i> *@
+                    <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="bagIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="bagIconTitle">Bag</title> <rect width="14" height="12" x="5" y="7" /> <path d="M8 7a4 4 0 1 1 8 0" /> </svg>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+@section Scripts{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* NavBar-------------- *@
+@* <nav class="navbar navbar-transparent" style="@ViewData["NavGrid"]">
+    @if (!ViewData["HideNavbarLinks"]?.Equals(true) ?? true)
+    {
+        <div class="nav-left">
+            <div class="navbar-burger">
+                <ul>
+                    <li>
+                        <div class="sidebar-toggle">
+                            <label for="sidebar-toggle">
+                                <i class="fas fa-bars"></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-links">
+                <ul>
+
+
+                    <li class="active">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">NEW IN</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
+                    </li>
+                   
+                    <li>
+                        <a asp-area="" asp-action="Sale"
+                           asp-controller="Products">Sale</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-action="Index"
+                           asp-controller="Products">Products</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    }
+    <div class="nav-middle">
+        <div class="brand-title">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+
+                <img src="/Resources/Logo/LogoSimp.png" alt="">
+
+            </a>
+        </div>
+    </div>
+    <div class="nav-right">
+
+        <div class="navbar-links">
+
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+
+                var user = await UserManager.GetUserAsync(Context.User);
+                @if (!ViewData["HideNavbarLinks"]?.Equals(true) ?? true)
+                {
+                    <ul>
+                        <li>
+                            <a asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>Orders</a>
+                        </li>
+                        <!-- Admin-only links -->
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-area="" asp-action="Manage" asp-controller="Home">Manage</a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-action="Dashboard" asp-controller="Dashboard">DASHBOARD</a>
+                            </li>
+                        }
+
+                    </ul>
+                }
+
+                @if (!ViewData["HideNavbarLinks"]?.Equals(true) ?? true)
+                {
+                    <label class="search-toggle" for="search-toggle"><i class="material-icons">search</i></label>
+                }
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId><i class="material-icons">shopping_basket</i></a>
+
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <ul>
+                    <li>
+                        <a href="/Identity/Account/Login"><i class="material-icons">people</i></a>
+                    </li>
+                </ul>
+
+                <label class="search-toggle" for="search-toggle"><i class="material-icons">search</i></label>
+
+                <ul>
+                    <li>
+                        <a href="/Identity/Account/Login">
+                            <i class="material-icons">shopping_basket</i>
+                        </a>
+                    </li>
+                </ul>
+            }
+
+
+
+        </div>
+    </div>
+</nav> *@

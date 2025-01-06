@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu", "MiliNeu.csproj", "{D840B1A6-DC91-43E8-8817-23CD0CAD263D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.DataAccess", "..\MiliNeu.DataAccess\MiliNeu.DataAccess.csproj", "{CEAEE23B-4C3C-4D79-A3FE-7C6B076B1EE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.Models", "..\MiliNeu.Models\MiliNeu.Models.csproj", "{D684BAA7-D108-411E-A0C8-FF89371AC877}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserTracking", "..\UserTracking\UserTracking.csproj", "{13F3D0C0-7D89-4CC0-BED6-0E2699040A57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway", "..\RazorPay\PaymentGateway.csproj", "{9E73151C-E91D-4EEE-97A7-A070622C8FDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiliNeu.Utility", "..\MiliNeu.Utility\MiliNeu.Utility.csproj", "{B86D99B5-8374-49F0-9B0B-1ACB0251AA40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiliNeu.Models.Services", "..\MiliNeu.Models.Services\MiliNeu.Models.Services.csproj", "{F9F53D16-5DE9-460C-AA49-7B5B6714B006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D840B1A6-DC91-43E8-8817-23CD0CAD263D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D840B1A6-DC91-43E8-8817-23CD0CAD263D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D840B1A6-DC91-43E8-8817-23CD0CAD263D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D840B1A6-DC91-43E8-8817-23CD0CAD263D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEAEE23B-4C3C-4D79-A3FE-7C6B076B1EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEAEE23B-4C3C-4D79-A3FE-7C6B076B1EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEAEE23B-4C3C-4D79-A3FE-7C6B076B1EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEAEE23B-4C3C-4D79-A3FE-7C6B076B1EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D684BAA7-D108-411E-A0C8-FF89371AC877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D684BAA7-D108-411E-A0C8-FF89371AC877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D684BAA7-D108-411E-A0C8-FF89371AC877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D684BAA7-D108-411E-A0C8-FF89371AC877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F3D0C0-7D89-4CC0-BED6-0E2699040A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F3D0C0-7D89-4CC0-BED6-0E2699040A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F3D0C0-7D89-4CC0-BED6-0E2699040A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F3D0C0-7D89-4CC0-BED6-0E2699040A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E73151C-E91D-4EEE-97A7-A070622C8FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E73151C-E91D-4EEE-97A7-A070622C8FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E73151C-E91D-4EEE-97A7-A070622C8FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E73151C-E91D-4EEE-97A7-A070622C8FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86D99B5-8374-49F0-9B0B-1ACB0251AA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86D99B5-8374-49F0-9B0B-1ACB0251AA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86D99B5-8374-49F0-9B0B-1ACB0251AA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86D99B5-8374-49F0-9B0B-1ACB0251AA40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F53D16-5DE9-460C-AA49-7B5B6714B006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F53D16-5DE9-460C-AA49-7B5B6714B006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F53D16-5DE9-460C-AA49-7B5B6714B006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F53D16-5DE9-460C-AA49-7B5B6714B006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14C907DE-1AEF-4582-9C86-461F486423B3}
+	EndGlobalSection
+EndGlobal

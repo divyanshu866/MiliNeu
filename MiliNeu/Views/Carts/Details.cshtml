@@ -1,0 +1,557 @@
+﻿@model MiliNeu.Models.Cart
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
+@{
+    ViewData["Title"] = "Details";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+    decimal CartPrice = 0;
+}
+
+@* <p class="page-title">Basket</p> *@
+@* new cart html--------------------- *@
+<div class="page-title">
+    <h1>Your basket</h1>
+
+</div>
+<div class="cart-wrapper">
+
+
+    @if (Model.Items.Count == 0)
+    {
+        <h2>Your cart is empty &#x1F614</h2>
+    }
+    else
+    {
+        <form class="cart-form" action="/Cart/Update" method="post">
+            <table class="cart-table">
+                <colgroup>
+                    <col style="width: auto;">
+                    <col style="width: 100%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>
+                            
+                            <span></span>
+                            <span class="text-right"><p>Price</p></span>
+                            <span class="text-center"><p>Quantity</p> </span>
+                            <span class="text-right"><p>Subtotal</p> </span>
+                                
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cartitem in Model.Items)
+                    {
+                        <tr class="cart-row" data-product-id="@cartitem.Product.Id" data-cartitem-size="@cartitem.SelectedSize" data-cart-id="@Model.Id">
+                            <!-- Image Column -->
+                            <td class="product-image">
+                                <a asp-controller="Products" asp-action="details" asp-route-id="@cartitem.Product.Id" asp-route-selectedColor="@cartitem.ProductVariant.Id" asp-route-size="@cartitem.SelectedSize">
+                                    <img src="@($"{imageBasePath}{cartitem.ProductVariant.Images.FirstOrDefault(i => i.IsMain).Path}")" alt="@cartitem.Product.Name">
+                                </a>
+                            </td>
+
+                            <!-- Details Column -->
+                            <td class="product-details">
+                                <p><strong>@cartitem.Product.Name</strong><br /> <span>@cartitem.ProductVariant.Color.Name / @cartitem.SelectedSize</span></p>
+                                
+
+                                <!-- Price -->
+                                <div class="price">
+                                    @if (cartitem.Product.DiscountedPrice > 0)
+                                    {
+                                        <span class="discount-color">INR @cartitem.Product.DiscountedPrice</span>
+                                        <span>INR @cartitem.Product.Price</span>
+                                    }
+                                    else
+                                    {
+                                        <span>INR @cartitem.Product.Price</span>
+                                    }
+                                </div>
+
+                                <!-- Quantity -->
+                                <div class="quantity-container">
+                                    <div>
+                                        <div class="quantity-toggler">
+                                            <button type="button" class="quantity-decrement @(cartitem.Quantity==1 ? "deactive" : " ")"
+                                                    data-product-id="@cartitem.Product.Id"
+                                                    data-cartitem-size="@cartitem.SelectedSize"
+                                                    data-cartitem-variantId="@cartitem.ProductVariant.Id"
+                                                    onclick="updateQuantity(this, -1)">-</button>
+                                            <input type="text" name="quantity" class="quantity-input" value="@cartitem.Quantity" readonly />
+                                            <button type="button" class="quantity-increment" 
+                                                    data-product-id="@cartitem.Product.Id"
+                                                    data-cartitem-size="@cartitem.SelectedSize"
+                                                    data-cartitem-variantId="@cartitem.ProductVariant.Id"
+                                                    onclick="updateQuantity(this, 1)">+</button>
+                                        </div>
+                                        <a asp-action="Delete" asp-controller="Carts" asp-route-productId="@cartitem.Product.Id" asp-route-variantId="@cartitem.ProductVariant.Id" asp-route-selectedSize="@cartitem.SelectedSize" asp-route-productId= asp-route-cartId="@Model.Id">
+                                            Remove
+
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <!-- Subtotal -->
+                                <div class="subtotal price text-right">
+                                    @if (cartitem.Product.DiscountedPrice > 0)
+                                    {
+                                        <span class="discount-color">INR @(cartitem.Product.DiscountedPrice * cartitem.Quantity)</span>
+                                        <span>INR @(cartitem.Product.Price * cartitem.Quantity)</span>
+
+                                    }
+                                    else
+                                    {
+
+                                        <span>INR @(cartitem.Product.Price * cartitem.Quantity)</span>
+                                    }
+
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="cart-total">
+         <span>
+
+             @foreach(var cartitem in Model.Items)
+             {
+                 if (cartitem.Product.DiscountedPrice>0)
+                 {
+                     CartPrice += (decimal)(cartitem.Product.DiscountedPrice * cartitem.Quantity);
+                 }
+                 else
+                 {
+                     CartPrice += (decimal)(cartitem.Product.Price * cartitem.Quantity);
+
+                 }
+             }
+             Subtotal: INR @CartPrice
+         </span>
+         <br />
+         <p>Tax included, shipping and discounts calculated at checkout.</p>
+     </div>
+
+     <div class="cart-actions">
+         <a class="checkout-btn" asp-action="GetCheckout" asp-controller="Orders">Proceed to Checkout</a>
+     </div>
+
+        </form>
+
+
+
+
+
+
+
+        @await Html.PartialAsync("_Socials")
+
+
+
+
+
+
+
+        @section scripts {
+            <script>
+                           function updateQuantity(button, increment) {
+                const productId = button.getAttribute("data-product-id");
+                // const cartId = button.getAttribute("data-cart-id");
+                const variantId = button.getAttribute("data-cartitem-variantId");
+                const cartItemSize = button.getAttribute("data-cartitem-size");
+                const row = button.closest(".cart-row");
+
+                const quantityInput = button.closest(".quantity-toggler").querySelector(".quantity-input");
+                const quantityContainer = quantityInput.closest(".quantity-container");
+                const decrementBtn = quantityContainer.querySelector(".quantity-decrement");
+
+
+                let currentQuantity = parseInt(quantityInput.value, 10);
+
+                // Calculate new quantity
+                const newQuantity = currentQuantity + increment;
+
+                // Prevent decrementing below 1
+                if (newQuantity < 1)
+                {
+                    return;
+                }
+
+                if( increment == -1 && newQuantity == 1)
+                {
+                    button.classList.add("deactive");
+                }
+                else if(newQuantity > 1)
+                {
+                    decrementBtn.classList.remove("deactive");
+                }
+                
+                // Disable the row
+                row.classList.add("disabled");
+
+                // Send the updated quantity to the server
+                fetch(`/Carts/UpdateQuantity`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        // cartId: cartId,
+                        cartItemSize: cartItemSize,
+                        productId: productId,
+                        variantId: variantId,
+                        quantity: newQuantity,
+                    }),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to update quantity");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update quantity and subtotal in the UI
+                    quantityInput.value = newQuantity;
+                    const subtotalElement = row.querySelector(".subtotal span");
+                    if (data.subtotal) {
+                        subtotalElement.textContent = `INR ${data.subtotal}`;
+                    }
+
+                    // Update the total if returned
+                    if (data.total) {
+                        document.querySelector(".cart-total span").textContent = `Subtotal: INR ${data.total}`;
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("An error occurred while updating the quantity.");
+                })
+                .finally(() => {
+                    // Re-enable the row
+                    row.classList.remove("disabled");
+                });
+            }
+
+            </script>
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @* <div class="project">
+            <div class="shop">
+                <div class="content">
+                    <div class="table">
+                        <p class="table-item table-item-product">Product</p>
+                        <p class="table-item table-item-size">Size</p>
+                        <p class="table-item table-item-quantity">Quantity</p>
+                        <p class="table-item table-item-edit">Remove</p>
+
+                    </div>
+
+
+                </div>
+                @foreach (var cartitem in Model.Items)
+                {
+                    <div class="box">
+
+                        <a href="/products/details/@cartitem.Product.Id?selectedColor=@cartitem.ProductVariant.Id">
+                            <img href="/products/details/@cartitem.Product.Id" src="@($"{imageBasePath}{cartitem.ProductVariant.Images.FirstOrDefault(i=>i.IsMain).Path}")" alt="">
+
+                        </a>
+
+                        <div class="content">
+                            <div class="prof-name-price">
+                                <h3>@cartitem.Product.Name</h3>
+                                @if (@cartitem.Product.DiscountedPrice > 0)
+                                {
+                                    <h4>Rs. @cartitem.Product.DiscountedPrice
+                                         <span style="text-decoration:line-through"> @($"{"Rs. "}{cartitem.Product.Price}")</span>
+                                    </h4>
+                                }
+                                else
+
+                                {
+                                    <h4>
+                                        Rs.@cartitem.Product.Price
+                                    </h4>
+
+                                }
+
+                            </div>
+                            <p>@cartitem.SelectedSize</p>
+                            <p class="unit"><input type="number" value="@cartitem.Quantity"></p>
+
+                            <a class="btn-area" asp-action="Delete" asp-controller="Carts" asp-route-productId="@cartitem.Product.Id" asp-route-cartId="@Model.Id">
+                                <i class="fas fa-trash"></i>
+
+                            </a>
+
+
+
+
+                        </div>
+                    </div>
+                    <hr />
+                }
+
+
+            </div>
+            <div class="right-bar">
+                <p><span>Subtotal</span><span>@foreach (var item in Model.Items)
+                        {
+                            CartPrice = CartPrice + (item.Product.DiscountedPrice>0?(decimal)item.Product.DiscountedPrice:item.Product.Price)*item.Quantity;
+                        }
+                        RS. @CartPrice
+                    </span></p>
+                <hr>
+                <p><span>Tax (5%)</span><span>$1</span></p>
+                <hr>
+                <p><span>Shipping</span><span>$15</span></p>
+                <hr>
+                <p><span>Total</span><span>RS. @(CartPrice + ((5*CartPrice)/100)+15)</span></p>
+
+                <a asp-action="GetCheckout" asp-controller="Orders">Checkout</a>
+            </div>
+        </div> *@
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* Old cart html------------------------ *@
+@*  <div class="cart-page">
+
+        <table>
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Subtotal
+                </th>
+
+
+
+                @foreach (var cartitem in Model.Items)
+                {
+
+                    var product = cartitem.Product;
+                    var SubT = cartitem.Quantity * product.Price;
+
+                <tr>
+
+
+                    <td>
+                        <div class="cart-info">
+                            <img src="\Resources\Items\@product.Path" alt="">
+                            <div>
+                                <p>@product.Name</p>
+                                <small>$@product.Price</small>
+                                <br>
+                                <a href="#">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                            @cartitem.SelectedSize
+                    </td>
+                    <td>
+                        <input type="number" value="@cartitem.Quantity">
+                    </td>
+                    <td>
+
+                        $@SubT
+                    </td>
+
+                </tr>
+
+                }
+
+        </table>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
+@* commented----------- *@
+@* <div class="total-price">
+            <table>
+
+                <tr>
+                    <td>
+                        Subtotal
+                    </td>
+                    <td>
+                        $750
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tax
+                    </td>
+                    <td>
+                        $50
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total
+                    </td>
+                    <td>
+                        $800
+                    </td>
+                </tr>
+
+            </table>
+        </div> *@
+@* -----commented *@
+@*  </div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+ *@
+@*
+
+<div>
+    <h4>Cart</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplictaionUserId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplictaionUserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+    <h1>Shopping Cart</h1>
+
+    <table>
+        <tr>
+            <th> </th>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var cartItem in Model.CartItems)
+        {
+            var product = cartItem.Product;
+            <tr>
+                <td>
+                    <a href="/products/Details/@Html.DisplayFor(modelItem => product.Id)" loading="lazy">
+                        <img class="cart-item" src="\Resources\Items\@product.Path">
+                    </a>
+                </td>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>@cartItem.SelectedSize</td>
+                <td>@cartItem.Quantity</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+
+                <td>
+
+                </td>
+            </tr>
+        }
+    </table>
+</div> *@
+
+

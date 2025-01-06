@@ -1,0 +1,106 @@
+﻿@model IEnumerable<MiliNeu.Models.Collection>
+
+@{
+     string imageBasePath = ViewData["ImageBasePath"].ToString();
+    
+}
+
+@foreach (var collection in Model)
+{
+    <div class="details">
+        @* <div class="name">
+    <h1>@collection.Name</h1>
+    </div> *@
+        <div class="description">
+            <p class="fade-out-right">@collection.Name</p>
+        </div>
+    </div>
+
+    <div class="collections-container">
+        
+        <div class="content">
+
+
+           @*  <div class="cover">
+                <img decoding="async" loading="lazy" src="@($"{"/Resources/Images/Collections/"}{collection.Images.FirstOrDefault(i=>i.IsMain).Path}")">
+
+            </div> *@
+
+            
+            <div class="media-scroller-wrapper">
+            <div class="media-scroller snaps-inline">
+                <button class="prev" type="button">&#10094;</button> <!-- Previous button -->
+                @foreach (var product in collection.Products)
+                {
+                    <div class="card-wrapper">
+                        <div class="image-wrapper">
+                            <a href="/products/Details/@product.Id">
+                                    <img decoding="async" loading="lazy" src="@($"{imageBasePath}{product.Variants.FirstOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")">
+                            </a>
+
+
+                        </div>
+                            <div class="card-info">
+                                <div class="name-wrapper">
+                                    <p>@product.Name</p>
+                                </div>
+                                @if (product.DiscountedPrice > 0)
+                                {
+
+
+
+                                    <div class="product-price">
+                                        <span class="discounted-price">INR @product.DiscountedPrice</span>
+                                        <span class="original-price">INR @product.Price</span>
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="product-price">
+                                        <span class="original-price">INR @product.Price</span>
+                                    </div>
+                                }
+
+                            </div>
+                            @if (product.Variants.Count > 1)
+                            {
+                                <div class="variant-wrapper">
+                                    <p>@product.Variants.Count Variants</p>
+                                </div>
+                            }
+
+                    </div>
+                }
+
+                <button class="next" type="button">&#10095;</button> <!-- Next button -->
+
+            </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mediaScrollers = document.querySelectorAll('.media-scroller');
+
+        mediaScrollers.forEach(function (scroller) {
+            const prevButton = scroller.querySelector('.prev');
+            const nextButton = scroller.querySelector('.next');
+
+            prevButton.addEventListener('click', function () {
+                scroller.scrollBy({ left: -scroller.offsetWidth, behavior: 'smooth' });
+            });
+
+            nextButton.addEventListener('click', function () {
+                scroller.scrollBy({ left: scroller.offsetWidth, behavior: 'smooth' });
+            });
+        });
+    });
+
+</script>

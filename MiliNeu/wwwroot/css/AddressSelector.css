@@ -1,0 +1,93 @@
+﻿
+
+/* Delivery Address Info Styling */
+.delivery-info {
+    position: relative;
+    margin-top: 30px;
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+}
+
+    .delivery-info h2,
+    .delivery-info h3 {
+        color: #333;
+    }
+
+    /* Collapsible Button Styling */
+    .delivery-info .collapsible {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        transition: 0.3s;
+        margin-top: 5px;
+    }
+
+        .delivery-info .collapsible:hover {
+            background-color: #ddd;
+        }
+
+    /* Collapsible Content Styling */
+    .delivery-info .content {
+        position:absolute;
+        width:100%;
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f9f9f9;
+        z-index:5;
+    }
+
+    .delivery-info .active {
+        display: block;
+    }
+
+    .delivery-info .item {
+        display: flex;
+        padding: 10px;
+        margin:0;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .delivery-info .item-details p{
+        margin:0;
+        padding:0;
+    }
+    .delivery-info .item-details p:first-child {
+        color:black;
+        font-weight:600;
+    }
+    .delivery-info #delivery-address p {
+        margin: 0;
+        padding: 0;
+    }
+    .delivery-info #delivery-address p:first-child {
+        color: black;
+        font-weight: 600;
+    }
+.delivery-info #delivery-address p:first-child::before {
+    content: "Delivering To: ";
+    font-weight: bold; /* Make the label bold if desired */
+    margin-right: 5px; /* Optional: adds some space between the label and the content */
+}
+
+.delivery-info input[type="radio"] {
+    margin-right: 10px;
+}
+
+    .delivery-info input :hover {
+        border:10px solid #fff;
+    }
+
+.delivery-info #delivery-address {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}

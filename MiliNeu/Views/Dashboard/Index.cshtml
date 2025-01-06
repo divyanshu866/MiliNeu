@@ -1,0 +1,19 @@
+﻿@model MiliNeu.Models.ViewModels.SalesStatisticsVM
+@{
+}
+
+<h2>Sales Statistics</h2>
+
+<div>
+    <h4>Total Sales: @Model.TotalSales.ToString("C")</h4>
+
+    <h4>Sales by Product:</h4>
+    <ul>
+        @foreach (var sale in Model.SalesByProduct)
+        {
+            <li>@sale.Key: @sale.Value.ToString("C")</li>
+        }
+    </ul>
+
+    <h4>Average Order Value: @Model.AverageOrderValue.ToString("C")</h4>
+</div>

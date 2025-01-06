@@ -1,0 +1,156 @@
+﻿@model MiliNeu.Models.ViewModels.ProductWithVariantCreateVM
+
+@{
+    ViewData["Title"] = "Edit";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+<h1>Product Create View</h1>
+
+<hr />
+<div class="row">
+    </div>
+    
+    
+       
+        <form asp-action="Create" enctype="multipart/form-data" >
+
+    <div style="display:flex; flex-direction:row;gap:20px;justify-content:center">
+        <!-- Container to show the image previews and radio buttons -->
+        <div id="imagePreviewContainer" class="form-group" style="width:10vw">
+        </div>
+        <div style="width:30vw">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.Name" class="control-label"></label>
+                <input asp-for="ProductCreateVM.Name" class="form-control" />
+                <span asp-validation-for="ProductCreateVM.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.Category" class="control-label"></label>
+                <input asp-for="ProductCreateVM.Category" class="form-control" />
+                <span asp-validation-for="ProductCreateVM.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.Description" class="control-label"></label>
+                <input asp-for="ProductCreateVM.Description" class="form-control" />
+                <span asp-validation-for="ProductCreateVM.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.Price" class="control-label"></label>
+                <input asp-for="ProductCreateVM.Price" class="form-control" />
+                <span asp-validation-for="ProductCreateVM.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.DiscountedPrice" class="control-label"></label>
+                <input asp-for="ProductCreateVM.DiscountedPrice" class="form-control" />
+                <span asp-validation-for="ProductCreateVM.DiscountedPrice" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.CollectionId" class="control-label"></label>
+
+                <select asp-for="ProductCreateVM.CollectionId" asp-items="ViewBag.CollectionId" class="form-control"></select>
+
+                <span asp-validation-for="ProductCreateVM.CollectionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Select Colors</label>
+                <select required asp-for="ProductVariantCreateVM.ColorID" id="colorSelector" class="form-control">
+                    <option value="">Select a color</option>
+                    @foreach (var color in ViewBag.AvailableColors)
+                    {
+                        <option value="@color.Value" style="color:@color.Text.Split('(')[1].TrimEnd(')');font-weight:700">
+                            @color.Text
+                        </option>
+                    }
+                </select> 
+
+
+
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.UploadedImages" class="control-label"></label>
+                <input asp-for="ProductCreateVM.UploadedImages" type="file" multiple class="form-control" id="fileInput" accept="image/*" />
+                <span asp-validation-for="ProductCreateVM.UploadedImages" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.SizeChartImage" class="control-label"></label>
+                <input asp-for="ProductCreateVM.SizeChartImage" type="file" class="form-control" id="fileInput" accept="image/*" />
+                <span asp-validation-for="ProductCreateVM.SizeChartImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label>Set as Discontinued?</label><br />
+
+                <div class="form-check">
+                    <input type="radio" asp-for="ProductCreateVM.IsDiscontinued" value="true" class="form-check-input" />
+                    <label class="form-check-label">Yes</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="radio" asp-for="ProductCreateVM.IsDiscontinued" value="false" class="form-check-input" />
+                    <label class="form-check-label">No</label>
+                    <!-- Validation message for IsDiscontinued -->
+                    <span asp-validation-for="ProductCreateVM.IsDiscontinued" class="text-danger"></span>
+                </div>
+                
+            </div>
+            
+            
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+
+
+        <div style="width:30vw;display:flex;flex-direction:column-reverse;justify-content:start">
+            <div>
+                <label>
+                    <input type="radio" name="colorOption" value="existing" onclick="toggleColorForm(false)" /> Existing Color
+                </label>
+                <label>
+                    <input type="radio" name="colorOption" value="new" onclick="toggleColorForm(true)" /> New Color
+                </label>
+            </div>
+        <!-- The new color form -->
+        <div class="new-color-form" style="display: none;">
+            <div class="form-group">
+                    <label asp-for="ProductVariantCreateVM.ColorName" class="control-label"></label>
+                    <input asp-for="ProductVariantCreateVM.ColorName" required class="form-control" />
+                    <span asp-validation-for="ProductVariantCreateVM.ColorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="ProductVariantCreateVM.HexCode" class="control-label"></label>
+                    <input asp-for="ProductVariantCreateVM.HexCode" required class="form-control" />
+                    <span asp-validation-for="ProductVariantCreateVM.HexCode" class="text-danger"></span>
+            </div>
+
+        </div>
+        </div>
+        </form>
+</div>
+@* </div> *@
+
+
+@section Scripts {
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script async src="~/js/ImagePreview.js"></script>
+
+    <script async src="~/js/ToggleColorForm.js"></script>
+
+
+
+}

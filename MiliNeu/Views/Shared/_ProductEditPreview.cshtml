@@ -1,0 +1,199 @@
+﻿@model MiliNeu.Models.ViewModels.ProductEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+
+<form asp-action="Edit" class="product-form" enctype="multipart/form-data" style="display:flex;">
+    <input type="hidden" name="OriginalProductVariantId" value="@Model.OriginalProductVariantId" />
+    <input type="hidden" name="OriginalColorId" value="@Model.OriginalColorId" />
+    <!-- Thumbnails and radio buttons for existing images -->
+    <div class="image-thumbnails" id="imagePreviewContainer">
+
+        @foreach (var image in Model.SelectedProductVariant.ProductImages)
+        {
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="@($"{imageBasePath}{image.Path}")" alt="@image.Path" />
+
+                <!-- Radio button to select the main image -->
+                <input class="radio_set-main" type="radio" name="mainImageName" value="@image.Path" @(image.IsMain ? "checked" : "") /> Set as Main
+            </div>
+        }
+
+
+
+
+    </div>
+
+    <div class="details">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="productId" />
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category" class="control-label"></label>
+            <input asp-for="Category" class="form-control" />
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DiscountedPrice" class="control-label"></label>
+            <input asp-for="DiscountedPrice" class="form-control" />
+            <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CollectionId" class="control-label"></label>
+
+            <select asp-for="CollectionId" asp-items="ViewBag.CollectionId" class="form-control"></select>
+
+            <span asp-validation-for="CollectionId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Select Colors</label>
+            <select required asp-for="SelectedProductVariant.ColorID" id="colorSelector" class="form-control">
+                <option value="">Select a color</option>
+                @foreach (var color in ViewBag.AvailableColors)
+                {
+                    <option value="@color.Value" style="color:@color.Text.Split('(')[1].TrimEnd(')');font-weight:700">
+                        @color.Text
+                    </option>
+                }
+            </select>
+
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            <label asp-for="UploadedImages" class="control-label"></label>
+            @* <input asp-for="UploadedImages" hidden type="text" class="form-control" /> *@
+            <input name="UploadedImages" type="file" multiple class="form-control" id="fileInput" accept="image/*" />
+            <span asp-validation-for="UploadedImages" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SizeChartImage" class="control-label"></label>
+            <input name="SizeChartImage" type="file" class="form-control" id="fileInput" accept="image/*" />
+            <span asp-validation-for="SizeChartImage" class="text-danger"></span>
+        </div>
+
+        <!-- Container to show the image previews and radio buttons -->
+        <div id="imagePreviewContainer" class="form-group">
+        </div>
+        <br />
+
+        <div class="form-group">
+            <div class="form-group">
+
+                <input type="submit" value="Update" class="btn btn-primary" />
+
+
+            </div>
+
+
+
+            <hr />
+
+
+        </div>
+
+
+        <a asp-action="Index">Back to List</a>
+    </div>
+    <div class="product-status">
+        @if (Model.SelectedProductVariant.VariantDiscontinued)
+        {
+            <br />
+            <H3>This Variant Is Discontinued.</H3>
+        }
+        else
+        {
+            <br />
+            <H3>This Variant Is Active.</H3>
+        }
+        <label>Set Variant as Discontinued?</label><br />
+
+        <div class="form-check">
+            <input type="radio" asp-for="SelectedProductVariant.VariantDiscontinued" value="true" class="form-check-input" />
+            <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" asp-for="SelectedProductVariant.VariantDiscontinued" value="false" class="form-check-input" />
+            <label class="form-check-label">No</label>
+            <!-- Validation message for IsDiscontinued -->
+            <span asp-validation-for="IsDiscontinued" class="text-danger"></span>
+        </div>
+
+    <hr />
+    <div class="product-status">
+        @if (Model.IsDiscontinued)
+        {
+            <br />
+            <H3>This Product Is Discontinued.</H3>
+        }
+        else
+        {
+            <br />
+            <H3>This Product Is Active.</H3>
+        }
+        <label>Set as Discontinued?</label><br />
+
+        <div class="form-check">
+            <input type="radio" asp-for="IsDiscontinued" value="true" class="form-check-input" />
+            <label class="form-check-label">Yes</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" asp-for="IsDiscontinued" value="false" class="form-check-input" />
+            <label class="form-check-label">No</label>
+            <!-- Validation message for IsDiscontinued -->
+            <span asp-validation-for="IsDiscontinued" class="text-danger"></span>
+        </div>
+
+        <hr />
+        @if (Model.SelectedProductVariant.isMain)
+            {
+                <h3>This Action is Permanent.</h3>
+                <label class="control-label">Main Variant Cannot be Deleted</label>
+                <br />
+                <br />
+                <a asp-action="" class="btn" style="background-color:gray;pointer-events:none" >Delete Variant</a>
+            }
+            else{
+            <h3>This Action is Permanent.</h3>
+            <label class="control-label">You Will Be Asked For Confirmation On Next Page</label>
+            <br />
+            <br />
+            <a asp-action="DeleteVariant" class="btn btn-danger" asp-route-productId="@Model.productId" asp-route-variantId="@Model.SelectedProductVariant.VariantId">Delete Variant</a>
+
+            }
+            <hr />
+        <h3>This Action is Permanent.</h3>
+        <label class="control-label">You Will Be Asked For Confirmation On Next Page</label>
+        <br />
+        <br />
+        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.productId">Delete Product</a>
+    </div>
+    </div>
+
+</form>
+<script async src="~/js/ImagePreview.js"></script>
+
+
+

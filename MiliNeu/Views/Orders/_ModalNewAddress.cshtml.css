@@ -1,0 +1,150 @@
+﻿
+.cmodal {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen width */
+    height: 100%; /* Full screen height */
+    z-index: 200;
+    scroll-behavior: unset;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+.cwrapper {
+    position: relative;
+    width: 90%; /* Responsive for smaller screens */
+    max-width: 600px; /* Maximum width */
+    max-height: 90%; /* Prevents overflow on very small screens */
+    aspect-ratio: 9/16;
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth entrance animation */
+}
+    .cmodal .cwrapper ::deep #new-address-form {
+    }
+/*.cmodal .cwrapper .nav-address {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    gap: 2rem;
+}
+.cmodal .cwrapper .nav-address input {
+    display:initial;
+}
+
+*/
+
+    .cmodal .cwrapper ::deep .form-group input {
+        height: 3.2rem;
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    .cmodal .cwrapper ::deep .form-group {
+    }
+
+
+
+    .cmodal .cwrapper ::deep input[type="checkbox"] {
+        height: max-content;
+        margin: 0 0.5rem 1rem 0;
+    }
+
+    .cmodal .cwrapper ::deep .name, .cmodal .cwrapper ::deep .city-state-pin {
+        display: flex;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+        .cmodal .cwrapper ::deep .name .form-group {
+            flex: 1;
+        }
+
+    /* Optional Close Button */
+.cmodal .btn-close-address-modal {
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+}
+
+    /* Optional update Button */
+.cmodal .btn-close-address-update {
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease;
+    background-color: darkblue;
+    padding: 0.5rem 1rem;
+}
+
+.cmodal .close-btn:hover {
+    color: #ff0000;
+}
+
+/* Keyframes for fade-in animation */
+/*@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}*/
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .cmodal .cwrapper {
+        width: 95%; /* Adapts to smaller screens */
+        max-height: 85%; /* Adjusts for limited vertical space */
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/***************************************Address-Modal********************************/
+.cmodal input {
+    margin: 1rem 0;
+}
+
+.cmodal .form-group input {
+    height: 3.2rem;
+    font-size: 1rem;
+}
+
+.cmodal .cwrapper input[type="checkbox"] {
+    height: max-content;
+    margin: 0 0.5rem 1rem 0;
+}
+
+.cmodal .name, .cmodal .city-state-pin {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+    .cmodal .name .form-group {
+        flex: 1;
+    }

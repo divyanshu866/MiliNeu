@@ -1,0 +1,23 @@
+﻿@model List<MiliNeu.Models.Product>
+
+
+<div class="page-title">
+    <h1>SEARCH RESULTS</h1>
+
+</div>
+<form class="search-page-form" asp-controller="Products" asp-action="Search" method="get">
+    <input class="search-input" type="search" name="searchTerm" placeholder="Search products" aria-label="Search">
+    <button class="search-btn" type="submit"><i class="material-icons">search</i></button>
+</form> 
+@if (Model.Count == 0)
+{
+    <div class="page-title">
+        <h1>NO SEARCH RESULT FOUND</h1>
+    </div>
+}
+else
+{
+    @await Html.PartialAsync("_gallery", Model)
+
+}
+@await Html.PartialAsync("_Socials")

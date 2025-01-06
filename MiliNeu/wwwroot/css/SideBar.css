@@ -1,0 +1,107 @@
+﻿/*..................................Search Bar.......................\..............*/
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 500PX;
+    background-color: #fdfcfb;
+    z-index: 101;
+    left: -500px; /* Initial position */
+    top: 0px;
+    /* transition: 0.4s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);*/
+    transition: 0.3s cubic-bezier(0.01, 0.28, 0, 0.94);
+}
+
+#sidebar-toggle {
+    display: none;
+}
+    /* Checkbox checked state: move container to the right */
+    #sidebar-toggle:checked ~ .sidebar-container {
+        left: 0px; /* Move container to the right */
+        z-index: 101; /* Ensure it's above the overlay */
+    }
+
+/* Show overlay and allow clicks on it when sidebar is active */
+    #sidebar-toggle:checked ~ .overlay {
+        display: block;
+        pointer-events: all; /* Make the overlay block interactions */
+    }
+
+
+.navbar .sidebar-toggle {
+    color: #5C5C5C;
+    cursor: pointer;
+}
+
+
+
+.sidebar-container hr {
+    margin: 0;
+    padding:0;
+}
+
+.sidebar-container .sidebar-head {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f6f4ed;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1.7rem 3rem 1.7rem 3rem;
+    border-bottom: 1px solid #5c5c5c;
+}
+
+    .sidebar-container .sidebar-head p {
+        margin: 0;
+    }
+
+.sidebar-container .sidebar-head label i {
+    font-size: 2rem;
+}
+
+.sidebar-container .sidebar-head label {
+    display: flex;
+    cursor: pointer;
+}
+
+.sidebar-container .sidebar-items {
+    width: 100%;
+    height: min-content;
+    padding:2rem 0 0 0;
+    background-color: #fdfcfb;
+}
+    .sidebar-container .sidebar-items ul {
+        list-style-type: none;
+        background-color: #fdfcfb;
+        width: 100%;
+        height: 100%;
+    }
+.sidebar-container .sidebar-items ul li{
+    
+    margin:1rem;
+}
+.sidebar-container .sidebar-items ul li a {
+    text-decoration:none;
+    color:black;
+    font-size:2rem;
+}
+
+@media screen and (max-width:500px){
+    .sidebar-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100vw;
+        background-color: #fdfcfb;
+        z-index: 101;
+        left: -500px; /* Initial position */
+        top: 0px;
+        /* transition: 0.4s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);*/
+        transition: 0.3s cubic-bezier(0.01, 0.28, 0, 0.94);
+    }
+        .sidebar-container .sidebar-items ul li a {
+            font-size: 2rem;
+        }
+}

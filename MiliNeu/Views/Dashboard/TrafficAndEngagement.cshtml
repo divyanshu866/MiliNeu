@@ -1,0 +1,12 @@
+﻿@model MiliNeu.Models.ViewModels.TrafficEngagementVM
+
+<h2>Traffic and Engagement Statistics</h2>
+
+<div class="stats">
+    <h4>Total Visitors: @Model.TotalVisitors</h4>
+    <h4>Total Conversions: @Model.TotalConversions</h4>
+    <h4>Conversion Rate: @Model.ConversionRate.ToString("F2")%</h4>
+    <h4>Bounce Rate: @Model.BounceRate.ToString("F2")%</h4>
+    <h4>Total Page Views: @Model.TotalPageViews</h4>
+    <h4>Unique Sessions: @Model.UniqueSessions</h4>
+</div>

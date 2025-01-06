@@ -1,0 +1,54 @@
+﻿<title>Manage</title>
+<style>
+    /* Optional: Add some basic styling for better presentation */
+
+
+    .link-container {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        background-color: #f2f2f2;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.3rem;
+    }
+
+        .link-container a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+            .link-container a:hover {
+                background-color: #ddd;
+            }
+</style>
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="link-container">
+        <div>
+            <a asp-action="Manage" asp-controller="Orders">Manage Orders</a>
+        </div>
+        <div>
+        <a asp-action="Manage" asp-controller="Collections">Manage Collections</a>
+        </div>
+
+    <div>
+        <a asp-action="Manage" asp-controller="Products">Manage Products</a>
+    </div>
+        <div>
+            <a asp-action="Manage" asp-controller="Colors">Manage Colors</a>
+        </div>
+        <div>
+            <a asp-action="Index" asp-controller="HeroSections">Manage Hero Section</a>
+        </div>
+        
+        
+       
+    </div>
+}

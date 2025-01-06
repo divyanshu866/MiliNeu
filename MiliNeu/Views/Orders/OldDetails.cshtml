@@ -1,0 +1,148 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = "Index";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+<div class="page-header order-background">
+    <h1 class="">Order Id: @Model.Id</h1>
+</div>
+
+
+<div class="order-wrapper">
+
+
+<div class="project">
+    <div class="shop">
+        <div class="content">
+            <div class="table">
+                <p class="table-item table-item-product">Product</p>
+                <p class="table-item table-item-size">Size</p>
+                <p class="table-item table-item-quantity">Quantity</p>
+                <p class="table-item table-item-edit">Total</p>
+
+            </div>
+
+
+        </div>
+        @foreach (var orderitem in Model.Items)
+        {
+            <div class="box">
+                    <a href="/products/details/@orderitem.Product.Id?selectedColor=@orderitem.ProductVariant.Id">
+                        <img href="/products/details/@orderitem.Product.Id" src="@($"{imageBasePath}{orderitem.ProductVariant.Images.FirstOrDefault(i=>i.IsMain).Path}")" alt="">
+
+                </a>
+
+                <div class="content">
+                    <div class="prof-name-price">
+                            <h3>@orderitem.Product.Name</h3>
+                            <h4>RS. @(orderitem.Price)</h4>
+
+                    </div>
+                        <p>@orderitem.SelectedSize</p>
+                        <p class="unit"><input type="number" value="@orderitem.Quantity"></p>
+
+                        <p>RS. @(orderitem.Price*orderitem.Quantity)</p>
+
+
+
+
+                </div>
+            </div>
+            <hr />
+        }
+
+
+    </div>
+        <div class="right-bar">
+            <p><span>Subtotal</span><span>$80</span></p>
+            <hr>
+            <p><span>Tax (5%)</span><span>$1</span></p>
+            <hr>
+            <p><span>Shipping</span><span>$15</span></p>
+            <hr>
+            <p><span>Total</span><span>$96</span></p>
+            @if (Model.PaymentStatus.ToString().ToLower()=="failed")
+            {
+                <a asp-action="Cancel" asp-controller="Orders" asp-route-orderId="@Model.Id">Complete payment</a>
+            }
+            else
+            {
+
+
+                <a asp-action="GetInitiatePayment" asp-controller="Orders" asp-route-orderId="@Model.Id">Retry payment</a>
+            }
+            </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 
+<div class="cart-wrapper">
+
+
+    
+
+        <div class="gallery">
+
+    @foreach (var orderItem in Model.Items)
+    {
+
+    var product = orderItem.Product;
+
+
+    <div class="card-wrapper">
+    <div class="image-wrapper">
+    <a href="/products/Details/@Html.DisplayFor(modelItem => product.Id)">
+    <img src="\Resources\Items\@product.Path">
+    </a>
+
+
+    </div>
+    <div class="description-wrapper">
+    <p>@product.Name</p>
+    </div>
+
+    <div class="price-wrapper">
+    <p>Rs.@product.Price</p>
+    </div>
+
+    </div>
+    }
+    </div>
+    
+
+
+
+
+</div>
+
+ *@

@@ -1,0 +1,90 @@
+﻿@model MiliNeu.Models.ViewModels.CollectionCreateViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    
+}
+
+<h1>Collection Create View</h1>
+
+<hr />
+<div class="row">
+    <div class="col-lg-5 col-md-4 col-6 mb-1">
+
+
+        <div style="width: 100%; content-visibility: auto">
+            <img src="\Resources\Images\Common\Image-Placeholder.jpg" onerror="this.src='';" alt="Image" class="img-fluid">
+
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            
+
+
+
+            <div class="form-group">
+                <label asp-for="UploadedImages" class="control-label"></label>
+                <input asp-for="UploadedImages" type="file" multiple class="form-control" id="fileInput" accept="image/*" />
+                <span asp-validation-for="UploadedImages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                
+
+               
+
+            </div>
+            <!-- Container to show the image previews and radio buttons -->
+            <div id="imagePreviewContainer" class="form-group">
+            </div>
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script async src="~/js/ImagePreview.js"></script>
+
+}

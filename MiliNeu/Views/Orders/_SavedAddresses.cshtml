@@ -1,0 +1,56 @@
+﻿@model MiliNeu.Models.ViewModels.AddressVM
+<!-- "Delivering to" Section -->
+<div class="delivery-info">
+
+    <div id="delivery-address">
+        @foreach (var address in Model.Addresses)
+        {
+            if (address.IsPrimary)
+            {
+                <p>@address.FirstName<span> </span>@address.LastName</p>
+                <p><span>@address.ApartmentSuite ,@address.StreetAddress, @address.City, @address.Country, @address.PostalCode</span></p>
+                <p><span>Phone Number:</span>@address.PhoneNumber</p>
+                <a asp-controller="Addresses" asp-action="Edit" asp-route-id="@address.Id">Edit</a>
+            }
+
+
+
+        }
+    </div>
+    <!-- Collapsible List of Addresses -->
+    <span asp-validation-for="@Model.SelectedAddressId" class="text-danger"></span>
+
+    <button class="collapsible">Change</button>
+    <div class="content">
+        @foreach (var address in Model.Addresses)
+        {
+
+            <label class="item">
+                @if (address.IsPrimary)
+                {
+                    <input type="radio" checked required name="AddressVM.SelectedAddressId" asp-for="SelectedAddressId" value="@address.Id" class="address-radio">
+
+                }
+                else
+                {
+                    <input type="radio" required name="AddressVM.SelectedAddressId" asp-for="SelectedAddressId" value="@address.Id" class="address-radio">
+
+                }
+
+                <div class="item-details">
+                    <p>@address.FirstName <span> </span>@address.LastName</p>
+                    <p><span>@address.ApartmentSuite ,@address.StreetAddress, @address.City, @address.Country, @address.PostalCode</span></p>
+                    <p><span>Phone Number:</span>@address.PhoneNumber</p>
+                    <a asp-controller="Addresses" asp-action="Edit" asp-route-id="@address.Id">Edit</a> |
+
+                </div>
+            </label>
+        }
+
+
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,311 @@
+﻿@model int
+
+
+
+
+
+
+<div class="help-modal">
+    <div class="wrapper">
+        <form id="help-modal-issue" action="">
+            <label for="ItemNotDelivered">Item Not Delivered</label>
+            <input name="issue" required hidden id="ItemNotDelivered" value="Item Not Delivered" type="radio">
+
+            <label for="ItemDamaged">Item Damaged</label>
+            <input name="issue" hidden id="ItemDamaged" value="Item Damaged" type="radio">
+
+            <label for="WrongItemReceived">Wrong Item Received</label>
+            <input name="issue" hidden id="WrongItemReceived" value="Wrong Item Received" type="radio">
+
+            <label for="Other">Other</label>
+            <input name="issue" hidden id="Other" value="Other" type="radio">
+            <div class="btn-box">
+                
+                <button class="cancel" type="button">Cancel</button>
+
+            </div>
+        </form>
+        <form id="help-modal-description" action="">
+            <input type="text" readonly required hidden name="order-id" value="@Model" />
+            <h3>Please describe the issue</h3>
+            <p id="selected-issue-display" style="font-weight: bold;"></p> <!-- Placeholder for selected issue -->
+
+            <textarea name="description" required id="comments" rows="4" cols="50"></textarea>
+
+
+            <div class="btn-box">
+                <button id="Back2" type="button">Back</button>
+                <button class="cancel" type="button">Cancel</button>
+                <button id="help-modal-Submit" type="button">Submit</button>
+
+            </div>
+        </form>
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col">
+                <small>Select Issue</small>
+            </div>
+            <div class="step-col">
+                <small>Describe the Issue</small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.getElementById("helpLink").addEventListener('click',()=>{
+        helpModal.style.display = "flex";
+    })
+    var stepCol = document.getElementsByClassName('step-col')[1];
+    var submitButton = document.getElementById('help-modal-Submit');
+    var helpModal = document.getElementsByClassName("help-modal")[0];
+    var issueForm = document.getElementById("help-modal-issue");
+    var descriptionForm = document.getElementById("help-modal-description");
+
+    const issue = document.querySelectorAll('input[name="issue"]');
+    var Back2 = document.getElementById("Back2");
+    var CancelBtns = document.getElementsByClassName("cancel");
+
+    var Progress = document.getElementById("progress");
+
+    issue.forEach(element => {
+        element.addEventListener('click', () => {
+            issueForm.style.opacity = "0";
+            descriptionForm.style.left = "0";
+            descriptionForm.style.opacity = "1";
+            Progress.style.width = "100%";
+            stepCol.style.color = "#fff";
+
+        })
+    })
+
+
+    Array.from(CancelBtns).forEach(element => {
+        element.addEventListener('click', () => {
+            helpModal.style.display = "none";
+            issueForm.style.opacity = "1";
+            descriptionForm.style.left = "450px";
+            descriptionForm.style.opacity = "0";
+            Progress.style.width = "50%";
+            stepCol.style.color = "#000";
+
+        });
+    }); 
+
+    Back2.addEventListener('click', () => {
+        issueForm.style.opacity = "1";
+        descriptionForm.style.left = "450px";
+        descriptionForm.style.opacity = "0";
+        Progress.style.width = "50%";
+        stepCol.style.color = "#000";
+
+    });
+    const selectedIssueDisplay = document.getElementById("selected-issue-display");
+
+
+    // Listen for radio button selection in the first form
+    issueForm.addEventListener("change", (event) => {
+        if (event.target.name === "issue") {
+            const selectedIssue = event.target.value; // Get the selected issue value
+            // Update the second form with the selected issue
+            selectedIssueDisplay.textContent = `Issue: ${selectedIssue}`;
+        }
+    });
+
+    submitButton.addEventListener('click',()=>{
+        // Collect data from the first form
+        const issueData = new FormData(issueForm);
+        const selectedIssue = issueData.get("issue"); // Gets the selected radio value
+
+        // Collect data from the second form
+        const descriptionData = new FormData(descriptionForm);
+        const issueDescription = descriptionData.get("description"); // Gets the textarea value
+        const orderId = descriptionData.get("order-id"); // Gets the textarea value
+
+        // Validation: Check if all required fields are filled
+        let validationErrors = [];
+
+        if (!selectedIssue) {
+            validationErrors.push("Please select an issue type.");
+        }
+
+        if (!issueDescription || issueDescription.trim() === "") {
+            validationErrors.push("Please describe the issue.");
+        }
+
+        if (!orderId || orderId.trim() === "") {
+            validationErrors.push("Order ID is required.");
+        }
+
+        // If there are validation errors, display them and stop submission
+        if (validationErrors.length > 0) {
+            alert(validationErrors.join("\n"));
+            return;
+        }
+        // Combine both data into one object
+        const combinedData = {
+            IssueType: selectedIssue,
+            Description: issueDescription,
+            OrderId: orderId,
+        };
+
+        // POST the combined data to the server
+        fetch('/OrderIssues/ReportIssue', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(combinedData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert("Your issue has been submitted successfully!");
+                    document.querySelector(".help-modal").style.display = "none";
+                } else {
+                    alert("There was an error submitting your issue.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 
+<!-- Modal Structure -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+
+        <!-- Step 1: Reason Selection -->
+        <div id="step1" class="modal-step">
+            <h2>What's the issue with your order?</h2>
+            <ul class="options">
+                <li><button class="reason-btn" data-reason="Return Item">Return Item</button></li>
+                <li><button class="reason-btn" data-reason="Order Not Delivered">Order Not Delivered</button></li>
+                <li><button class="reason-btn" data-reason="Damaged Item">Damaged Item</button></li>
+                <li><button class="reason-btn" data-reason="Something Else">Something Else</button></li>
+            </ul>
+        </div>
+
+        <!-- Step 2: More Information -->
+        <div id="step2" class="modal-step" style="display: none;">
+            <h2>Provide More Information</h2>
+            <p id="selectedReasonText"></p>
+            <form id="helpForm" asp-controller="OrderIssues" asp-action="ReportIssue">
+                
+                <label for="issue">Describe your issue:</label>
+                <textarea id="issue" name="issue" placeholder="Provide more details..." required></textarea>
+
+                <button type="button" id="backButton">Back</button>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+ *@
+@* 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const helpLink = document.getElementById("helpLink");
+        const modal = document.getElementById("helpModal");
+        const closeButton = document.querySelector(".close-button");
+        const step1 = document.getElementById("step1");
+        const step2 = document.getElementById("step2");
+        const reasonButtons = document.querySelectorAll(".reason-btn");
+        const selectedReasonText = document.getElementById("selectedReasonText");
+        const backButton = document.getElementById("backButton");
+        const helpForm = document.getElementById("helpForm");
+
+        let selectedReason = ""; // Variable to store selected reason
+
+        // Show the modal
+        helpLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.style.display = "block";
+            step1.style.display = "block";
+            step2.style.display = "none";
+        });
+
+        // Close the modal
+        closeButton.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close the modal when clicking outside the modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Handle reason selection
+        reasonButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                selectedReason = button.getAttribute("data-reason");
+                selectedReasonText.textContent = `You selected: ${selectedReason}`;
+                step1.style.display = "none";
+                step2.style.display = "block";
+            });
+        });
+
+        // Go back to Step 1
+        backButton.addEventListener("click", () => {
+            step1.style.display = "block";
+            step2.style.display = "none";
+        });
+
+        // Handle form submission
+        helpForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const orderId = document.getElementById("orderId").value;
+            const issue = document.getElementById("issue").value;
+
+            console.log(`Selected Reason: ${selectedReason}`);
+            console.log(`Order ID: ${orderId}`);
+            console.log(`Issue: ${issue}`);
+
+            alert("Your issue has been submitted. We'll get back to you shortly.");
+            modal.style.display = "none";
+        });
+    });
+
+</script> *@

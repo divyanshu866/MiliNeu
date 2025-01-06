@@ -1,0 +1,165 @@
+﻿@model MiliNeu.Models.ViewModels.AddVariantVM
+
+@{
+    ViewData["Title"] = "Edit";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+<h1>Add Variant View</h1>
+
+<hr />
+
+
+
+
+<form asp-action="AddProductVariant" enctype="multipart/form-data">
+    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+    <input type="hidden" name="CollectionId" value="@Model.CollectionId" />
+    <input type="hidden" name="isMain" value="false" />
+    <div style="display:flex; flex-direction:row;gap:20px;justify-content:center">
+        <!-- Container to show the image previews and radio buttons -->
+        <div id="imagePreviewContainer" class="form-group" style="width:10vw">
+        </div>
+        <div style="width:30vw">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                     
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" readonly class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" readonly class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" readonly class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" readonly class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscountedPrice" class="control-label"></label>
+                <input asp-for="DiscountedPrice" readonly class="form-control" />
+                <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
+            </div>
+
+            
+            <div class="form-group">
+                
+                <div class="color-label" style="display:flex; justify-content:space-between">
+                   
+                    <div>
+                        <label>Select New Color:</label>
+                        <input type="checkbox" onclick="toggleColorForm(this.checked)" />
+                    </div>
+                    
+                </div>
+                <select required asp-for="Variant.ColorID" id="colorSelector" class="form-control">
+                    <option value="">Select a color</option>
+                    @foreach (var color in ViewBag.AvailableColors)
+                    {
+                        <option value="@color.Value" style="color:@color.Text.Split('(')[1].TrimEnd(')');font-weight:700">
+                            @color.Text
+                        </option>
+                    }
+                </select>
+
+
+
+
+                <!-- The new color form -->
+                <div class="new-color-form" style="display: none;">
+                    <div class="form-group">
+                        <label asp-for="Variant.ColorName" class="control-label"></label>
+                        <input asp-for="Variant.ColorName" required class="form-control" />
+                        <span asp-validation-for="Variant.ColorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Variant.HexCode" class="control-label"></label>
+                        <input asp-for="Variant.HexCode" required class="form-control" />
+                        <span asp-validation-for="Variant.HexCode" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="color-container">
+                
+                
+                
+            </div>
+            
+
+            <div class="form-group">
+                <label asp-for="UploadedImages" class="control-label"></label>
+                <input asp-for="UploadedImages" type="file" multiple class="form-control" id="fileInput" accept="image/*" />
+                <span asp-validation-for="UploadedImages" class="text-danger"></span>
+            </div>
+            
+
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <br />
+            <div class="form-group">
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+
+
+        <div style="width:30vw;display:flex;flex-direction:column;justify-content:start">
+            <div class="product-status">
+              
+                    <br />
+                    <H3>Set Variant Status.</H3>
+                
+                <label>Set as Discontinued?</label><br />
+
+                <div class="form-check">
+                    <input type="radio" asp-for="IsDiscontinued" value="true" class="form-check-input" />
+                    <label class="form-check-label">Yes</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="radio" asp-for="IsDiscontinued" value="false" class="form-check-input" />
+                    <label class="form-check-label">No</label>
+                    <!-- Validation message for IsDiscontinued -->
+                    <span asp-validation-for="IsDiscontinued" class="text-danger"></span>
+                </div>
+
+                <hr />
+                <h3>This Action is Permanent.</h3>
+                <label class="control-label">You Will Be Asked For Confirmation On Next Page</label>
+                <br />
+                <br />
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.ProductId">Delete Product</a>
+            </div>
+
+            
+            
+        </div>
+</form>
+</div>
+@* </div> *@
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script async src="~/js/ImagePreview.js"></script>
+    <script async src="~/js/ToggleColorForm.js"></script>
+
+}

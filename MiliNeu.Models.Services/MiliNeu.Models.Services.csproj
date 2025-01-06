@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiliNeu.DataAccess\MiliNeu.DataAccess.csproj" />
+    <ProjectReference Include="..\MiliNeu.Models\MiliNeu.Models.csproj" />
+    <ProjectReference Include="..\RazorPay\PaymentGateway.csproj" />
+    <PackageReference Include="Azure.Identity" Version="1.13.1" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+	 <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+	  <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+	  <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+	  <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+	  <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+	  <PackageReference Include="System.Collections" Version="4.3.0" />
+
+
+  </ItemGroup>
+
+</Project>

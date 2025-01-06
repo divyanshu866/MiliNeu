@@ -1,0 +1,61 @@
+﻿@model MiliNeu.Models.ViewModels.AddressVM
+<div class="form-group">
+
+    <input required asp-for="@Model.NewAddress.Country" name="AddressVM.NewAddress.Country" placeholder="India" value="India" readonly class="form-control" />
+    <span asp-validation-for="@Model.NewAddress.Country" class="text-danger"></span>
+</div>
+<div class="name">
+    <div class="form-group">
+
+        <input required asp-for="@Model.NewAddress.FirstName" name="AddressVM.NewAddress.FirstName" placeholder="First Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        <input required asp-for="@Model.NewAddress.LastName" name="AddressVM.NewAddress.LastName" placeholder="Last Name" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+
+    <input required asp-for="@Model.NewAddress.ApartmentSuite" name="AddressVM.NewAddress.ApartmentSuite" placeholder="Apartment, suite, etc." class="form-control" />
+</div>
+<div class="form-group">
+
+    <input required asp-for="@Model.NewAddress.StreetAddress" name="AddressVM.NewAddress.StreetAddress" placeholder="Street Address" class="form-control" />
+</div>
+<div class="city-state-pin">
+    <div class="form-group">
+
+        <input required asp-for="@Model.NewAddress.City" name="AddressVM.NewAddress.City" placeholder="City" class="form-control" />
+    </div>
+
+    <div class="form-group">
+
+        <input required asp-for="@Model.NewAddress.State" name="AddressVM.NewAddress.State" placeholder="State" class="form-control" />
+    </div>
+    <div class="form-group">
+
+        <input required asp-for="@Model.NewAddress.PostalCode" name="AddressVM.NewAddress.PostalCode" placeholder="PIN Code" class="form-control" />
+    </div>
+</div>
+
+@* <div class="form-group">
+
+            <input placeholder="Name"  class="form-control" />
+            <span asp-validation-for="@Model.ApplicationUser.UserName" class="text-danger"></span>
+            </div> *@
+
+<div class="form-group">
+
+    <input required asp-for="@Model.NewAddress.PhoneNumber" name="AddressVM.NewAddress.PhoneNumber" placeholder="Phone" class="form-control" />
+    <span asp-validation-for="@Model.NewAddress.PhoneNumber" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label>
+
+        <input type="checkbox" checked asp-for="@Model.SaveAddress" name="AddressVM.NewAddress.SaveAddress" value="@Model.SaveAddress" />
+        <span>Save this address for future use</span>
+    </label>
+    <span asp-validation-for="@Model.SaveAddress" class="text-danger"></span>
+</div>

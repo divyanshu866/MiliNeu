@@ -1,0 +1,52 @@
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Ikonate</title>
+    <style>
+      :root {
+        --grey--light: #fafaff;
+        --white: #ffffff;
+      }
+
+      body {
+        background: var(--grey--light);
+      }
+
+      .main {
+        width: 1152px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .main__item {
+        background: var(--white);
+        border-radius: 4px;
+        padding: 20px;
+        display: inline-block;
+        margin: 10px;
+      }
+
+      .main__item svg {
+          width: 64px;
+          height: 64px;
+          stroke: #000000;
+          stroke-width: 0.75;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+          color: #000000;
+  }</style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="main__item"><svg>
+          <title id="hamburgerIconTitle">Menu</title>
+          <use xlink:href="./ikonate.svg#hamburger"></use>
+        </svg></div>
+    </div>
+
+  </body>
+
+</html>

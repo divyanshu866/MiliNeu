@@ -1,0 +1,134 @@
+﻿@model MiliNeu.Models.ViewModels.SalesStatisticsVM
+@{
+    Layout = "_AdminLayout";
+}
+    @using Microsoft.AspNetCore.Identity;
+@using System.Globalization
+    @inject SignInManager<ApplicationUser> SignInManager;
+    @inject UserManager<ApplicationUser> UserManager;
+
+        
+    
+        
+
+        
+<div class="dashboard">
+    
+    <div class="stat-row">
+        <div class="stat-section">
+            
+            <div class="stat-icon">
+                <i class="material-icons">bar_chart</i>
+
+            </div>
+            <div class="stat-info">
+                <div class="stat-title">
+                    <p>Total Revenue</p>
+                </div>
+                <div class="stat-value">
+                    <p>Rs. @Model.TotalSales.ToString("N2")</p>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <div class="stat-section">
+
+            <div class="stat-icon">
+                <i class="material-icons">shopping_cart</i>
+
+            </div>
+            <div class="stat-info">
+                <div class="stat-title">
+                    <p>Average Order Value </p>
+                </div>
+                <div class="stat-value">
+                    <p>Rs. @Model.AverageOrderValue.ToString("N2")</p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="stat-section">
+
+            <div class="stat-icon">
+                <i class="material-icons">pie_chart</i>
+            </div>
+            <div class="stat-info">
+                <div class="stat-title">
+                    <p>Lifetime Units Sold</p>
+
+                </div>
+                <div class="stat-value">
+                    <p>@Model.LifeTimeUnitSold</p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="stat-section">
+
+            <div class="stat-icon">
+                <i class="material-icons">people</i>
+
+            </div>
+            <div class="stat-info">
+                <div class="stat-title">
+                    <p>Visits This Month</p>
+                </div>
+                <div class="stat-value">
+                    <p>@Model.CurrentMonthTraffic.TotalVisits</p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="stat-section">
+
+            <div class="stat-icon">
+                <i class="material-icons">people</i>
+
+            </div>
+            <div class="stat-info">
+                <div class="stat-title">
+                    <p>Conversion Rate</p>
+                </div>
+                <div class="stat-value">
+                    <p>@(Model.TrafficEngagementVM.ConversionRate)%</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+ <div class="stat-row">
+     <div class="stat-graph">
+         <div class="stat-icon">
+                <i class="material-icons">bar_chart</i>
+
+         </div>
+     </div>
+     <div class="stat-medium">
+         <div class="stat-icon">
+                <i class="material-icons">shopping_cart</i>
+
+         </div>
+     </div>
+ </div>
+@*     <div class="stat-row">
+        <div class="stat-section">
+            <div class="stat-icon">
+                <i class="material-icons">bar_chart</i>
+
+            </div>
+        </div>
+        
+    </div> *@
+    @* @await Html.PartialAsync("_OrderTable", Model.OrderTable) *@
+
+</div>

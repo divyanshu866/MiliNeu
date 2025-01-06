@@ -1,0 +1,56 @@
+﻿@model MiliNeu.Models.ViewModels.AddressVM
+<input required hidden asp-for="@Model.SelectedAddressSnapshot.Id" name="Id" placeholder="India" value="@Model.SelectedAddressSnapshot.Id" readonly class="form-control" />
+<input required hidden asp-for="@Model.SelectedAddressSnapshot.Email" name="Email" placeholder="India" value="admin@admin" readonly class="form-control" />
+
+<div class="form-group">
+    <label for="country">Country</label>
+    <input required asp-for="@Model.SelectedAddressSnapshot.Country" name="Country" placeholder="India" readonly class="form-control" />
+    <span asp-validation-for="@Model.SelectedAddressSnapshot.Country" class="text-danger"></span>
+</div>
+<div class="name">
+    <div class="form-group">
+        <label for="FirstName">FirstName</label>
+        <input required asp-for="@Model.SelectedAddressSnapshot.FirstName" name="FirstName" placeholder="First Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">LastName</label>
+        <input required asp-for="@Model.SelectedAddressSnapshot.LastName" name="LastName" placeholder="Last Name" class="form-control" />
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="ApartmentSuite">ApartmentSuite</label>
+    <input required asp-for="@Model.SelectedAddressSnapshot.ApartmentSuite" name="ApartmentSuite" placeholder="Apartment, suite, etc." class="form-control" />
+</div>
+<div class="form-group">
+    <label for="StreetAddress">StreetAddress</label>
+    <input required asp-for="@Model.SelectedAddressSnapshot.StreetAddress" name="StreetAddress" placeholder="Street Address" class="form-control" />
+</div>
+<div class="city-state-pin">
+    <div class="form-group">
+        <label for="City">City</label>
+        <input required asp-for="@Model.SelectedAddressSnapshot.City" name="City" placeholder="City" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="State">State</label>
+        <input required asp-for="@Model.SelectedAddressSnapshot.State" name="State" placeholder="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="State">State</label>
+        <input required asp-for="@Model.SelectedAddressSnapshot.PostalCode" name="PostalCode" placeholder="PIN Code" class="form-control" />
+    </div>
+</div>
+
+@* <div class="form-group">
+
+            <input placeholder="Name"  class="form-control" />
+            <span asp-validation-for="@Model.ApplicationUser.UserName" class="text-danger"></span>
+            </div> *@
+
+<div class="form-group">
+    <label for="PhoneNumber">PhoneNumber</label>
+    <input required asp-for="@Model.SelectedAddressSnapshot.PhoneNumber" name="PhoneNumber" placeholder="Phone" class="form-control" />
+    <span asp-validation-for="@Model.SelectedAddressSnapshot.PhoneNumber" class="text-danger"></span>
+</div>

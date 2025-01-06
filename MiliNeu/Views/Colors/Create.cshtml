@@ -1,0 +1,39 @@
+﻿@model MiliNeu.Models.ViewModels.ColorViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Color View.</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+            <div class="form-group">
+                <label asp-for="ColorName" class="control-label"></label>
+                <input asp-for="ColorName" class="form-control" />
+                <span asp-validation-for="ColorName" class="text-danger"></span>
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="HexCode" class="control-label"></label>
+                <input asp-for="HexCode" class="form-control" />
+                <span asp-validation-for="HexCode" class="text-danger"></span>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

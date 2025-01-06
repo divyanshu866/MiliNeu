@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MiliNeu.Models.Order> // Use your model type
+@if (Model.Count()>0)
+{
+
+
+    @foreach (var order in Model)
+    {
+        var backgroundColor = "";
+        switch (order.DeliveryStatus.ToString())
+        {
+            case "Pending":
+                backgroundColor = "background-color: yellow;";
+                break;
+            case "Delivered":
+                backgroundColor = "background-color: #5bff5b;";
+                break;
+            case "Processing":
+                backgroundColor = "background-color: #2d51cdc;";
+                break;
+            case "Failed":
+                backgroundColor = "background-color: #ff2424aa;";
+                break;
+            default:
+                backgroundColor = "background-color: white;";
+                break;
+        }
+
+        <tr id="@order.Id">
+
+            <td>
+                <input class="order-select" type="checkbox" name="selectedOrders" value="@order.Id" />
+            </td>
+            <td>@order.Id</td>
+            <td>
+                <a href="@Url.Action("Details", "Orders", new { orderId = order.Id })">
+                    @order.RazorOrderId
+                </a>
+            </td>
+            <td>@order.User.UserName</td>
+            <td>@order.PaymentStatus</td>
+
+            
+
+            <td>@order.Amount</td>
+            <td>@order.DiscountApplied</td>
+            <td>@order.CreatedAt.ToString("g")</td>
+            <td style ="@backgroundColor">@order.DeliveryStatus</td>
+
+            
+
+        </tr>
+
+    }
+
+
+}else
+{
+    <tr>
+        <td colspan="8" class="text-center">No orders found.</td>
+    </tr>
+}

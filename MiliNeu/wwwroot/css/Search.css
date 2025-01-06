@@ -1,0 +1,32 @@
+﻿.search-page-form {
+    display: flex;
+    background-color: transparent;
+    width: 30%;
+    margin: 0 auto;
+}
+
+    .search-page-form .search-input {
+        position: relative;
+        width: 100%; /* Adjust the width of the search input */
+        border-radius: 25px;
+        border: 1px solid #5c5c5c;
+        height: 60%;
+        align-self: center;
+        padding: 1rem;
+        background-color: transparent;
+    }
+
+    .search-page-form .search-btn {
+        margin-left: 10px; /* Adjust the spacing between the input and button */
+        border: 1px solid #5c5c5c;
+        border-radius: 50%;
+        padding: 1rem;
+        height: 60%;
+        aspect-ratio: 1/1;
+        background-color: transparent;
+        align-self: center;
+    }
+    .search-page-form .search-input:focus {
+        outline: none; /* Remove the outline */
+        box-shadow: none; /* Remove any default focus shadow */
+    }

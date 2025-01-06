@@ -1,0 +1,31 @@
+﻿@using MiliNeu.Models.enums
+@model MiliNeu.Models.ViewModels.OrderDisplayVM
+
+@{
+    bool confirmed = false;
+    if (Model.PaymentStatus == "Confirmed")
+    {
+        confirmed = true;
+    }
+    var status = Model.DeliveryStatus;
+}
+
+
+<div class="stepper-wrapper">
+    <div class="stepper-item @(status >= DeliveryStatus.OrderPlaced ? "completed" : "")">
+        <div class="step-counter">•</div>
+        <div class="step-name">Order Placed</div>
+    </div>
+    <div class="stepper-item @(status >= DeliveryStatus.Dispatched ? "completed" : (status == DeliveryStatus.OrderPlaced ? "active" : ""))">
+        <div class="step-counter">•</div>
+        <div class="step-name">Dispatched</div>
+    </div>
+    <div class="stepper-item @(status >= DeliveryStatus.OutForDelivery ? "completed" : (status == DeliveryStatus.Dispatched ? "active" : ""))">
+        <div class="step-counter">•</div>
+        <div class="step-name">Out For Delivery</div>
+    </div>
+    <div class="stepper-item @(status == DeliveryStatus.Delivered ? "completed" : (status == DeliveryStatus.OutForDelivery ? "active" : ""))">
+        <div class="step-counter">•</div>
+        <div class="step-name">Delivered</div>
+    </div>
+</div>

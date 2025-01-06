@@ -1,0 +1,81 @@
+﻿@model MiliNeu.Models.ViewModels.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <!-- Sales Statistics -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Sales Statistics</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Sales:</strong> @Model.TotalSales.ToString("C")</p>
+            <p><strong>Average Order Value:</strong> @Model.AverageOrderValue.ToString("C")</p>
+            <p><strong>Total Orders:</strong> @Model.TotalOrders</p>
+            <p><strong>Orders Processing:</strong> @Model.OrdersProcessing</p>
+            <p><strong>Orders Pending:</strong> @Model.OrdersPending</p>
+        </div>
+    </div>
+
+    <!-- Customer Insights -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Customer Insights</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Customers:</strong> @Model.TotalCustomers</p>
+            <p><strong>New Customers:</strong> @Model.NewCustomers</p>
+            <p><strong>Returning Customers:</strong> @Model.ReturningCustomers</p>
+        </div>
+    </div>
+
+    <!-- Inventory Management -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Inventory Management</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Products:</strong> @Model.TotalProducts</p>
+            <p><strong>Low Stock Products:</strong> @string.Join(", ", Model.LowStockProducts)</p>
+            <p><strong>Top-Selling Products:</strong> @string.Join(", ", Model.TopSellingProducts)</p>
+        </div>
+    </div>
+
+    <!-- Site Traffic and Performance -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Site Traffic and Performance</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Visitors:</strong> @Model.TotalVisitors</p>
+            <p><strong>Conversion Rate:</strong> @Model.ConversionRate.ToString("F2")%</p>
+            <p><strong>Bounce Rate:</strong> @Model.BounceRate.ToString("F2")%</p>
+        </div>
+    </div>
+
+    <!-- User Feedback and Reviews -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>User Feedback and Reviews</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Total Reviews:</strong> @Model.TotalReviews</p>
+            <p><strong>Average Rating:</strong> @Model.AverageRating</p>
+        </div>
+    </div>
+
+    <!-- Marketing Performance -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Marketing Performance</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Discount Code Usage:</strong> @Model.DiscountCodeUsage</p>
+            <p><strong>Revenue from Promotions:</strong> @Model.RevenueFromPromotions.ToString("C")</p>
+        </div>
+    </div>
+</div>

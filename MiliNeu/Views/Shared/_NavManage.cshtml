@@ -1,0 +1,240 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
+
+
+
+<nav class="nav" id="navbar">
+
+
+    <div class="content">
+        <div class="menu">
+            <label for="sidebar-toggle">
+                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="hamburgerIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="hamburgerIconTitle">Menu</title> <path d="M6 7L18 7M6 12L18 12M6 17L18 17" /> </svg><span>MENU</span>
+            </label>
+        </div>
+
+        <div class="logo">
+
+
+
+
+            <a href="/Home/Index">
+                <img src="/Resources/Logo/LogoSimp.png" alt="">
+
+            </a>
+        </div>
+
+        <ul class="navbar-nav">
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="Index">SHOP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="Sale">SALE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Products" asp-action="BestSellers">BESTSELLERS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Collections" asp-action="Index">COLLECTIONS</a>
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav">
+
+
+
+            <!-- Admin-only links -->
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-action="Manage" asp-controller="Home">
+                        <svg width="26px" height="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="controlsVerticalAltIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" color="#000000"> <title id="controlsVerticalAltIconTitle">Controls</title> <circle cx="18" cy="9" r="2" transform="rotate(90 18 9)" /> <path d="M18 4L18 7" /> <path d="M18 11L18 20" /> <circle cx="6" cy="9" r="2" transform="rotate(90 6 9)" /> <path d="M6 4L6 7" /> <path d="M6 11L6 20" /> <circle cx="12" cy="15" r="2" transform="rotate(90 12 15)" /> <path d="M12 4L12 13" /> <path d="M12 17L12 20" /> </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-action="Dashboard" asp-controller="Dashboard">
+                        <svg width="26px" height="26px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="appsIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#fff"> <title id="appsIconTitle">Apps drawer</title> <circle cx="6" cy="6" r="1" /> <circle cx="12" cy="6" r="1" /> <circle cx="18" cy="6" r="1" /> <circle cx="6" cy="12" r="1" /> <circle cx="12" cy="12" r="1" /> <circle cx="18" cy="12" r="1" /> <circle cx="6" cy="18" r="1" /> <circle cx="12" cy="18" r="1" /> <circle cx="18" cy="18" r="1" /> </svg>
+                    </a>
+                </li>
+            }
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+
+                var user = await UserManager.GetUserAsync(Context.User);
+
+                <li class="nav-item account">
+                    <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="personIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="personIconTitle">Person</title> <path d="M4,20 C4,17 8,17 10,15 C11,14 8,14 8,9 C8,5.667 9.333,4 12,4 C14.667,4 16,5.667 16,9 C16,14 13,14 14,15 C16,17 20,17 20,20" /> </svg>
+
+                    </a>
+                </li>
+                <li class="nav-item account">
+                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                        <svg width="26px" height="26px" stroke-width="0.3px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+
+                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <g id="SVGRepo_iconCarrier">
+
+                                <path d="M20.017 14.669L23 13.564l-.012-3.208-2.996-1.085a8.455 8.455 0 0 0-.437-1.05l1.329-2.893-2.277-2.26-2.886 1.351a8.396 8.396 0 0 0-1.052-.436L13.564 1l-3.208.012-1.085 2.996a8.485 8.485 0 0 0-1.05.437L5.328 3.116l-2.26 2.276L4.419 8.28a8.378 8.378 0 0 0-.436 1.052L1 10.436l.012 3.208 2.996 1.085a8.46 8.46 0 0 0 .437 1.05l-1.329 2.893 2.276 2.26 2.887-1.351a8.383 8.383 0 0 0 1.052.436L10.436 23l3.208-.012 1.085-2.996a8.478 8.478 0 0 0 1.05-.437l2.893 1.329 2.26-2.276-1.351-2.887a8.382 8.382 0 0 0 .436-1.052zm-.287 3.73l-1.275 1.285-2.694-1.238-.429.215a7.612 7.612 0 0 1-.928.385l-.452.156-1.01 2.789-1.81.007-1.03-2.779-.456-.151a7.394 7.394 0 0 1-.926-.385l-.43-.21-2.688 1.257-1.286-1.275 1.239-2.695-.216-.43a7.551 7.551 0 0 1-.386-.926l-.155-.452-2.79-1.01-.005-1.81 2.777-1.03.152-.456a7.46 7.46 0 0 1 .384-.927l.212-.43L4.27 5.601l1.275-1.285 2.694 1.238.429-.215a7.612 7.612 0 0 1 .928-.385l.452-.156 1.01-2.789 1.81-.007 1.03 2.779.456.151a7.35 7.35 0 0 1 .925.385l.43.211L18.4 4.27l1.285 1.275-1.239 2.695.216.43a7.551 7.551 0 0 1 .386.926l.155.452 2.79 1.01.005 1.81-2.777 1.03-.152.456a7.46 7.46 0 0 1-.384.927l-.212.43zM12 7.2a4.8 4.8 0 1 0 4.8 4.8A4.8 4.8 0 0 0 12 7.2zm0 8.6a3.8 3.8 0 1 1 3.8-3.8 3.804 3.804 0 0 1-3.8 3.8z" />
+
+
+                            </g>
+
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <label class="search-toggle nav-link" for="search-toggle">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#ffffff"> <title id="searchIconTitle">Search</title> <path color="white" d="M14.4121122,14.4121122 L20,20" /> <circle cx="10" cy="10" r="6" /> </svg>
+                    </label>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>@* <i class="material-icons">shopping_basket</i> *@
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="bagIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="bagIconTitle">Bag</title> <rect width="14" height="12" x="5" y="7" /> <path d="M8 7a4 4 0 1 1 8 0" /> </svg>
+                    </a>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+            }
+            else
+            {
+
+                <li class="nav-item account">
+                    <a class="nav-link" href="/Identity/Account/Login">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="personIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="personIconTitle">Person</title> <path d="M4,20 C4,17 8,17 10,15 C11,14 8,14 8,9 C8,5.667 9.333,4 12,4 C14.667,4 16,5.667 16,9 C16,14 13,14 14,15 C16,17 20,17 20,20" /> </svg>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <label class="search-toggle nav-link" for="search-toggle">
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="searchIconTitle">Search</title> <path d="M14.4121122,14.4121122 L20,20" /> <circle cx="10" cy="10" r="6" /> </svg>
+                    </label>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Identity/Account/Login">
+                        @* <i class="material-icons">shopping_basket</i> *@
+
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="bagIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="bagIconTitle">Bag</title> <rect width="14" height="12" x="5" y="7" /> <path d="M8 7a4 4 0 1 1 8 0" /> </svg>
+
+                    </a>
+                </li>
+
+
+            }
+        </ul>
+    </div>
+</nav>
+
+
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.nav');
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
+
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled'); // Add 'scrolled' class when scrolled more than 50px
+        } else {
+            navbar.classList.remove('scrolled'); // Remove 'scrolled' class when near top
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

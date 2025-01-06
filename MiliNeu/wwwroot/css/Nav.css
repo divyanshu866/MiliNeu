@@ -1,0 +1,469 @@
+﻿/* General styles */
+
+/* Navbar styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding:0 0 0 0;
+    height: 80px;
+    z-index: 100;
+}
+
+nav .menu{
+    flex:1;
+    display:none;
+    
+}
+    nav .menu label {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        color: white;
+        padding-left: 1rem;
+    }
+
+#navbar.hidden {
+    top: -108px; /* Move navbar out of view */
+}
+nav .content ul:nth-child(3) li:nth-child(2) {
+    display: none;
+}
+.nav-top {
+    height: 90px;
+    background-color: transparent;
+/*    margin-top:1rem;*/
+    transition: top 0.3s, background-color 0.3s ease, margin 0.3s,height 0.3s, padding 0.3s; /* Smooth transition for sliding */
+}
+.nav-scrolled {
+    background-color: rgb(255 255 255 / 80%); /* Semi-transparent white */
+    margin-top: 0rem;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.2); /* Lighter border */
+    backdrop-filter: blur(20px); /* Blur the background behind the navbar */
+    -webkit-backdrop-filter: blur(20px); /* Safari compatibility */
+    transition: top 0.3s, background-color 0.3s ease 0.3s; /* Smooth transition for sliding */
+}
+
+
+nav .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+nav .content ul {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+nav .content ul:nth-child(3) {
+    justify-content:center;
+}
+    nav .content ul:last-child li:last-child {
+        padding-right: 1.4rem;
+    }
+    nav .content ul:nth-child(4) .nav-item-settings {
+        display:none;
+    }
+nav .content ul:last-child {
+    justify-content: end;
+    gap: 0.2rem;
+}
+nav .content ul li a, nav .content .menu span {
+    color: white;
+    font-family: Nunito Sans, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform:uppercase;
+
+}
+.nav-top .content ul li a:hover {
+    color: white;
+}
+.nav-scrolled .content ul li a:hover {
+    color: black;
+}
+.nav-scrolled .content ul li a, .nav-scrolled .content .menu span {
+    color: black;
+}
+nav .content ul li {
+    position: relative; /* Required for positioning the ::before element */
+}
+
+nav .content ul:nth-child(3) li::before {
+    content: "";
+    position: absolute;
+    width: 0; /* Start with no width */
+    height: 2px;
+    bottom: 0; /* Position at the bottom of the list item */
+    left: 0;
+    top:32px;
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+.nav-top .content ul:nth-child(3) li::before {
+    background-color:white;
+}
+.nav-scrolled .content ul:nth-child(3) li::before {
+    background-color: black;
+}
+.nav-top .content ul li:hover::before {
+    width: 100%; /* Expand the underline to full width on hover */
+    background-color:white;
+}
+.nav-scrolled .content ul li:hover::before {
+    width: 100%; /* Expand the underline to full width on hover */
+    background-color: black;
+}
+
+nav .content ul:last-child li svg, nav .content .menu svg {
+    stroke: white;
+    stroke-width: 1.5PX;
+    width: 26px;
+    height: 26px;
+}
+.nav-scrolled .content ul:last-child li svg, .nav-scrolled .content .menu svg {
+    stroke: black;
+    stroke-width: 1.5PX;
+    width: 26px;
+    height: 26px;
+}
+
+
+
+
+
+nav .content ul:last-child li :hover {
+    stroke: gray;
+}
+nav .logo {
+    flex: 1;
+    
+    height: 100%;
+    width: max-content;
+}
+nav .logo a {
+   text-decoration:none;
+}
+    nav .logo img {
+        height: 100%;
+        padding:1.4rem;
+        object-fit: contain;
+        width: max-content;
+        padding-left: 5rem;
+    }
+nav .logo label {
+    font-size:1.3rem;
+    color:black;
+    font-weight:100;
+}
+nav .navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-item {
+    margin: 0 10px;
+}
+
+nav .nav-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+nav .nav-link:hover {
+    color: #0056b3;
+}
+
+
+
+nav .search-toggle {
+    color: #6c6c6c;
+    cursor: pointer;
+}
+
+nav .search-toggle i {
+    color: #9b614f;
+    cursor: pointer;
+}
+
+
+
+
+/*Manage Nav*******************************/
+
+.nav-manage {
+    background-color: rgb(255 255 255 / 80%); /* Semi-transparent white */
+    margin-top: 0rem;
+    border-bottom: 1px solid rgba(92, 92, 92, 0.2); /* Lighter border */
+    backdrop-filter: blur(20px); /* Blur the background behind the navbar */
+    -webkit-backdrop-filter: blur(20px); /* Safari compatibility */
+    transition: top 0.3s, background-color 0.3s ease 0.3s; /* Smooth transition for sliding */
+}
+
+.nav-manage .content{
+    max-width:1120px;
+    margin:0 auto;
+}
+.nav-manage .content .menu{
+    justify-content:start;
+    align-items:center;
+}
+.nav-manage .content .menu label svg,
+.nav-manage .content .menu label span{
+    stroke:black;
+    color:black;
+
+}
+.nav-manage .content ul:nth-child(3) li::before {
+    background-color: black;
+}
+
+.nav-manage .content ul li:hover::before {
+    width: 100%; /* Expand the underline to full width on hover */
+    background-color: black;
+}
+.nav-manage .logo {
+    flex:0;
+}
+.nav-manage .logo img {
+    padding: 1.8rem 3rem 1.8rem 0;
+}
+.nav-manage .content ul:nth-child(4) .nav-item-settings {
+    display: initial;
+}
+.nav-manage .content ul:nth-child(4) .nav-item-cart {
+     padding: 0; 
+}
+.nav-manage .content ul:nth-child(3) li:nth-child(2) {
+    display: initial;
+}
+.nav-manage .content ul:nth-child(3) li:nth-child(3),
+.nav-manage .content ul:nth-child(3) li:nth-child(4),
+.nav-manage .content ul:nth-child(3) li:nth-child(5) {
+/*    background: red;*/
+    display: none;
+}
+    .nav-manage .content ul:nth-child(3) li a {
+        color: black;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+.nav-manage .content ul:nth-child(4) .nav-item-orders,
+.nav-manage .content ul:nth-child(4) .nav-item-search {
+    /*background: red;*/
+    display: none;
+}
+.nav-manage .content ul:nth-child(4) li a svg,
+.nav-manage .content ul:nth-child(4) li label svg
+{
+    /*background: red;*/
+    stroke:black;
+}
+.nav-manage .content ul:nth-child(3){
+    justify-content:start;
+}
+
+
+
+
+
+@media screen and (max-width:1300px){
+    nav .content ul:nth-child(3) li a{
+        font-size:1rem;
+    }
+}
+@media screen and (max-width:1050px) {
+    nav .content ul:nth-child(3) {
+        display:none;
+    }
+    nav .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav .content .menu {
+        display:flex;
+    }
+}
+@media screen and (max-width:950px) {
+    .nav-top {
+       
+        margin-top: 0rem;
+    }
+
+    
+}
+@media screen and (max-width:800px) {
+    nav .content .logo img {
+        padding: 1.8rem;
+    }
+}
+@media screen and (max-width:600px) {
+    nav {
+        padding: 0.5rem;
+        padding: 0rem;
+        height: 80px;
+    }
+    nav .content ul:nth-child(3), nav .content ul .account {
+        display: none;
+    }
+        nav .content ul .orders {
+            display: none;
+        }
+
+    nav .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav .content .logo img {
+        padding-left: 0;
+    }
+
+    nav .content .menu label span{
+        display:none;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.................................Search Bar.......................\..............*/
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 500PX;
+    max-width: 100vw;
+    /*background-color: #f6f4ed;*/
+    backdrop-filter: blur(30px);
+    background-color: #ffffffdb;
+    z-index: 101;
+    right: -500px; /*Initial position */
+    top: 0px;
+    gap: 1rem;
+    transition: 0.4s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+    transition: 0.3s cubic-bezier(0.01, 0.28, 0, 0.94);
+}
+
+/*The overlay that darkens the background and disables clicks*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /*Darkens the background */
+    z-index: 100; /*Ensure it's just below the search bar */
+    display: none; /*Initially hidden */
+    pointer-events: none; /*Prevent clicks */
+}
+
+#search-toggle {
+    display: none;
+}
+
+/*Show overlay and allow clicks on it when sidebar is active*/
+#search-toggle:checked ~ .overlay {
+    display: block;
+    pointer-events: all; /*Make the overlay block interactions */
+}
+
+/*Ensure search container is above the overlay*/
+#search-toggle:checked ~ .search-container {
+    right: 0px; /*Slide in the sidebar */
+    z-index: 101; /*Ensure it's above the overlay */
+}
+
+
+
+.search-container .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 80%;
+    height: 50px;
+    padding-left: 15px;
+    border: 1px solid #5c5c5c;
+    margin: 2rem auto;
+}
+
+.search-container hr {
+    margin: 0;
+}
+
+.search-container .search-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1.7rem 3rem 1.7rem 3rem;
+    border-bottom: 1px solid #5c5c5c;
+}
+
+    .search-container .search-head p {
+        margin: 0;
+    }
+
+    .search-container .search-head label i {
+        font-size: 2rem;
+    }
+
+    .search-container .search-head label {
+        display: flex;
+        cursor: pointer;
+    }
+
+.search-container .search-input {
+    border: none;
+    width: 100%; /*Adjust the width of the search input */
+    background-color: transparent;
+}
+
+    .search-container .search-input:focus {
+        border: none; /*Remove the border */
+        outline: none; /*Remove the outline */
+        box-shadow: none; /* Remove any default focus shadow */
+    }
+
+.search-container .search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    aspect-ratio: 1/1;
+    height: 100%;
+    background-color: transparent;
+}
+
+    .search-container .search-btn i {
+        line-height: 0;
+    }
+
+
+

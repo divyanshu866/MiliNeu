@@ -1,0 +1,317 @@
+﻿
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+.collections-container {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    gap: 1rem;
+    margin: 6rem auto;
+}
+
+   
+
+    .collections-container .content {
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+
+ 
+
+    .collections-container .content .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+     
+        .details {
+            height: 8vw;
+            background-color: black;
+        }
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%
+}
+
+    .description p {
+        color: white;
+        align-content: center;
+        font-size: 4rem;
+        margin:0;
+    }
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+
+
+
+
+
+
+
+
+
+.collections-container .media-scroller-wrapper {
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 1240px;
+    margin: 0 auto 8rem auto;
+}
+
+.collections-container .media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    grid-auto-columns: 22%;
+    width: 100%;
+    height: fit-content;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    overscroll-behavior-inline: contain;
+}
+/*
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+}*/
+
+    .snaps-inline > * {
+        scroll-snap-align: start;
+    }
+.collections-container .content button {
+    color: black;
+    font-size: 2.5rem;
+}
+/* Prev and Next button styling */
+.media-scroller-wrapper .prev, .media-scroller-wrapper .next {
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 3rem;
+    top: 20%;
+    z-index: 100;
+    height: 54%;
+}
+
+.media-scroller-wrapper .prev {
+    left: -60px; /* Adjust this value based on the desired position */
+}
+
+.media-scroller-wrapper .next {
+    right: -60px; /* Adjust this value based on the desired position */
+}
+
+.media-scroller-wrapper .prev:hover {
+    color:black;
+}
+
+.collections-container .next:hover {
+    color:black;
+}
+
+.collections-container .card-wrapper {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    letter-spacing: 0.14px;
+    flex-direction: column;
+    background-color: white;
+    height: min-content;
+    margin-top: 20px;
+    transition: 0.2s ease-out;
+    /*border-radius: 5px;*/
+    padding-bottom: 1rem;
+}
+/* Base styles */
+.collections-container .sale-tag {
+    position: absolute;
+    display: inline-block; /* Inline-block for wrapping text */
+    background-color: darkblue; /* Background color */
+    color: #fff; /* Text color */
+    padding: 0.2rem 0.4rem; /* Space inside (use rem for scaling) */
+    border-radius: 0px; /* Full rounded corners for pill shape */
+    font-size: 0.7rem; /* Base font size for accessibility */
+    font-weight: 600; /* Slightly bold text */
+    text-align: center; /* Center text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth hover effects */
+    margin: 0.5rem; /* Margin around the pill tag */
+    cursor: pointer; /* Pointer cursor to make it feel interactive */
+}
+
+    .collections-container .sale-tag p {
+        margin: 0; /* Remove paragraph default margin */
+        text-transform: uppercase; /* Make text uppercase */
+    }
+.collections-container .card-wrapper .image-wrapper {
+    position: relative;
+    width: 100%;
+    /*border-radius: 3px;*/
+    aspect-ratio: 1280 / 1919; /* Set an aspect ratio (3:2 in this case, adjust as needed) */
+    overflow: hidden; /* Ensures that images don't overflow the container */
+}
+
+    .collections-container .card-wrapper .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures that images are cropped to fit the container */
+        transition: opacity 0.2s ease-in; /* Smooth transition for hover effect */
+    }
+
+
+.collections-container .card-wrapper .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-top: 1.5rem;
+}
+
+    .collections-container .card-wrapper .card-info .name-wrapper {
+    }
+
+        .collections-container .card-wrapper .card-info .name-wrapper p {
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #252729;
+        }
+
+
+
+
+
+
+
+
+    .collections-container .card-wrapper .card-info .product-price {
+        display: flex; /* Ensures the prices are on the same line initially */
+        flex-wrap: wrap; /* Allows wrapping to the next line on smaller screens */
+        gap: 0.5rem; /* Adds spacing between prices */
+    }
+
+        .collections-container .card-wrapper .card-info .product-price span:nth-child(2) {
+            text-decoration: line-through; /* Line-through style for original price */
+            color: gray;
+            font-size: 1rem; /* Adjust font size as needed */
+        }
+
+        .collections-container .card-wrapper .card-info .product-price span:nth-child(1) {
+            color: #000b89; /* Highlight discounted price */
+            font-weight: 500;
+            font-size: 1rem; /* Adjust font size as needed */
+        }
+
+
+
+.collections-container .card-wrapper .variant-wrapper {
+    padding-top: calc(1.5rem - 11px);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.card-wrapper:hover {
+    cursor: pointer;
+    display: flex;
+    transform: scale(0.99);
+    transition: 0.2s ease-out;
+    opacity: 0.7;
+}
+/*.collections-container .card-wrapper .image-wrapper:hover img{
+        transform:scale(1.05);
+        transition-duration:0.3s;
+    }
+    .collections-container .card-wrapper .image-wrapper:hover .price-wrapper {
+        background-color: black;
+        transition-duration: 0.3s;
+    }*/
+
+.product-view .product-details .card-footer {
+    background-color: #fdfcfb;
+}
+
+    .product-view .product-details .card-footer a {
+        color: black;
+        text-decoration: none;
+    }
+
+@media(max-width: 1035px) {
+    .collections-container .card-wrapper .name-wrapper p {
+        padding: 0.2rem 0.5rem 0rem 0rem;
+        font-size: 1rem;
+    }
+
+    .collections-container .card-wrapper .price-wrapper p {
+        padding: 0em 0em 0rem 0rem;
+        font-size: 0.9rem;
+    }
+
+    .description p {
+        color: white;
+        align-content: center;
+        font-size: 3rem;
+        
+    }
+}
+
+@media(max-width: 900px) {
+    .collections-container .card-wrapper .name-wrapper p {
+        padding: 0.2rem 0.5rem 0rem 0rem;
+        font-size: 0.8rem;
+    }
+
+    .collections-container .card-wrapper .price-wrapper p {
+        padding: 0em 0em 0rem 0rem;
+        font-size: 0.7rem;
+    }
+
+    .description p {
+        color: white;
+        align-content: center;
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 760px) {
+    .collections-container {
+        display: flex;
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+    .details{
+        height:10vh;
+    }
+      
+        .description{
+        }
+    .description p {
+        color: white;
+        align-content: center;
+        font-size: 2rem;
+    }
+    .collections-container .media-scroller {
+        grid-auto-columns: 35%;
+    }
+}

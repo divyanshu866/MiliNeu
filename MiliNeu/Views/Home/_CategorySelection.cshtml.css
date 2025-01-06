@@ -1,0 +1,46 @@
+﻿
+.category-container {
+    display: flex;
+    max-width: 1240px;
+    margin: 5rem auto 1rem auto;
+    overflow: hidden;
+
+}
+
+    .category-container .category {
+        position: relative;
+        overflow: hidden;
+        height:100%;
+        width:100%;
+    }
+
+
+        .category-container .category a {
+            display: block; /* Ensures the anchor wraps the entire image */
+        }
+
+        .category-container .category img {
+            width: 100%;
+            aspect-ratio: 11/16;
+            transition-duration: 0.3s;
+            object-fit: cover;
+        }
+
+.category:hover img {
+    transition-duration: 0.5s;
+    transform: scale(1.02); /* Zoom in effect */
+}
+
+.category-container .category label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the label */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px; /* Adds padding around the text */
+    border-radius: 5px;
+    cursor: pointer;
+}

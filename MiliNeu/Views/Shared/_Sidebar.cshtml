@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
+<input type="checkbox" id="sidebar-toggle">
+
+<aside class="sidebar-container">
+    <div class="sidebar-head">
+        <p>Sidebar</p>
+
+        <label for="sidebar-toggle">
+            <i class="material-icons">close</i>
+
+        </label>
+
+    </div>
+    <div class="sidebar-items">
+        <ul>
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+                <li>
+                    <a href="#"> <i class="material-icons">people</i>@User.Identity?.Name</a>
+                </li>
+            }
+            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i> NEW IN</a></li>
+            <li>
+                <a asp-controller="Products" asp-action="Sale">
+                    <i class="material-icons">dashboard</i>
+                    SALE
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Products" asp-action="Index">
+                    <i class="material-icons">dashboard</i>
+                    Products
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Collections" asp-action="Index">
+                    <i class="material-icons">assessment</i>
+                    Collections
+                </a>
+            </li>
+
+
+
+
+
+
+            @* Get user info for basket *@
+            @if (SignInManager.IsSignedIn(Context.User))
+            {
+                var user = await UserManager.GetUserAsync(Context.User);
+                <li>
+                    <a asp-area="" asp-controller="Orders" asp-action="Index"
+                       asp-route-userId=@user.Id>Orders</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId><i class="material-icons">shopping_cart</i> BASKET</a>
+                </li>
+
+            }
+            @* If not logged in redirect to login page *@
+            else
+            {
+
+                <li>
+                    <a href="/Identity/Account/Login"><i class="material-icons">shopping_cart</i> BASKET</a>
+                </li>
+            }
+
+
+
+
+        </ul>
+
+    </div>
+    <div class="sidebar-items">
+        <ul>
+            <partial name="_LoginPartial.cshtml" />
+        </ul>
+    </div>
+
+
+
+
+</aside>

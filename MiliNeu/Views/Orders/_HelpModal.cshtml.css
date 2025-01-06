@@ -1,0 +1,266 @@
+﻿
+.help-modal {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen width */
+    height: 100%; /* Full screen height */
+    z-index: 200;
+    scroll-behavior: unset;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    margin: 8% auto;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth entrance animation */
+}
+    .wrapper textarea {
+        border: 1px solid #5c5c5c;
+    }
+    .wrapper h3 {
+        color:black;
+    }
+
+    .wrapper ::deep form {
+        padding: 60px 1rem 1rem 1rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        transition: left 0.5s, opacity 0.2s;
+        gap: 1rem;
+    }
+
+   
+    .help-modal label {
+        padding: 0.5rem;
+        background-color: beige;
+        cursor:pointer;
+    }
+.help-modal label:hover {
+    
+    color: black;
+
+}
+
+      
+.help-modal .wrapper form .btn-box{
+    position:absolute;
+    display:flex;
+    width:100%;
+    height:40px;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    bottom:34px;
+    left:0px;
+    padding:0 1rem;
+}
+.help-modal .wrapper .btn-box button {
+    border: 1px solid black;
+    border-radius:5px;
+    padding: 0.5rem 1rem;
+    color: black;
+    height: 100%;
+    width:100%;
+}
+.help-modal .wrapper .btn-box .cancel{
+    background-color:white;
+}
+
+.help-modal .wrapper .btn-box #Back2{
+    background-color:white;
+}
+.help-modal .wrapper .btn-box #Submit {
+    /*background-color: #2d72fa;*/
+    background-color:white;
+}
+::deep #help-modal-description {
+    padding: 7rem 2rem 2rem 2rem;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    left: 450px;
+    gap: 0.5rem;
+}
+
+::deep #help-modal-description {
+    opacity: 0;
+    left: 450px;
+}
+
+.step-row {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+}
+
+.step-col {
+    width: 50%;
+    text-align: center;
+    color: white;
+    position: relative;
+    transition:color 1s;
+}
+.step-col:last-child {
+    
+    color: black;
+}
+#progress {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    /*background: linear-gradient(to right,#ff105f,#ffad06);*/
+    background-color: black;
+    color:white;
+    transition: 1s;
+}
+
+    #progress::after {
+        content: '';
+        height: 0;
+        width: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        position: absolute;
+        right: -20px;
+        top: 0;
+        /*border-left: 20px solid #ffad06; */
+        border-left: 20px solid black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.modal {
+    display: none;*/ /* Hidden by default */
+    /*position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);*/ /* Semi-transparent background */
+/*}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-step {
+    text-align: center;
+}
+
+.options {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .options li {
+        margin: 10px 0;
+    }
+
+.reason-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .reason-btn:hover {
+        background-color: #0056b3;
+    }
+
+#helpForm input,
+#helpForm textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#helpForm button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    #helpForm button#backButton {
+        background-color: #ccc;
+    }
+
+    #helpForm button[type="submit"] {
+        background-color: #007bff;
+        color: white;
+    }
+
+    #helpForm button:hover {
+        opacity: 0.9;
+    }*/

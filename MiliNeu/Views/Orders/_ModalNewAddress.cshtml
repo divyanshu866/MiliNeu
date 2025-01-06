@@ -1,0 +1,34 @@
+﻿@model MiliNeu.Models.ViewModels.AddressVM
+
+<div id="modal-address" class="cmodal">
+    <div class="cwrapper">
+        <h2>Update Address</h2>
+        <form id="new-address-form" asp-controller="Addresses" asp-action="UpdateOrderAddress">
+            @await Html.PartialAsync("_OrderAddressForm", Model)
+            <button class="btn-close-address-modal">Close</button>
+            <button class="btn-close-address-update">Update</button>
+        </form>
+        
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

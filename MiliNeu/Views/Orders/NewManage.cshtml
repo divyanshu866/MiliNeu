@@ -1,0 +1,97 @@
+﻿@model MiliNeu.Models.ViewModels.PagerVM<Order>
+
+@{
+    ViewData["Title"] = "Manage Orders";
+}
+
+<p class="page-title">Manage Orders</p>
+
+<!-- Filters Section -->
+<section class="manage-orders">
+    <div class="filters">
+        <ul>
+            @foreach (var status in ViewBag.StatusOptions)
+            {
+                var isActive = ViewBag.filter == status ? "active" : "";
+                <li class="@isActive">
+                    <a href="#" onclick="getFilteredOrders('@status')">@status</a>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Bulk Update and Search -->
+    <div class="action-search">
+        <div class="bulk-update-status">
+            <select id="newbulkStatus" name="newbulkStatus">
+                @foreach (var status in ViewBag.StatusOptions)
+                {
+                    <option value="@status">@status</option>
+                }
+            </select>
+            <button type="button" onclick="submitForm()" class="btn btn-primary">Update</button>
+        </div>
+
+        <form id="searchForm" asp-action="Manage" method="get">
+            <input type="hidden" name="filter" value="@ViewBag.filter" />
+            <input type="search" name="searchTerm" value="@ViewBag.searchTerm" placeholder="Search order" />
+            <button type="submit"><i class="material-icons">search</i></button>
+        </form>
+    </div>
+
+    <!-- Orders Table -->
+    <div id="ordersContainer">
+        <form id="orderForm" asp-action="BulkUpdateStatus" method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Order ID</th>
+                        <th>Razor Pay Order ID</th>
+                        <th>Username</th>
+                        <th>Payment</th>
+                        <th>Amount</th>
+                        <th>Discount Applied</th>
+                        <th>Created At</th>
+                        <th>Fulfilment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @await Html.PartialAsync("_OrderRows", Model.Items)
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <!-- Pagination -->
+    @Html.RenderPartialAsync("_Pagination",Model);
+</section>
+
+<!-- JavaScript -->
+<script>
+    function getFilteredOrders(filter) {
+        $.ajax({
+            url: '@Url.Action("GetFilteredOrders", "Orders")',
+            type: 'GET',
+            data: { filter: filter, searchTerm: '@ViewBag.searchTerm' },
+            success: function (response) {
+                $('#ordersContainer tbody').html(response);
+                updateActiveFilter(filter);
+            },
+            error: function () {
+                console.log("Failed to fetch orders.");
+            }
+        });
+    }
+
+    function updateActiveFilter(filter) {
+        $('.filters ul li').removeClass('active');
+        $('.filters ul li').filter(function () {
+            return $(this).text().trim() === filter;
+        }).addClass('active');
+    }
+
+    function submitForm() {
+        $("#orderForm").submit();
+    }
+</script>

@@ -1,0 +1,88 @@
+﻿@model List<MiliNeu.Models.Product>
+
+@{
+
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+<div class="gallery">
+
+    @foreach (var product in Model)
+ {
+        <div class="card-wrapper fade-out-left">
+            <div class="image-wrapper">
+                <a href="/products/Details/@product.Id">
+                    <!-- Default Image -->
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain).Path == null)
+                    {
+                        <img class="main-image" decoding="async" loading="lazy"
+                             src="/Resources/Logo/LogoSimp.png"
+                             alt="@product.Name">
+                    }
+                    else
+                    {
+                        <img class="main-image" decoding="async" loading="lazy"
+                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
+                             alt="@product.Name">
+                    }
+                   
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path==null)
+                    {
+                        <img class="hover-image" decoding="async" loading="lazy"
+                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
+                        alt="@product.Name">
+                    }
+                    else
+                    {
+                        <img class="hover-image" decoding="async" loading="lazy"
+                         src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path}")"
+                         alt="@product.Name">
+                    }
+
+                        
+                        
+                        
+
+                    
+                </a>
+
+
+            </div>
+            @if (product.DiscountedPrice > 0)
+            {
+                <div class="sale-tag"><P>SALE</P></div>
+            }
+            <div class="card-info">
+                <div class="name-wrapper">
+                    <p>@product.Name</p>
+                </div>
+                @if (product.DiscountedPrice > 0)
+                {
+
+                   
+
+                    <div class="product-price">
+                        <span class="discounted-price">INR @product.DiscountedPrice</span>
+                        <span class="original-price">INR @product.Price</span>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="product-price">
+                        <span class="original-price">INR @product.Price</span>
+                    </div>
+                }
+                
+            </div>
+            @if (product.Variants.Count>1)
+            {
+                <div class="variant-wrapper">
+                    <p>@product.Variants.Count Variants</p>
+                </div>
+            }
+           
+            
+
+        </div>
+    }
+</div>

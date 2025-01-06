@@ -1,0 +1,86 @@
+﻿@model MiliNeu.Models.ViewModels.ProductEditCombinedVM
+
+@{
+    ViewData["Title"] = "Edit";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+<h1>Product Edit View</h1>
+<div class="product-edit">
+    <div class="variants-container">
+        <div class="variant-btns">
+            @foreach (var variant in Model.ProductVariants)
+            {
+                <div class="variant-option">
+
+                    @if (variant.ColorId == Model.ProductEditViewModel.SelectedProductVariant.ColorID)
+                    {
+
+                        <input id="@variant.ColorId" checked type="radio" name="selectedColorId" value=@variant.Id onclick="EditProductVariant(@Model.ProductEditViewModel.productId,@variant.Id)" />
+                    }
+                    else
+                    {
+                        <input id="@variant.ColorId" type="radio" name="selectedColorId" value=@variant.Id onclick="EditProductVariant(@Model.ProductEditViewModel.productId,@variant.Id)" />
+
+                    }
+                    <label for="@variant.ColorId">@variant.Color.Name</label>
+                </div>
+
+            }
+            <div class="variant-option">
+                <a class="add-color-link" href="/Products/AddProductVariant?productId=@Model.ProductEditViewModel.productId"> NEW</a>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+
+
+
+
+    <div id="preview">
+        @await Html.PartialAsync("_ProductEditPreview", Model.ProductEditViewModel)
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script async src="~/js/ImagePreview.js"></script>
+
+
+    <script>
+        function EditProductVariant(productId, variantId) {
+
+
+            $.ajax({
+                url: '@Url.Action("EditProductVariant", "Products")',
+                type: 'GET',
+
+                data: {
+                    productId: productId,
+                    VariantId: variantId
+                },
+
+                success: function (response) {
+                    $('#preview').html(response);  // Insert the HTML into the container
+                    console.log("Images recieved");
+                    
+                },
+                error: function (xhr, status, error) {
+                    console.log("Failed");
+                }
+            })
+        }
+    </script>
+}

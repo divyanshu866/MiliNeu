@@ -1,0 +1,301 @@
+﻿*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+
+/* For the details page, align variant options to the left */
+.product-view .variants-container {
+    display: flex;
+    flex-direction: column; /* Align the items vertically to the left */
+
+    justify-content: flex-start; /* Align to the start (left side) */
+    align-items: flex-start; /* Ensure items are left-aligned */
+    margin: 0rem 1rem 1rem 0rem;
+}
+
+/* Optional: If you want to adjust the width or size */
+/*.details-page .variant-option label {
+    width: auto;*/ /* Adjust the width so that it doesn’t force square sizes */
+    /*text-align: left;*/ /* Align the text inside to the left */
+    /*line-height: 1.5;*/ /* Adjust line height to match a normal label */
+/*}*/
+
+
+
+/*Style for the size selector container.......................................FINAL............................... */
+
+.product-view .size-container {
+    display: flex;
+    flex-direction: column;
+    font-family: Nunito Sans, sans-serif;
+    font-size: 0.875em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    gap: 0.3rem;
+    color: #5c5c5c;
+    margin: 2rem 1rem 1rem 0rem;
+}
+    .product-view .size-container .size-header {
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: 0em;
+    }
+        .product-view .size-container .size-header a {
+            color: #5c5c5c;
+            font-weight: 600;
+        }
+
+.product-view .size-box {
+    display: flex;
+    gap: 0.5rem; /* Space between the size boxes */
+    justify-content: start;
+    flex-wrap:wrap;
+}
+/* Hide the default radio button for size options */
+.product-view .size-btn input[type="radio"] {
+    display: none;
+}
+
+/* Style the label to look like a square button (same as variant radio buttons) */
+.product-view .size-btn label {
+    display: inline-block;
+    padding: 10px;
+    padding: 0px 20px;
+    text-align: center;
+    background-color:white;
+    color: #5c5c5c;
+    border: 1px solid #d7d6d0;
+    cursor: pointer;
+    /*transition: background-color 0.3s, border-color 0.3s;*/
+    transition: border-color .2s ease;
+    box-sizing: border-box;
+    line-height: 40px; /* Center the text vertically */
+}
+
+/* Style for the checked state */
+.product-view .size-btn input[type="radio"]:checked + label {
+    box-shadow: inset 0 0 0 1px #5c5c5c;
+    border-color: #5c5c5c;
+}
+
+/* Hover effect */
+.product-view .size-btn label:hover {
+    border-color: #999;
+}
+
+/* Additional styling to match the layout */
+.product-view .size-selector {
+    display: flex;
+    flex-wrap: wrap; /* Wrap the sizes to the next line if needed */
+    justify-content: flex-start; /* Align to the left */
+}
+
+
+
+/*............................................PAGE-LAYOUT..................................................*/
+
+
+.product-view {
+    display: flex;
+    justify-content: center;
+    max-width: 1320px;
+    margin: 45px auto;
+    padding: 0 2rem;
+}
+.product-preview {
+    width: 63%;
+}
+
+.product-details {
+    width:37%;
+    
+}
+.title-product{
+    margin: 0rem 1rem 2rem 0rem;
+}
+.product-details .details-container {
+    position: sticky;
+    top: 120px;
+}
+.product-details .title-product h2 {
+    text-transform:uppercase;
+    font-family: Nunito Sans, sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #343534; 
+}
+.product-details .price-container {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2rem 1rem 0rem 0rem;
+}
+    .product-details .tax-container p {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        font-weight:400;
+        align-self: center;
+        margin-top:0.1rem;
+    }
+    .product-details .price-container p {
+        margin: 0;
+        padding: 0;
+    }
+
+.product-details .price-container .original-price p {
+    font-size: 1.2rem;
+    color: #a9a8a4;
+    text-decoration: line-through;
+}
+.product-details .price-container .discounted-price p {
+    font-size: 1.2rem;
+}
+.product-details .buy-now-btn {
+    background-color: #181f9c;
+    color: white;
+    font-weight: 500;
+    border-radius: 30PX;
+    border:none;
+    padding: 15px;
+    width: 100%;
+    margin: 1rem 1rem 1rem 0rem;
+    transition-duration: 0.5s;
+}
+    .product-details .buy-now-btn:hover {
+        background-color: midnightblue;
+    }
+.product-details .add-to-cart-btn {
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    border-radius: 30PX;
+    padding: 15px;
+    width: 100%;
+    margin: 1rem 1rem 1rem 0rem;
+    transition-duration: 0.5s;
+}
+
+    .product-details .add-to-cart-btn:hover {
+        background-color: black;
+        color: white;
+    }
+.product-view .details-footer a{
+    text-decoration:none;
+    color:black;
+}
+
+
+
+
+
+
+@media screen and (max-width:1079px){
+
+    .product-view {
+        gap:3rem;
+    }
+    .product-preview {
+        width: 50%;
+    }
+
+    .product-details {
+        width: 50%;
+    }
+    .image-viewer img {
+
+       
+    }
+}
+
+
+@media screen and (max-width:1023px) {
+
+    .product-view {
+        gap: 3rem;
+        padding:0 1rem;
+    }
+
+    .product-preview {
+        width: 50%;
+    }
+
+    .product-details {
+        width: 50%;
+    }
+
+    .image-viewer img {
+    }
+}
+
+@media screen and (max-width:768px) {
+    .product-view {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+    .product-preview {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding:0 1.5rem;
+    }
+    .product-details .details-container {
+        position: static;
+    }
+
+
+    .product-details {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .product-view .size-container {
+       
+        margin: 1rem 1rem 1rem 0rem;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+    .product-view {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+    .product-preview {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+    .image-viewer .image-grid {
+        display:none;
+    }
+
+
+    .image-thumbnails {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: auto 0;
+        width: 100%;
+        justify-content: start;
+    }
+
+    .product-details {
+        padding: 3rem 0.5rem 2rem 0.5rem;
+        width: 100%;
+    }
+    
+    .product-view .size-container {
+        margin: 1rem 1rem 1rem 0rem;
+    }
+    .product-view .size-btn label {
+        padding:0 16px;
+    }
+}

@@ -1,0 +1,406 @@
+﻿@using MiliNeu.Models.enums
+@model MiliNeu.Models.ViewModels.OrderDisplayVM
+
+@{
+    ViewData["Title"] = "Index";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+    bool confirmed = false;
+    if (Model.PaymentStatus == "Confirmed")
+    {
+        confirmed = true;
+    }
+    var status = Model.DeliveryStatus;
+}
+
+@* <p class="page-title">Order Status</p> *@
+
+
+
+
+<div class="order-details">
+
+
+
+    <section class="order-details-left">
+        <div class="order-info-container">
+            <div class="status-header">
+                <p>Order #@Model.OrderId</p>
+                @if (confirmed)
+                {
+                    <p style="color:green">Thank You @Model.Username!</p>
+                }
+                else
+                {
+                    <p style="color:red">Payment Failed!</p>
+                }
+            </div>
+            <section class="confirmation-status">
+                @if (confirmed)
+                {
+                <p>Your order is confirmed</p>
+                <p>You'll receive a confirmation email with your order number shortly.</p>
+
+                }
+                else
+                {
+                    <p>Your order is not yet confirmed</p>
+                    <p>Complete payment to confirm order. </p>
+                }
+            </section>
+            
+            @if (confirmed)
+            {
+                
+                if (Model.ReturnStatus == null)
+                {
+                    if (Model.DeliveryStatus != DeliveryStatus.Delivered)
+                    {
+                        <div class="estimated-delivery">
+                            <h4>Estimated delivery</h4>
+                            <p>@Model.EstimatedDeliveryDate</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="estimated-delivery">
+                            <h4>Delivered</h4>
+                            <p>@Model.EstimatedDeliveryDate "Palceholder"</p>
+                        </div>
+                    }
+                }else
+                {
+                    if (Model.ReturnStatus!=ReturnStatus.RefundInitiaded) //When NOT Completed
+                    {
+                        <div class="estimated-delivery">
+                            <h4>Return Initiated</h4>
+                            <p>@Model.EstimatedDeliveryDate</p>
+                        </div>
+                    }
+                    else //When Completed
+                    {
+                        <div class="estimated-delivery">
+                            <h4>Refunded</h4>
+                            <p>@Model.EstimatedDeliveryDate</p>
+                        </div>
+                    }
+                    
+                }
+                
+               
+
+                if (Model.ReturnStatus == null)
+                {
+                    @await Html.PartialAsync("_StepProgress", Model)
+
+                }
+                else
+                {
+                    @await Html.PartialAsync("_StepProgressReturn", Model)
+
+                }
+
+
+                <div class="order-functions">
+                    <a href="#">Contact Support</a>
+                    <button class="btn-address-modal">Change Address</button>
+                    @if (Model.DeliveryStatus==DeliveryStatus.Delivered)
+                    {
+                        <button id="helpLink">Report Issue</button>
+
+                    }
+                </div>
+
+
+            }
+           
+            <section class="customer-information">
+                
+                <div>
+                    @* <div>
+                        <p>Esitmated delivery</p>
+                        <p>@Model.EstimatedDeliveryDate</p>
+                    <p>@Model.DeliveryStatus</p>
+                    </div> *@
+                    <div>
+                        <p>Customer Information</p>
+                        <p>Contact Information</p>
+                        <p>@Model.ShippingAddress.Email</p>
+                        <p>@Model.ShippingAddress.PhoneNumber</p>
+                    </div>
+                    
+                </div>
+                <div>
+                    <br />
+                    <div class="payment-method">
+                        <p>Payment Method</p>
+                        <p>ending with - DUM-0407</p>
+                    </div>
+                    <div class="billing-address">
+                        <p>Billing address</p>
+                        <p>@Model.ShippingAddress.FirstName<span> </span>@Model.ShippingAddress.LastName</p>
+                        <p>@string.Concat(Model.ShippingAddress.ApartmentSuite, ", ",
+                            Model.ShippingAddress.StreetAddress, ", ",
+                                     
+                                     Model.ShippingAddress.PostalCode
+                                     
+                        )</p>
+                        <p>@string.Concat(Model.ShippingAddress.City, ", ",
+                        Model.ShippingAddress.Country)</p>
+                    </div>
+                    
+                </div>
+            </section>
+
+
+
+
+
+            @await Html.PartialAsync("_ModalNewAddress",Model.AddressVM)
+
+
+
+            <div class="order-container">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="order-item">
+                        <div class="item-thumbnail">
+                            <img src="@($"{imageBasePath}{item.Images.FirstOrDefault(i=>i.IsMain).Path}")" />
+                            <div class="quantity">
+                                <p>@item.Quantity</p>
+                            </div>
+
+                        </div>
+                        <div class="item-details">
+                            <p>@item.ProductName</p>
+                            <p>@($"{item.Size} / {item.VariantName}")</p>
+                        </div>
+                        <div class="item-price">
+                            @if (item.DiscountedPrice > 0)
+                            {
+
+                                <p><span>@($"{"INR " + item.Price} ")</span> <span>@($"{"INR " + item.DiscountedPrice}")</span></p>
+                            }
+                            else
+                            {
+                                <p>@($"{"INR " + item.Price}")</p>
+                            }
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <div class="order-summary">
+                @*  <p><span> Subtotal</span><span>@("INR " + Model.Subtotal) </span> </p>
+            <p><span>Discount</span><span>@("- INR " + Model.Discount) </span> </p>
+            <p><span>Shipping</span><span>@("INR " + Model.Shipping) </span> </p>
+            <p><span>Total</span><span>@("INR " + Model.Total) </span> </p>
+            *@
+            </div>
+
+            @if (!confirmed)
+            {
+                <a asp-action="GetInitiatePayment" asp-controller="Orders" asp-route-orderId="@Model.OrderId">Retry payment</a>
+            }
+            
+            @await Html.PartialAsync("_HelpModal",Model.OrderId)
+            
+        </div>
+
+        
+
+    </section>
+    <div class="order-details-right">
+
+        <div class="order-container">
+            @foreach (var item in Model.Items)
+            {
+                <div class="order-item">
+                    <div class="item-thumbnail">
+                        <img src="@($"{imageBasePath}{item.Images.FirstOrDefault(i=>i.IsMain).Path}")" />
+                        <div class="quantity">
+                            <p>@item.Quantity</p>
+                        </div>
+
+                    </div>
+                    <div class="item-details">
+                        <p>@item.ProductName</p>
+                        <p>@($"{item.Size} / {item.VariantName}")</p>
+                    </div>
+                    <div class="item-price">
+                        @if (item.DiscountedPrice > 0)
+                        {
+
+                            <p><span>@($"{"INR " + item.Price} ")</span> <span>@($"{"INR " + item.DiscountedPrice}")</span></p>
+                        }
+                        else
+                        {
+                            <p>@($"{"INR " + item.Price}")</p>
+                        }
+
+                    </div>
+                </div>
+            }
+
+
+        </div>
+        <div class="order-summary">
+            @*  <p><span> Subtotal</span><span>@("INR " + Model.Subtotal) </span> </p>
+            <p><span>Discount</span><span>@("- INR " + Model.Discount) </span> </p>
+            <p><span>Shipping</span><span>@("INR " + Model.Shipping) </span> </p>
+            <p><span>Total</span><span>@("INR " + Model.Total) </span> </p>
+            *@
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    
+    
+
+
+    //Togling Address Modal
+
+
+    
+    // Define reusable functions
+    function openModal(modalId) {
+        const Modal =  document.getElementById(modalId);
+        Modal.style.display = 'flex'
+    }
+
+    function closeModal(modalId) {
+        const Modal =  document.getElementById(modalId);
+        Modal.style.display = 'none'
+    }
+
+    // Bind event listeners to buttons
+    document.getElementsByClassName('btn-address-modal')[0].addEventListener('click', () => {
+        openModal("modal-address");
+    });
+
+        var CloseButtons = document.getElementsByClassName('btn-close-address-modal');
+        Array.from(CloseButtons).forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            console.log("sdxcsdcdscsdcsd");
+            event.preventDefault(); // Prevents the default action (like form submission)
+            closeModal("modal-address"); // Closes the modal by passing the modal id
+        });
+    });
+
+    
+    
+    
+    
+    //Togling New and Saved addresses forms
+
+    const savedAddressForm = document.getElementById("saved-address-form");
+    const NewAddressForm = document.getElementById("new-address-form");
+
+        document.querySelectorAll('input[name="address"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            const selectedAddress = document.querySelector('input[name="address"]:checked');
+            if (selectedAddress.value=="saved") {
+
+                savedAddressForm.style.display = "initial";
+                NewAddressForm.style.display = "none";
+
+            }
+            if (selectedAddress.value=="new") {
+
+                savedAddressForm.style.display = "none";
+                NewAddressForm.style.display = "initial";
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+@* // Assuming you have a status variable indicating the shipping stage
+        const shippingStatus = "Order Placed"; // Replace with dynamic status
+        const steps = document.querySelectorAll(".step");
+
+        steps.forEach(step => {
+        const stepLabel = step.querySelector("p").innerText;
+        if (stepLabel === shippingStatus) {
+        step.classList.add("active");
+        } else if (stepLabel === "Order Placed" || stepLabel === "Dispatched") { // Update this logic as needed
+        step.classList.add("completed");
+        }
+        }); *@
+
+
+
+
+
+
+
+
+@* 
+<div class="cart-wrapper">
+
+
+    
+
+        <div class="gallery">
+
+    @foreach (var orderItem in Model.Items)
+    {
+
+    var product = orderItem.Product;
+
+
+    <div class="card-wrapper">
+    <div class="image-wrapper">
+    <a href="/products/Details/@Html.DisplayFor(modelItem => product.Id)">
+    <img src="\Resources\Items\@product.Path">
+    </a>
+
+
+    </div>
+    <div class="description-wrapper">
+    <p>@product.Name</p>
+    </div>
+
+    <div class="price-wrapper">
+    <p>Rs.@product.Price</p>
+    </div>
+
+    </div>
+    }
+    </div>
+    
+
+
+
+
+</div>
+
+ *@

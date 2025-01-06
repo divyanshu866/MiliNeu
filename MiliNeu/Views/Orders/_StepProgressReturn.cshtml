@@ -1,0 +1,28 @@
+﻿@using MiliNeu.Models.enums
+@model MiliNeu.Models.ViewModels.OrderDisplayVM
+
+@{
+    bool confirmed = false;
+    if (Model.PaymentStatus == "Confirmed")
+    {
+        confirmed = true;
+    }
+    var status = Model.ReturnStatus;
+}
+
+
+<div class="stepper-wrapper">
+    <div class="stepper-item @(status >= ReturnStatus.Initiated ? "completed" : "")">
+        <div class="step-counter">•</div>
+        <div class="step-name">Return Initiated</div>
+    </div>
+    <div class="stepper-item @(status >= ReturnStatus.Received ? "completed" : (status == ReturnStatus.Initiated ? "active" : ""))">
+        <div class="step-counter">•</div>
+        <div class="step-name">Recieved</div>
+    </div>
+    <div class="stepper-item @(status >= ReturnStatus.RefundInitiaded ? "completed" : (status == ReturnStatus.Received ? "active" : ""))">
+        <div class="step-counter">•</div>
+        <div class="step-name">Refund Initiated</div>
+    </div>
+    
+</div>

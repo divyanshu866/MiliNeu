@@ -1,0 +1,247 @@
+﻿
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+/* Base styles */
+.gallery .sale-tag {
+    position: absolute;
+    display: inline-block; /* Inline-block for wrapping text */
+    background-color: darkblue; /* Background color */
+    color: #fff; /* Text color */
+    padding: 0.2rem 0.4rem; /* Space inside (use rem for scaling) */
+    border-radius: 0px; /* Full rounded corners for pill shape */
+    font-size: 0.7rem; /* Base font size for accessibility */
+    font-weight: 600; /* Slightly bold text */
+    text-align: center; /* Center text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth hover effects */
+    margin: 0.5rem; /* Margin around the pill tag */
+    cursor: pointer; /* Pointer cursor to make it feel interactive */
+}
+
+    .gallery .sale-tag p {
+        margin: 0; /* Remove paragraph default margin */
+        text-transform: uppercase; /* Make text uppercase */
+    }
+
+.gallery {
+    max-width: calc(1240px + 4rem);
+    margin: 0 auto; /* Centers the gallery horizontally */
+    padding: 0 2rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Responsive grid */
+    column-gap: clamp(1rem, 2rem, 3rem); /* Dynamic gaps between grid items */
+    row-gap:clamp(1rem, 3rem, 3rem);
+    justify-content: center;
+}
+
+
+
+    .gallery .card-wrapper {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        letter-spacing: 0.14px;
+        flex-direction: column;
+        background-color: white;
+        height: min-content;
+        margin-top: 20px;
+        padding-bottom: 1rem;
+
+
+        /*    animation: appearRight linear;
+        animation-timeline: view();
+        animation-range-start: 150px;
+        animation-range-end: 100%;*/
+    }
+
+        .gallery .card-wrapper .image-wrapper {
+            position: relative;
+            width: 100%;
+            /*border-radius: 3px;*/
+            aspect-ratio: 1280 / 1919; /* Set an aspect ratio (3:2 in this case, adjust as needed) */
+            overflow: hidden; /* Ensures that images don't overflow the container */
+        }
+
+            .gallery .card-wrapper .image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensures that images are cropped to fit the container */
+                transition: opacity 0.2s ease-in; /* Smooth transition for hover effect */
+            }
+
+
+        .gallery .card-wrapper .card-info{
+            display:flex;
+            flex-direction:column;
+            gap:0.3rem;
+            padding-top:1.5rem;
+        }
+        
+        .gallery .card-wrapper .card-info .name-wrapper {
+        }
+            .gallery .card-wrapper .card-info .name-wrapper p {
+                font-family: inherit;
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #252729;
+            }
+
+       
+
+
+
+
+
+
+.gallery .card-wrapper .card-info .product-price {
+    display: flex; /* Ensures the prices are on the same line initially */
+    flex-wrap: wrap; /* Allows wrapping to the next line on smaller screens */
+    gap: 0.5rem; /* Adds spacing between prices */
+}
+
+.gallery .card-wrapper .card-info .product-price span:nth-child(2) {
+    text-decoration: line-through; /* Line-through style for original price */
+    color: gray;
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+.gallery .card-wrapper .card-info .product-price span:nth-child(1) {
+    color: #000b89; /* Highlight discounted price */
+    font-weight: 500;
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .gallery .card-wrapper .variant-wrapper {
+            padding-top: calc(1.5rem - 11px);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+.card-wrapper .main-image {
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+    opacity: 1; /* Show the main image by default */
+}
+
+.card-wrapper .hover-image {
+    position: absolute; /* Stack the hover image on top */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hide hover image by default */
+}
+
+.card-wrapper .image-wrapper:hover .main-image {
+    opacity: 0; /* Hide the main image on hover */
+}
+
+.card-wrapper .image-wrapper:hover .hover-image {
+    opacity: 1; /* Show the hover image */
+}
+
+
+
+.product-view .product-details .card-footer {
+    background-color: #fdfcfb;
+}
+
+    .product-view .product-details .card-footer a {
+        color: black;
+        text-decoration: none;
+    }
+
+@media(max-width: 1260) {
+    .gallery {
+        padding-left: clamp(1rem, 2rem, 3rem);
+        padding-right: clamp(1rem, 2rem, 3rem);
+        padding-top: 2rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr; /*2 columns for smaller screens */
+        column-gap: clamp(1rem, 2rem, 3rem); /* Dynamic gaps between grid items */
+        justify-content: center;
+    }
+
+        .gallery .card-wrapper .image-wrapper {
+            aspect-ratio: 9 / 15; /*Adjust aspect ratio for mobile if needed*/
+        }
+
+        .gallery .card-wrapper .price-wrapper {
+        }
+}
+
+@media(max-width: 1279px) {
+    .gallery {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr; /*2 columns for smaller screens */
+        column-gap: clamp(1rem, 2rem, 3rem); /* Dynamic gaps between grid items */
+        justify-content: center;
+    }
+
+        .gallery .card-wrapper .image-wrapper {
+        }
+
+        .gallery .card-wrapper .price-wrapper {
+        }
+}
+
+@media(max-width: 1023px) {
+    .gallery {
+        padding-left: clamp(1rem, 2rem, 3rem);
+        padding-right: clamp(1rem, 2rem, 3rem);
+        padding-top: 2rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr; /*2 columns for smaller screens */
+        column-gap: clamp(1rem, 2rem, 3rem); /* Dynamic gaps between grid items */
+        justify-content: center;
+    }
+
+        .gallery .card-wrapper .image-wrapper {
+        }
+        .gallery .card-wrapper .price-wrapper{
+
+        }
+
+}
+@media(max-width: 639px) {
+    .gallery {
+        padding-left: clamp(1rem, 1rem, 3rem);
+        padding-right: clamp(1rem, 1rem, 3rem);
+        column-gap: clamp(1rem, 1rem, 3rem); /* Dynamic gaps between grid items */
+    }
+}

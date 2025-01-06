@@ -1,0 +1,21 @@
+﻿<input type="checkbox" id="search-toggle">
+<div class="overlay"></div> <!-- The darkened background -->
+<aside class="search-container">
+    <div class="search-head">
+        <p>Search</p>
+
+        <label for="search-toggle">
+            <i class="material-icons">close</i>
+
+        </label>
+
+    </div>
+
+
+    <form class="search-form" asp-controller="Products" asp-action="Search" method="get">
+        <input class="search-input" type="search" name="searchTerm" placeholder="Search products" aria-label="Search">
+        <button class="search-btn" type="submit"><i class="material-icons">search</i></button>
+    </form>
+
+
+</aside>

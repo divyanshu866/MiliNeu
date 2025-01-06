@@ -1,0 +1,142 @@
+﻿@model MiliNeu.Models.ViewModels.CheckoutVM
+@{
+    Layout = "_LayoutCheckout";
+    ViewData["Title"] = "Checkout";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+
+
+<div class="checkout">
+   
+
+
+    <div class="checkout-left">
+        
+        <form id="checkout-form" method="post" asp-controller="Orders" asp-action="PostCheckout">
+          
+            <h4>Account</h4>
+            <div class="form-group">
+                
+                <input asp-for="@Model.Email" readonly class="form-control" />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+            <section class="estimated-delivery">
+                <h4>Estimated delivery</h4>
+                <p>Monday, 18th November, 2024</p>
+            </section>
+            <h4>Shipping address</h4>
+            @if (Model.AddressVM.Addresses==null||Model.AddressVM.Addresses.Count()<1)
+            {
+                <p>No saved addresses found.</p>
+
+                @await Html.PartialAsync("_AddressForm", Model.AddressVM)
+            }
+            else
+            {
+                @await Html.PartialAsync("_SavedAddresses", Model.AddressVM)
+            }
+            
+            
+            <div class="form-group">
+
+                <textarea asp-for="@Model.CustomerNotes" placeholder="Notes" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="@Model.CustomerNotes" class="text-danger"></span>
+            </div>
+            <div class="order-container">
+                <p><strong>Order Summary</strong></p>
+
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="order-item">
+                        <div class="item-thumbnail">
+                            <img src="@($"{imageBasePath}{item.ProductVariant.Images.FirstOrDefault(i=>i.IsMain).Path}")" />
+                            <div class="quantity">
+                                <p>@item.Quantity</p>
+                            </div>
+
+                        </div>
+                        <div class="item-details">
+                            <p>@item.Product.Name</p>
+                            <p>@($"{item.SelectedSize} / {item.ProductVariant.Color.Name}")</p>
+                        </div>
+                        <div class="item-price">
+                            @if (item.Product.DiscountedPrice > 0)
+                            {
+
+                                <p><span>@($"{"INR " + item.Product.Price} ")</span> <span>@($"{"INR " + item.Product.DiscountedPrice}")</span></p>
+                            }
+                            else
+                            {
+                                <p>@($"{"INR " + item.Product.Price}")</p>
+                            }
+
+                        </div>
+                    </div>
+                }
+
+                <div class="order-summary">
+                    <p><span> Subtotal</span><span>@("INR " + Model.Subtotal) </span> </p>
+                    <p><span>Shipping</span><span>@("INR " + Model.Shipping) </span> </p>
+                    <p><span>Total</span><span>@("INR " + Model.Total) </span> </p>
+
+                </div>
+            </div>
+            
+            <div class="text-center mb-5">
+                <button type="submit" class="btn-checkout">Pay Now</button>
+            </div>
+        </form>
+    </div>
+    <div class="checkout-right">
+
+        <div class="order-container">
+            <p><strong>Order Summary</strong></p>
+
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="order-item">    
+                    <div class="item-thumbnail">
+                        <img src="@($"{imageBasePath}{item.ProductVariant.Images.FirstOrDefault(i=>i.IsMain).Path}")" />
+                        <div class="quantity">
+                            <p>@item.Quantity</p>
+                        </div>
+                       
+                    </div>
+                    <div class="item-details">
+                        <p>@item.Product.Name</p>
+                        <p>@($"{item.SelectedSize} / {item.ProductVariant.Color.Name}")</p>
+                    </div>
+                    <div class="item-price">
+                        @if (item.Product.DiscountedPrice>0)
+                        {
+
+                            <p><span>@($"{"INR " + item.Product.Price} ")</span> <span>@($"{"INR " + item.Product.DiscountedPrice}")</span></p>
+                        }
+                        else
+                        {
+                            <p>@($"{"INR " + item.Product.Price}")</p>
+                        }
+
+                    </div>  
+                </div>
+            }
+
+            
+            <div class="order-summary">
+                <p><span> Subtotal</span><span>@("INR " + Model.Subtotal) </span> </p>
+                <p><span>Discount</span><span>@("- INR " + Model.Discount) </span> </p>
+                <p><span>Shipping</span><span>@("INR " + Model.Shipping) </span> </p>
+                <p><span>Total</span><span>@("INR " + Model.Total) </span> </p>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+}
