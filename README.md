@@ -7,8 +7,7 @@
 #### Add your connection string:
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=Milineu;Trusted_Connection=True;MultipleActiveResultSets=true",
-  "ApplicationDbContextConnection": "Server=(localdb)\\mssqllocaldb;Database=Milineu;Trusted_Connection=True;MultipleActiveResultSets=true"
+  "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=Milineu;Trusted_Connection=True;MultipleActiveResultSets=true"
 }
 ```
 #### Add your RazorPay Api key and secret to allow payments:
