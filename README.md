@@ -25,6 +25,6 @@
     "ApiKey": "{Enter Your Sendgrid Api Key}"
   },
 ```
-#### open Package Mangement Console, and run command "Update-Database" to create and seed database.
+### 2. open Package Mangement Console, and run command "Update-Database" to create and seed database.
 
-#### Launch MiliNeu.
+### 3. Launch MiliNeu.
