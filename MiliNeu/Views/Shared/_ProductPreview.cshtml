@@ -215,7 +215,7 @@
                     <input class="add-to-cart-btn" disabled type="submit" value="ADD TO CART"  />
                     <input class="buy-now-btn" disabled type="submit" value="BUY IT NOW"  />
                 } *@
-  
+
                 @* <details>
                 <summary>Size Chart</summary>
                 <article>
@@ -223,10 +223,15 @@
 
                 </article>
             </details> *@
-                <div class="details-footer">
-                    <a asp-action="Edit" asp-route-productId="@Model.Product.Id">Edit</a> |
-                    <a asp-action="Index">Back to List</a>
-                </div>
+                <!-- Admin-only links -->
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="details-footer">
+                        <a asp-action="Edit" asp-route-productId="@Model.Product.Id">Edit</a> |
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                }
+                
 
 
             </form>

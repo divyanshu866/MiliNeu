@@ -8,10 +8,9 @@
 
 .collections-container {
     display: flex;
-    max-width: 1400px;
     width: 100%;
     gap: 1rem;
-    margin: 6rem auto;
+    margin: 0;
 }
 
    
@@ -74,7 +73,7 @@
     justify-content: center;
     height: 100%;
     max-width: 1240px;
-    margin: 0 auto 8rem auto;
+    margin: 2rem auto 3rem auto;
 }
 
 .collections-container .media-scroller {

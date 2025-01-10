@@ -1,12 +1,22 @@
 ﻿/* General styles */
 
 /* Navbar styles */
+#navbar {
+    width: 100%;
+    max-width: 100%;
+    
+    box-sizing: border-box;
+}
+
+
 nav {
     position: fixed;
     top: 0;
+    left:0;
     width: 100%;
     background-color: white;
-    padding:0 0 0 0;
+    padding:0;
+    overflow:auto;
     height: 80px;
     z-index: 100;
 }
@@ -32,11 +42,15 @@ nav .content ul:nth-child(3) li:nth-child(2) {
 }
 .nav-top {
     height: 90px;
+    width:100%;
+    max-width: 100vw;
     background-color: transparent;
-/*    margin-top:1rem;*/
+    /*    margin-top:1rem;*/
     transition: top 0.3s, background-color 0.3s ease, margin 0.3s,height 0.3s, padding 0.3s; /* Smooth transition for sliding */
 }
 .nav-scrolled {
+    width:100%;
+    max-width: 100vw;
     background-color: rgb(255 255 255 / 80%); /* Semi-transparent white */
     margin-top: 0rem;
     border-bottom: 1px solid rgba(92, 92, 92, 0.2); /* Lighter border */
@@ -51,6 +65,7 @@ nav .content {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 100vw;
     height: 100%;
     margin: 0;
 }
@@ -150,9 +165,8 @@ nav .logo a {
 }
     nav .logo img {
         height: 100%;
-        padding:1.4rem;
+        padding:1.6rem;
         object-fit: contain;
-        width: max-content;
         padding-left: 5rem;
     }
 nav .logo label {
@@ -286,12 +300,22 @@ nav .search-toggle i {
         display:none;
     }
     nav .logo {
-        display: flex;
-        justify-content: center;
+        display: block;
+        
     }
 
     nav .content .menu {
         display:flex;
+    }
+
+    nav .content .logo img {
+        padding:1.8rem;
+    }
+    nav .logo a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        height: 100%;
     }
 }
 @media screen and (max-width:950px) {
@@ -309,7 +333,6 @@ nav .search-toggle i {
 }
 @media screen and (max-width:600px) {
     nav {
-        padding: 0.5rem;
         padding: 0rem;
         height: 80px;
     }
@@ -326,7 +349,6 @@ nav .search-toggle i {
     }
 
     nav .content .logo img {
-        padding-left: 0;
     }
 
     nav .content .menu label span{
@@ -336,7 +358,15 @@ nav .search-toggle i {
 }
 
 
-
+@media screen and (max-width:450px) {
+    .nav-top .content .logo img {
+        padding: 2.3rem 0;
+        
+    }
+    .nav-scrolled .content .logo img {
+        padding: 2rem 0;
+    }
+}
 
 
 

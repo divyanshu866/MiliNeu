@@ -159,7 +159,7 @@
     background-color: #181f9c;
     color: white;
     font-weight: 500;
-    border-radius: 30PX;
+    border-radius: 7PX;
     border:none;
     padding: 15px;
     width: 100%;
@@ -173,7 +173,8 @@
     background-color: white;
     color: black;
     font-weight: 500;
-    border-radius: 30PX;
+    border-radius: 7PX;
+    border:2px solid black;
     padding: 15px;
     width: 100%;
     margin: 1rem 1rem 1rem 0rem;

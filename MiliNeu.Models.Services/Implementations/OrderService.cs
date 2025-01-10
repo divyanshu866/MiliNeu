@@ -269,13 +269,14 @@ namespace MiliNeu.Models.Services.Implementations
             order.CalculatePrice();
             string receiptId = GenerateReceiptId();
 
-            /* var razorOrder = _razorpayPaymentService.CreateOrder(order.Amount, order.Currency, receiptId);
+            var razorOrder = _razorpayPaymentService.CreateOrder(order.Amount, order.Currency, receiptId);
 
-             order.RazorOrderId = razorOrder["id"];
-             order.RazorReceiptId = receiptId;*/
+            order.RazorOrderId = razorOrder["id"];
+            order.RazorReceiptId = receiptId;
 
-            order.RazorOrderId = "RazorOrderId 4543dfvd";
-            order.RazorReceiptId = "RazorReceiptId 76543fdvf";
+
+            /*order.RazorOrderId = "RazorOrderId 4543dfvd";
+            order.RazorReceiptId = "RazorReceiptId 76543fdvf";*/
 
 
             user.UserOrders.Add(order);         // Add the order to user's orders and clear the cart

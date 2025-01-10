@@ -83,14 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let lastScrollTop = 0;
         window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
+            const scrollTop = document.documentElement.scrollTop;
+            if (lastScrollTop<50) {
                 // Scrolling down
-                navbar.classList.add('hidden');
-            } else {
+                if (navbar.classList.contains('hidden')) {
+                    navbar.classList.remove('hidden');
+                }
+            }
+            else if (scrollTop > lastScrollTop) {
                 // Scrolling up
-                navbar.classList.remove('hidden');
+                if (!navbar.classList.contains('hidden')) {
+                    navbar.classList.add('hidden');
+				}
+                
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling down
+                if (navbar.classList.contains('hidden')) {
+                    navbar.classList.remove('hidden');
+                }
+                
             }
 
 
