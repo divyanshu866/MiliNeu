@@ -147,7 +147,7 @@ main {
     font-size:2rem;
     font-weight:500;
     color:black;
-    margin:0;
+    margin:0 0 1rem 0;
     padding:0;
     height: 15vh;
 }

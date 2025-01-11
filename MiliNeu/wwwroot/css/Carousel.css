@@ -38,31 +38,32 @@
     height: max-content;
     width:100vw;
     left: 0;
-    top: 50%;
+    top: 48.8%;
 }
 .carousel .cta p {
-    font-weight:700;
-    font-size:2rem;
-    width:100%;
-    text-transform:uppercase;
-    color:white;
-
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 0.03em;
+    width: 100%;
+    text-transform: uppercase;
+    color: white;
 }
 .carousel .cta a {
     text-decoration: none;
     font-weight: 700;
-    font-size: 1rem;
-    background-color: #18189e;
+    font-size: 0.9rem;
+    /*    background-color: #18189e;*/
+    background-color: #0000002b;
     color: white;
     border-radius: 7px;
-    margin-top:1rem;
+    border:1px solid white;
+    margin-top: 1rem;
     padding: 0.7rem 1.4rem;
-
 }
     .carousel div a:hover {
-        /*background-color: white;
+        background-color: white;
         color: #18189e;
-        transition: .2s ease;*/
+        transition: .2s ease;
     }
 /*
  Navigation buttons */

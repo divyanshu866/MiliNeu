@@ -167,7 +167,8 @@
     transition-duration: 0.5s;
 }
     .product-details .buy-now-btn:hover {
-        background-color: midnightblue;
+        background-color: #181f9ca6;
+        transition-duration: 0.3s;
     }
 .product-details .add-to-cart-btn {
     background-color: white;
@@ -178,7 +179,7 @@
     padding: 15px;
     width: 100%;
     margin: 1rem 1rem 1rem 0rem;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 }
 
     .product-details .add-to-cart-btn:hover {
