@@ -27,10 +27,17 @@
                 <input asp-for="ProductCreateVM.Name" class="form-control" />
                 <span asp-validation-for="ProductCreateVM.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="ProductCreateVM.Category" class="control-label"></label>
                 <input asp-for="ProductCreateVM.Category" class="form-control" />
                 <span asp-validation-for="ProductCreateVM.Category" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ProductCreateVM.CategoryId" class="control-label"></label>
+
+                <select asp-for="ProductCreateVM.CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
+
+                <span asp-validation-for="ProductCreateVM.CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductCreateVM.Description" class="control-label"></label>

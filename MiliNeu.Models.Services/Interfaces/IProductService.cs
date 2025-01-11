@@ -5,6 +5,7 @@ namespace MiliNeu.Models.Services.Interfaces
     public interface IProductService
     {
         public Task<PagerVM<Product>> GetProductsAsync(int pageNumber, int pageSize);
+        public Task<PagerVM<Product>> GetProductsByCategoryAsync(int categoryId, int pageNumber, int pageSize);
 
         public Task<List<Product>> SearchAsync(string searchTerm);
         public Task<PagerVM<Product>> GetBestSellerProductsAsync(int pageNumber, int pageSize);

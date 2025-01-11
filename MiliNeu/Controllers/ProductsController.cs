@@ -31,7 +31,7 @@ namespace MiliNeu.Controllers
         {
 
             PagerVM<Product> viewModel = await _productServicce.GetProductsAsync(pageNumber, pageSize);
-            if (viewModel == null || viewModel.Items.Count() < 1)
+            if (viewModel == null)
             {
                 return NotFound();
             }
@@ -66,7 +66,7 @@ namespace MiliNeu.Controllers
 
 
             PagerVM<Product> viewModel = await _productServicce.GetBestSellerProductsAsync(pageNumber, pageSize);
-            if (viewModel == null || viewModel.Items.Count() < 1)
+            if (viewModel == null)
             {
                 return NotFound();
             }
@@ -85,6 +85,22 @@ namespace MiliNeu.Controllers
             string basepath = _configuration["BasePaths:ProductImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View("Sale", viewModel);
+        }
+        [HttpGet]
+        public async Task<IActionResult> ProductsByCategory(int categoryId, int pageNumber = 1, int pageSize = 8)
+        {
+
+            PagerVM<Product> viewModel = await _productServicce.GetProductsByCategoryAsync(categoryId, pageNumber, pageSize);
+            if (viewModel == null)
+            {
+                return NotFound();
+            }
+            ViewBag.Title = await _context.Categories.FindAsync(categoryId);
+
+            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            ViewData["ImageBasePath"] = basepath;
+            return View(viewModel);
+
         }
         //Displays products with crud options
         public async Task<IActionResult> Manage()
@@ -147,6 +163,7 @@ namespace MiliNeu.Controllers
 
             ViewData["ImageBasePath"] = basepath;
             ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", viewModel.CategoryId);
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", viewModel.CollectionId);
             return PartialView("_ProductEditPreview", viewModel);
         }
@@ -354,6 +371,7 @@ namespace MiliNeu.Controllers
 
 
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name");
+            ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name");
             ViewBag.AvailableColors = ViewBagColors();
             ViewData["ImageBasePath"] = _configuration["BasePaths:ProductImageBasePath"];
             return View();
@@ -376,7 +394,7 @@ namespace MiliNeu.Controllers
                     /*  Collection = model.Collection,*/
                     CollectionId = model.ProductCreateVM.CollectionId,
                     Description = model.ProductCreateVM.Description,
-                    Category = model.ProductCreateVM.Category,
+                    CategoryId = model.ProductCreateVM.CategoryId,
                     Price = model.ProductCreateVM.Price,
                     DiscountedPrice = model.ProductCreateVM.DiscountedPrice,
                     IsDiscontinued = model.ProductCreateVM.IsDiscontinued,
@@ -520,7 +538,7 @@ namespace MiliNeu.Controllers
             {
                 ProductId = product.Id,
                 Name = product.Name,
-                Category = product.Category,
+                CategoryId = product.CategoryId,
                 CollectionId = product.CollectionId,
                 Price = product.Price,
                 DiscountedPrice = product.DiscountedPrice,
@@ -531,6 +549,7 @@ namespace MiliNeu.Controllers
 
 
             ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
 
             string basepath = _configuration["BasePaths:ProductImageBasePath"];
@@ -548,8 +567,16 @@ namespace MiliNeu.Controllers
 
             if (ModelState.IsValid)
             {
-
-
+                Product product = _context.Products
+                    .Include(c => c.Variants)
+                    .SingleOrDefault(c => c.Id == model.ProductId);
+                foreach (var variant in product.Variants)
+                {
+                    if (variant.ColorId == model.Variant.ColorID)
+                    {
+                        return BadRequest();
+                    }
+                }
 
 
                 string uniqueFileName = null;
@@ -686,7 +713,7 @@ namespace MiliNeu.Controllers
             {
                 productId = product.Id,
                 Name = product.Name,
-                Category = product.Category,
+                CategoryId = product.CategoryId,
                 CollectionId = product.CollectionId,
                 Price = product.Price,
                 DiscountedPrice = product.DiscountedPrice,
@@ -714,6 +741,7 @@ namespace MiliNeu.Controllers
 
             ViewBag.AvailableColors = ViewBagColors();
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
+            ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
 
             string basepath = _configuration["BasePaths:ProductImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
@@ -782,7 +810,7 @@ namespace MiliNeu.Controllers
                 product.Name = model.Name;
                 product.CollectionId = model.CollectionId;
                 product.Description = model.Description;
-                product.Category = model.Category;
+                product.CategoryId = model.CategoryId;
                 product.Price = model.Price;
                 product.DiscountedPrice = model.DiscountedPrice;
                 product.IsDiscontinued = model.IsDiscontinued;

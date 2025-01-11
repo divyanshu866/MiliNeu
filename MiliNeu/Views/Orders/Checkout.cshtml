@@ -14,7 +14,7 @@
     <div class="checkout-left">
         
         <form id="checkout-form" method="post" asp-controller="Orders" asp-action="PostCheckout">
-          
+          <input type="text" hidden asp-for="EstimatedDelivery" value="@Model.EstimatedDelivery" />
             <h4>Account</h4>
             <div class="form-group">
                 
@@ -23,7 +23,7 @@
             </div>
             <section class="estimated-delivery">
                 <h4>Estimated delivery</h4>
-                <p>Monday, 18th November, 2024</p>
+                <p>@Model.EstimatedDelivery</p>
             </section>
             <h4>Shipping address</h4>
             @if (Model.AddressVM.Addresses==null||Model.AddressVM.Addresses.Count()<1)

@@ -50,6 +50,46 @@ namespace MiliNeu.Models.Services.Implementations
 
             return viewModel;
         }
+        public async Task<PagerVM<Product>> GetProductsByCategoryAsync(int categoryId, int pageNumber, int pageSize)
+        {
+            var AllProducts = await _context.Products
+                .IgnoreQueryFilters()
+                .Include(c => c.Collection)
+                .Include(c => c.Variants)
+                .ThenInclude(c => c.Images)
+                .Include(c => c.Variants)
+                .ThenInclude(c => c.Color)
+                .Where(c => c.CategoryId == categoryId)
+                .OrderBy(p => p.Name) // You can order by any property
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var totalProducts = _context.Products.Where(c => c.CategoryId == categoryId).Count();
+
+            PagerVM<Product> viewModel;
+            if (totalProducts > 0)
+            {
+                viewModel = new PagerVM<Product>
+                {
+                    Items = AllProducts,
+                    CurrentPage = pageNumber,
+                    TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
+                };
+            }
+            else
+            {
+                viewModel = new PagerVM<Product>
+                {
+                    Items = new List<Product>(),
+                    CurrentPage = pageNumber,
+                    TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
+                };
+            }
+
+
+            return viewModel;
+        }
         public async Task<List<Product>> SearchAsync(string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm))
@@ -246,7 +286,7 @@ namespace MiliNeu.Models.Services.Implementations
             };
             ProductEditVM viewModel = new ProductEditVM
             {
-                Category = product.Category,
+                CategoryId = product.CategoryId,
                 CollectionId = product.CollectionId,
                 SelectedProductVariant = productVariantViewModel,
                 Description = product.Description,

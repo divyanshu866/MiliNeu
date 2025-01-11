@@ -29,14 +29,14 @@
     }
 
 .gallery {
-    max-width: calc(1240px + 4rem);
+    max-width: calc(1340px + 4rem);
     margin: 0 auto; /* Centers the gallery horizontally */
     padding: 0 2rem;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr; /* Responsive grid */
     column-gap: clamp(1rem, 2rem, 3rem); /* Dynamic gaps between grid items */
-    row-gap:clamp(1rem, 3rem, 3rem);
+    row-gap:clamp(1rem, 1rem, 3rem);
     justify-content: center;
 }
 
@@ -50,7 +50,7 @@
         flex-direction: column;
         background-color: white;
         height: min-content;
-        margin-top: 20px;
+        /*margin-top: 20px;*/
         padding-bottom: 1rem;
 
 
@@ -80,7 +80,7 @@
             display:flex;
             flex-direction:column;
             gap:0.3rem;
-            padding-top:1.5rem;
+            padding-top:1.3rem;
         }
         
         .gallery .card-wrapper .card-info .name-wrapper {

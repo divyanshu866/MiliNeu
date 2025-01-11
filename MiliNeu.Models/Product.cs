@@ -13,7 +13,9 @@ namespace MiliNeu.Models
         public string Name { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+        public int CategoryId { get; set; }
 
 
         [Required]

@@ -11,6 +11,7 @@ namespace MiliNeu.Models
         public int Id { get; set; }
         [Required]
         public ApplicationUser User { get; set; }
+        public DateTime EstimatedDeliveryBy { get; set; }
         [Required]
         public decimal Amount { get; set; }
 
@@ -21,6 +22,7 @@ namespace MiliNeu.Models
         public string Currency { get; set; }
         public bool? PaymentCaptured { get; set; }
 
+        public OrderStatus OrderStatus { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public DeliveryStatus DeliveryStatus { get; set; }
         public ReturnStatus? ReturnStatus { get; set; }
@@ -45,8 +47,8 @@ namespace MiliNeu.Models
         public int ShippingAddressId { get; set; }
         public OrderAddress ShippingAddress { get; set; }
 
-        public int? BillingAddressId { get; set; }
-        public OrderAddress? BillingAddress { get; set; }
+        //public int? BillingAddressId { get; set; }
+        //public OrderAddress? BillingAddress { get; set; }
 
 
         // Order and Shipping Information

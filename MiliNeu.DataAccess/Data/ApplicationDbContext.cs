@@ -10,6 +10,7 @@ namespace MiliNeu.DataAccess.Data
         {
         }
         public DbSet<Product>? Products { get; set; }
+        public DbSet<Category>? Categories { get; set; }
         public DbSet<HeroSection>? HeroSections { get; set; }
         public DbSet<HeroSectionImage>? HeroSectionImages { get; set; }
 
@@ -74,11 +75,11 @@ namespace MiliNeu.DataAccess.Data
              .HasForeignKey(o => o.ShippingAddressId)
              .OnDelete(DeleteBehavior.Cascade); // Optional: avoid cascading deletes
 
-            modelBuilder.Entity<Order>()
+            /*modelBuilder.Entity<Order>()
                 .HasOne(o => o.BillingAddress)
-                .WithMany() // No navigation back to Order in OrderAddress
+                .WithMany() 
                 .HasForeignKey(o => o.BillingAddressId)
-                .OnDelete(DeleteBehavior.NoAction); // Optional: avoid cascading deletes
+                .OnDelete(DeleteBehavior.NoAction); */
             /*................................................................*/
 
 
@@ -145,6 +146,11 @@ namespace MiliNeu.DataAccess.Data
 
                 );
             // Seeding colors with basic details
+            modelBuilder.Entity<Category>().HasData(
+                new Color { Id = 1, Name = "Women" },
+                new Color { Id = 2, Name = "Unisex" }
+            );
+            // Seeding colors with basic details
             modelBuilder.Entity<Color>().HasData(
                 new Color { Id = 1, Name = "Red", HexCode = "#FF0000" },
                 new Color { Id = 2, Name = "Green", HexCode = "#00FF00" },
@@ -185,16 +191,16 @@ namespace MiliNeu.DataAccess.Data
             //Seed Products
             modelBuilder.Entity<Product>().HasQueryFilter(d => !d.IsDiscontinued).HasData(
 
-                new Product { Id = 1, Name = "A-line Dress", Category = "Casual Wear", Price = 5000.00m, DiscountedPrice = 3900.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Floral Midi Dress – A breezy, mid-length dress featuring a vibrant floral print, perfect for casual outings or summer events.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 2, Name = "Maxi Dress", Category = "Casual Wear", Price = 5000.00m, DiscountedPrice = 4800.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Lace Evening Gown – A sophisticated full-length gown with delicate lace details, ideal for formal occasions and black-tie events.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 3, Name = "Sheath Dress", Category = "Formal Wear", Price = 7000.00m, DiscountedPrice = 2700.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Bohemian Maxi Dress – Flowing and relaxed, this floor-length dress boasts boho-inspired patterns and an effortless silhouette.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 4, Name = "Shift Dress", Category = "Formal Wear", Price = 8000.00m, DiscountedPrice = 5600.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Shift Dress – A simple, straight-cut dress that falls loosely from the shoulders, great for a chic, minimalistic look.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 5, Name = "Wrap Dress", Category = "Evening Wear", Price = 4800.00m, DiscountedPrice = 4500.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Bodycon Dress – A form-fitting dress that hugs your curves, making it a sleek option for nights out or parties.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 6, Name = "Bodycon Dress", Category = "Evening Wear", Price = 4000.00m, DiscountedPrice = 3400.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "A-Line Cocktail Dress – A flattering dress with a fitted bodice and a flared skirt, perfect for semi-formal occasions.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 7, Name = "Peplum Dress", Category = "SumAthleisuremer", Price = 2000.00m, DiscountedPrice = 3300.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Shirt Dress – A casual dress designed like a button-down shirt, offering both comfort and versatility.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 8, Name = "Empire Waist Dress", Category = "Athleisure", Price = 5000.00m, DiscountedPrice = 4100.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Wrap Dress – A classic design featuring a wrap-around style that cinches at the waist, providing a flattering fit.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 9, Name = "Fit and Flare Dress", Category = "Party Wear", Price = 2000.00m, DiscountedPrice = 2100.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Off-Shoulder Ruffle Dress – A playful dress with an off-the-shoulder neckline and ruffle details, great for a stylish yet fun look.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
-                new Product { Id = 10, Name = "Tunic Dress", Category = "Party Wear", Price = 9000.00m, DiscountedPrice = 2900.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Embroidered Tunic Dress – A relaxed tunic dress adorned with intricate embroidery, perfect for a bohemian or artistic vibe.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false }
+                new Product { Id = 1, Name = "A-line Dress", CategoryId = 1, Price = 5000.00m, DiscountedPrice = 3900.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Floral Midi Dress – A breezy, mid-length dress featuring a vibrant floral print, perfect for casual outings or summer events.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 2, Name = "Maxi Dress", CategoryId = 1, Price = 5000.00m, DiscountedPrice = 4800.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Lace Evening Gown – A sophisticated full-length gown with delicate lace details, ideal for formal occasions and black-tie events.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 3, Name = "Sheath Dress", CategoryId = 1, Price = 7000.00m, DiscountedPrice = 2700.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Bohemian Maxi Dress – Flowing and relaxed, this floor-length dress boasts boho-inspired patterns and an effortless silhouette.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 4, Name = "Shift Dress", CategoryId = 1, Price = 8000.00m, DiscountedPrice = 5600.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Shift Dress – A simple, straight-cut dress that falls loosely from the shoulders, great for a chic, minimalistic look.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 5, Name = "Wrap Dress", CategoryId = 1, Price = 4800.00m, DiscountedPrice = 4500.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Bodycon Dress – A form-fitting dress that hugs your curves, making it a sleek option for nights out or parties.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 6, Name = "Bodycon Dress", CategoryId = 1, Price = 4000.00m, DiscountedPrice = 3400.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "A-Line Cocktail Dress – A flattering dress with a fitted bodice and a flared skirt, perfect for semi-formal occasions.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 7, Name = "Peplum Dress", CategoryId = 1, Price = 2000.00m, DiscountedPrice = 3300.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Shirt Dress – A casual dress designed like a button-down shirt, offering both comfort and versatility.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 8, Name = "Empire Waist Dress", CategoryId = 1, Price = 5000.00m, DiscountedPrice = 4100.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Wrap Dress – A classic design featuring a wrap-around style that cinches at the waist, providing a flattering fit.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 9, Name = "Fit and Flare Dress", CategoryId = 1, Price = 2000.00m, DiscountedPrice = 2100.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Off-Shoulder Ruffle Dress – A playful dress with an off-the-shoulder neckline and ruffle details, great for a stylish yet fun look.", CollectionId = 1, SalesCount = 0, IsDiscontinued = false },
+                new Product { Id = 10, Name = "Tunic Dress", CategoryId = 1, Price = 9000.00m, DiscountedPrice = 2900.00m, SizeChartPath = "SizeChart1.JPG", ReleaseDate = DateTime.Now, Description = "Embroidered Tunic Dress – A relaxed tunic dress adorned with intricate embroidery, perfect for a bohemian or artistic vibe.", CollectionId = 2, SalesCount = 0, IsDiscontinued = false }
 
             );
 

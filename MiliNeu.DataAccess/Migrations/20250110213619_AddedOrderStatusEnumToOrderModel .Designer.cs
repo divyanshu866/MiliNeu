@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiliNeu.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using MiliNeu.DataAccess.Data;
 namespace MiliNeu.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250110213619_AddedOrderStatusEnumToOrderModel ")]
+    partial class AddedOrderStatusEnumToOrderModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -343,35 +346,6 @@ namespace MiliNeu.DataAccess.Migrations
                     b.ToTable("CartItems");
                 });
 
-            modelBuilder.Entity("MiliNeu.Models.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Women"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Unisex"
-                        });
-                });
-
             modelBuilder.Entity("MiliNeu.Models.Collection", b =>
                 {
                     b.Property<int>("Id")
@@ -410,7 +384,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Bloom & Breeze",
                             Price = 50000.34765m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(1757)
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(1645)
                         },
                         new
                         {
@@ -419,7 +393,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Tribal Terra",
                             Price = 65000.7894m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(1762)
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(1651)
                         });
                 });
 
@@ -911,8 +885,9 @@ namespace MiliNeu.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CollectionId")
                         .HasColumnType("int");
@@ -946,8 +921,6 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("CollectionId");
 
                     b.ToTable("Products");
@@ -956,140 +929,140 @@ namespace MiliNeu.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 1,
+                            Category = "Casual Wear",
                             CollectionId = 1,
                             Description = "Floral Midi Dress – A breezy, mid-length dress featuring a vibrant floral print, perfect for casual outings or summer events.",
                             DiscountedPrice = 3900.00m,
                             IsDiscontinued = false,
                             Name = "A-line Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2332),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2465),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 2,
-                            CategoryId = 1,
+                            Category = "Casual Wear",
                             CollectionId = 2,
                             Description = "Lace Evening Gown – A sophisticated full-length gown with delicate lace details, ideal for formal occasions and black-tie events.",
                             DiscountedPrice = 4800.00m,
                             IsDiscontinued = false,
                             Name = "Maxi Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2338),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2476),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 3,
-                            CategoryId = 1,
+                            Category = "Formal Wear",
                             CollectionId = 1,
                             Description = "Bohemian Maxi Dress – Flowing and relaxed, this floor-length dress boasts boho-inspired patterns and an effortless silhouette.",
                             DiscountedPrice = 2700.00m,
                             IsDiscontinued = false,
                             Name = "Sheath Dress",
                             Price = 7000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2343),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2486),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 4,
-                            CategoryId = 1,
+                            Category = "Formal Wear",
                             CollectionId = 2,
                             Description = "Shift Dress – A simple, straight-cut dress that falls loosely from the shoulders, great for a chic, minimalistic look.",
                             DiscountedPrice = 5600.00m,
                             IsDiscontinued = false,
                             Name = "Shift Dress",
                             Price = 8000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2348),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2495),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 5,
-                            CategoryId = 1,
+                            Category = "Evening Wear",
                             CollectionId = 1,
                             Description = "Bodycon Dress – A form-fitting dress that hugs your curves, making it a sleek option for nights out or parties.",
                             DiscountedPrice = 4500.00m,
                             IsDiscontinued = false,
                             Name = "Wrap Dress",
                             Price = 4800.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2353),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2500),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 6,
-                            CategoryId = 1,
+                            Category = "Evening Wear",
                             CollectionId = 2,
                             Description = "A-Line Cocktail Dress – A flattering dress with a fitted bodice and a flared skirt, perfect for semi-formal occasions.",
                             DiscountedPrice = 3400.00m,
                             IsDiscontinued = false,
                             Name = "Bodycon Dress",
                             Price = 4000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2357),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2526),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 7,
-                            CategoryId = 1,
+                            Category = "SumAthleisuremer",
                             CollectionId = 1,
                             Description = "Shirt Dress – A casual dress designed like a button-down shirt, offering both comfort and versatility.",
                             DiscountedPrice = 3300.00m,
                             IsDiscontinued = false,
                             Name = "Peplum Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2362),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2574),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 8,
-                            CategoryId = 1,
+                            Category = "Athleisure",
                             CollectionId = 2,
                             Description = "Wrap Dress – A classic design featuring a wrap-around style that cinches at the waist, providing a flattering fit.",
                             DiscountedPrice = 4100.00m,
                             IsDiscontinued = false,
                             Name = "Empire Waist Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2366),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2580),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 9,
-                            CategoryId = 1,
+                            Category = "Party Wear",
                             CollectionId = 1,
                             Description = "Off-Shoulder Ruffle Dress – A playful dress with an off-the-shoulder neckline and ruffle details, great for a stylish yet fun look.",
                             DiscountedPrice = 2100.00m,
                             IsDiscontinued = false,
                             Name = "Fit and Flare Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2371),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2585),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
                         new
                         {
                             Id = 10,
-                            CategoryId = 1,
+                            Category = "Party Wear",
                             CollectionId = 2,
                             Description = "Embroidered Tunic Dress – A relaxed tunic dress adorned with intricate embroidery, perfect for a bohemian or artistic vibe.",
                             DiscountedPrice = 2900.00m,
                             IsDiscontinued = false,
                             Name = "Tunic Dress",
                             Price = 9000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2377),
+                            ReleaseDate = new DateTime(2025, 1, 10, 21, 36, 17, 760, DateTimeKind.Local).AddTicks(2590),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         });
@@ -1653,19 +1626,11 @@ namespace MiliNeu.DataAccess.Migrations
 
             modelBuilder.Entity("MiliNeu.Models.Product", b =>
                 {
-                    b.HasOne("MiliNeu.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("MiliNeu.Models.Collection", "Collection")
                         .WithMany("Products")
                         .HasForeignKey("CollectionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
 
                     b.Navigation("Collection");
                 });

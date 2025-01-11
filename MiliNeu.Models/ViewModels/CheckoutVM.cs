@@ -19,7 +19,7 @@
            public string PinCode { get; set; }
            public string StreetAddress { get; set; }
            public string Country { get; set; }*/
-        public bool SaveAddress { get; set; } = true;
+        public string EstimatedDelivery { get; set; }
         public List<CartItem> CartItems { get; set; }
 
         //Payment

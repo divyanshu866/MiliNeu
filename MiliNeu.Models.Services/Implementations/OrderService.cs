@@ -167,21 +167,26 @@ namespace MiliNeu.Models.Services.Implementations
             }
             total = subTotal + shipping;
 
-
+            /*Save address always false to prevent saving address*/
             CheckoutVM checkoutVM = new CheckoutVM
             {
                 CartItems = cartItems,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
+                EstimatedDelivery = DateTime.UtcNow.AddDays(7).ToString("dddd, dd MMMM, yyyy"),
                 Subtotal = subTotal,
                 Total = total,
                 Discount = totalDiscount,
                 Shipping = 500,
                 AddressVM = new AddressVM { Addresses = user.Addresses }
-
             };
 
             return checkoutVM;
+        }
+        public DateTime getEstimatedDeliveryDate()
+        {
+            return DateTime.UtcNow.AddDays(7);
+
         }
         public async Task<Order> CreateOrderAsync(CheckoutVM checkoutVM)
         {
@@ -191,7 +196,10 @@ namespace MiliNeu.Models.Services.Implementations
             {
                 return null;
             }
-
+            if (checkoutVM.EstimatedDelivery != getEstimatedDeliveryDate().ToString("dddd, dd MMMM, yyyy"))
+            {
+                return null;
+            }
             OrderAddress? orderAddress;
             // Create the new order
             if (checkoutVM.AddressVM.SelectedAddressId > 0)
@@ -223,7 +231,7 @@ namespace MiliNeu.Models.Services.Implementations
                     StreetAddress = checkoutVM.AddressVM.NewAddress.StreetAddress
                 };
 
-                if (checkoutVM.AddressVM.SaveAddress == true)
+                if (checkoutVM.AddressVM.SaveAddress == true && false)
                 {
 
                     Address address = new Address()
@@ -255,13 +263,15 @@ namespace MiliNeu.Models.Services.Implementations
             {
                 User = user,
                 Items = new List<OrderItem>(),
+                EstimatedDeliveryBy = getEstimatedDeliveryDate(),
+                OrderStatus = OrderStatus.Active,
                 PaymentStatus = PaymentStatus.Pending,
                 DeliveryStatus = DeliveryStatus.OrderPlaced,
                 Currency = "INR",
                 CustomerNotes = checkoutVM.CustomerNotes,
                 ShippingProvider = "Delhivery",
                 ShippingAddress = orderAddress,
-                BillingAddress = null,
+                //BillingAddress = null,
             };
 
 
@@ -269,14 +279,14 @@ namespace MiliNeu.Models.Services.Implementations
             order.CalculatePrice();
             string receiptId = GenerateReceiptId();
 
-            var razorOrder = _razorpayPaymentService.CreateOrder(order.Amount, order.Currency, receiptId);
+            //var razorOrder = _razorpayPaymentService.CreateOrder(order.Amount, order.Currency, receiptId);
 
-            order.RazorOrderId = razorOrder["id"];
-            order.RazorReceiptId = receiptId;
+            //order.RazorOrderId = razorOrder["id"];
+            //order.RazorReceiptId = receiptId;
 
 
-            /*order.RazorOrderId = "RazorOrderId 4543dfvd";
-            order.RazorReceiptId = "RazorReceiptId 76543fdvf";*/
+            order.RazorOrderId = "RazorOrderId 4543dfvd";
+            order.RazorReceiptId = "RazorReceiptId 76543fdvf";
 
 
             user.UserOrders.Add(order);         // Add the order to user's orders and clear the cart
@@ -382,7 +392,7 @@ namespace MiliNeu.Models.Services.Implementations
                 OrderId = orderId,
                 TrackingNumber = "1900020",
                 BillingAddress = order.ShippingAddress,
-                EstimatedDeliveryDate = DateTime.Now.ToString("dddd, dd MMMM"),
+                EstimatedDeliveryDate = order.EstimatedDeliveryBy.ToString("dddd, dd MMMM, yyyy"),
                 DeliveryStatus = order.DeliveryStatus,
                 ReturnStatus = order.ReturnStatus,
                 ReturnInitiatedDate = order.ReturnInitiatedDate,
@@ -495,7 +505,30 @@ namespace MiliNeu.Models.Services.Implementations
             }
             return order;
         }
+        public async void HandleAbandonedOrders()
+        {
+            var pendingOrders = await _context.Orders.Where(o => o.PaymentStatus == PaymentStatus.Pending && o.CreatedAt >= DateTime.UtcNow.AddDays(-3)).ToListAsync();
 
+            foreach (var order in pendingOrders)
+            {
+                order.OrderStatus = OrderStatus.Expired;
+            }
+
+            _context.SaveChanges();
+        }
+
+        public async void CleanupExpiredOrders()
+        {
+            var expiredOrders = await _context.Orders.Where(o => o.PaymentStatus == PaymentStatus.Pending && o.OrderStatus == OrderStatus.Expired && o.CreatedAt <= DateTime.UtcNow.AddMonths(-1)).ToListAsync();
+
+            foreach (var order in expiredOrders)
+            {
+                _context.Orders.Remove(order);
+            }
+
+            await _context.SaveChangesAsync();
+        }
     }
+
 
 }

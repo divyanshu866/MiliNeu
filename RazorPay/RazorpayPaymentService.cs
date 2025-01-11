@@ -20,13 +20,18 @@ namespace PaymentGateway
             // Initialize Razorpay client with the correct key and secret
             var client = new RazorpayClient(key, secret);
 
+
+            // Calculate the expiry timestamp 3 Days (UNIX epoch time in seconds)
+            int expiresAt = (int)(DateTime.UtcNow.AddDays(3).Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
             // Create order options
             var options = new Dictionary<string, object>
                 {
                     { "amount", (amount * 100) }, // Amount in paise (1 INR = 100 paise)
                     { "currency", currency },
                     { "receipt", receiptId }, // Use "receipt" instead of "receiptId"
-                    { "payment_capture", "1" } // Auto capture the payment
+                    { "payment_capture", "1" }, // Auto capture the payment
+                    { "expires_at", expiresAt }, // Expiry time for the order
                 };
 
             // Create and return the order

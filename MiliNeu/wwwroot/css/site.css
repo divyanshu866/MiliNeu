@@ -154,6 +154,7 @@ main {
 
     .page-title h1 {
         color: black;
+        text-transform:uppercase;
         margin: 0; /* removes default margin to prevent any alignment issues */
     }
 
