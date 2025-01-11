@@ -12,30 +12,32 @@
             <div class="image-wrapper">
                 <a href="/products/Details/@product.Id">
                     <!-- Default Image -->
-                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain).Path == null)
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain).Path != null)
                     {
-                        <img class="main-image" decoding="async" loading="lazy"
+                        <img class="item-image" decoding="async" loading="lazy"
+                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
+                             alt="@product.Name">
+                    }
+                    else
+                    {
+
+                        <img class="default" decoding="async" loading="lazy"
                              src="/Resources/Logo/LogoSimp.png"
                              alt="@product.Name">
                     }
-                    else
-                    {
-                        <img class="main-image" decoding="async" loading="lazy"
-                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
-                             alt="@product.Name">
-                    }
                    
-                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path==null)
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path!=null)
                     {
-                        <img class="hover-image" decoding="async" loading="lazy"
-                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
-                        alt="@product.Name">
+                        <img class="item-image_secondary" decoding="async" loading="lazy"
+                              src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path}")"
+                              alt="@product.Name">
                     }
                     else
                     {
-                        <img class="hover-image" decoding="async" loading="lazy"
-                         src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path}")"
-                         alt="@product.Name">
+
+                        <img class="default" decoding="async" loading="lazy"
+                             src="/Resources/Logo/LogoSimp.png"
+                             alt="@product.Name">
                     }
 
                         

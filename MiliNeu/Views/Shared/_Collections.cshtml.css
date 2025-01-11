@@ -172,19 +172,20 @@
     overflow: hidden; /* Ensures that images don't overflow the container */
 }
 
-    .collections-container .card-wrapper .image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures that images are cropped to fit the container */
-        transition: opacity 0.2s ease-in; /* Smooth transition for hover effect */
-    }
+.collections-container .card-wrapper .image-wrapper .item-image,
+.collections-container .card-wrapper .image-wrapper .item-image_secondary {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures that images are cropped to fit the container */
+    transition: opacity 0.3s ease-out; /* Smooth transition for hover effect */
+}
 
 
 .collections-container .card-wrapper .card-info {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    padding-top: 1.5rem;
+    padding-top: 1.3rem;
 }
 
     .collections-container .card-wrapper .card-info .name-wrapper {
@@ -226,26 +227,42 @@
 
 
 .collections-container .card-wrapper .variant-wrapper {
-    padding-top: calc(1.5rem - 11px);
+    padding-top: 1.3rem;
     font-size: 0.9rem;
     font-weight: 500;
 }
-
-.card-wrapper:hover {
-    cursor: pointer;
-    display: flex;
-    transform: scale(0.99);
-    transition: 0.2s ease-out;
-    opacity: 0.7;
+.collections-container .card-wrapper .image-wrapper .item-image {
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+    opacity: 1; /* Show the main image by default */
+    z-index: 100;
 }
-/*.collections-container .card-wrapper .image-wrapper:hover img{
-        transform:scale(1.05);
-        transition-duration:0.3s;
-    }
-    .collections-container .card-wrapper .image-wrapper:hover .price-wrapper {
-        background-color: black;
-        transition-duration: 0.3s;
-    }*/
+
+.collections-container .card-wrapper .image-wrapper .item-image_secondary {
+    position: absolute; /* Stack the hover image on top */
+    top: 0;
+    left: 0;
+    opacity: 1; /* Hide hover image by default */
+    z-index: 99;
+}
+.collections-container .card-wrapper .image-wrapper .default {
+    height: 100%;
+    width: 100%;
+    padding: 4rem;
+    object-fit: contain;
+}
+
+.collections-container .card-wrapper .image-wrapper:hover .item-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.collections-container .card-wrapper .image-wrapper:hover {
+    background: rgb(255,255,255);
+    background: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(245,245,220,1) 48%, rgba(255,255,255,1) 100%);
+}
+
 
 .product-view .product-details .card-footer {
     background-color: #fdfcfb;

@@ -69,11 +69,13 @@
             overflow: hidden; /* Ensures that images don't overflow the container */
         }
 
-            .gallery .card-wrapper .image-wrapper img {
+            .gallery .card-wrapper .image-wrapper .item-image,
+            .gallery .card-wrapper .image-wrapper .item-image_secondary
+            {
                 width: 100%;
                 height: 100%;
                 object-fit: cover; /* Ensures that images are cropped to fit the container */
-                transition: opacity 0.2s ease-in; /* Smooth transition for hover effect */
+                transition: opacity 0.3s ease-out; /* Smooth transition for hover effect */
             }
 
 
@@ -143,32 +145,42 @@
 
 
         .gallery .card-wrapper .variant-wrapper {
-            padding-top: calc(1.5rem - 11px);
+            padding-top: 1.3rem;
             font-size: 0.9rem;
             font-weight: 500;
         }
 
-.card-wrapper .main-image {
+.card-wrapper .item-image {
     position: absolute; /* Stack images on top of each other */
     top: 0;
     left: 0;
     opacity: 1; /* Show the main image by default */
+    z-index: 100;
 }
 
-.card-wrapper .hover-image {
+.card-wrapper .item-image_secondary {
     position: absolute; /* Stack the hover image on top */
     top: 0;
     left: 0;
-    opacity: 0; /* Hide hover image by default */
+    opacity: 1; /* Hide hover image by default */
+    z-index: 99;
+}
+.card-wrapper .image-wrapper .default {
+    height: 100%;
+    width: 100%;
+    padding: 4rem;
+    object-fit: contain;
 }
 
-.card-wrapper .image-wrapper:hover .main-image {
-    opacity: 0; /* Hide the main image on hover */
+.card-wrapper .image-wrapper:hover .item-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+.card-wrapper .image-wrapper:hover {
+    background: rgb(255,255,255);
+    background: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(245,245,220,1) 48%, rgba(255,255,255,1) 100%);
 }
 
-.card-wrapper .image-wrapper:hover .hover-image {
-    opacity: 1; /* Show the hover image */
-}
 
 
 

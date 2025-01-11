@@ -8,8 +8,15 @@
     <h1>@ViewBag.Title.Name</h1>
 
 </div>
+@if (Model.Items.Count()<1)
+{
+    <div class="page-Banner">
+        <h2>COMMING SOON</h2>
+    </div>
+}else{
+    @await Html.PartialAsync("_gallery", Model.Items)
 
-@await Html.PartialAsync("_gallery", Model.Items)
+}
 
 
 

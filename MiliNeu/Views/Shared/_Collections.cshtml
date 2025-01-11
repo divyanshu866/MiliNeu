@@ -35,7 +35,34 @@
                     <div class="card-wrapper">
                         <div class="image-wrapper">
                             <a href="/products/Details/@product.Id">
-                                    <img decoding="async" loading="lazy" src="@($"{imageBasePath}{product.Variants.FirstOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")">
+                                    <!-- Default Image -->
+                                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain).Path != null)
+                                    {
+                                        <img class="item-image" decoding="async" loading="lazy"
+                                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
+                                             alt="@product.Name">
+                                    }
+                                    else
+                                    {
+
+                                        <img class="default" decoding="async" loading="lazy"
+                                             src="/Resources/Logo/LogoSimp.png"
+                                             alt="@product.Name">
+                                    }
+
+                                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path != null)
+                                    {
+                                        <img class="item-image_secondary" decoding="async" loading="lazy"
+                                             src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path}")"
+                                             alt="@product.Name">
+                                    }
+                                    else
+                                    {
+
+                                        <img class="default" decoding="async" loading="lazy"
+                                             src="/Resources/Logo/LogoSimp.png"
+                                             alt="@product.Name">
+                                    }
                             </a>
 
 
