@@ -6,68 +6,89 @@
 
 <aside class="sidebar-container">
     <div class="sidebar-head">
-        <p>Sidebar</p>
+        
 
         <label for="sidebar-toggle">
             <i class="material-icons">close</i>
-
+            CLOSE
         </label>
 
     </div>
+    <div class="sidebar-content">
     <div class="sidebar-items">
         <ul>
-            @if (SignInManager.IsSignedIn(Context.User))
+            @* @if (SignInManager.IsSignedIn(Context.User))
             {
                 <li>
-                    <a href="#"> <i class="material-icons">people</i>@User.Identity?.Name</a>
+                    <a href="#"> @User.Identity?.Name</a>
                 </li>
-            }
-            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="material-icons">home</i> NEW IN</a></li>
+            } *@
+
             <li>
-                <a asp-controller="Products" asp-action="Sale">
-                    <i class="material-icons">dashboard</i>
-                    SALE
+                <a asp-area="" asp-controller="Products" asp-action="ProductsByCategory" asp-route-categoryId="1">
+                        WOMEN
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" aria-labelledby="arrowRightIconTitle" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="arrowRightIconTitle">Arrow Right</title> <path d="M15 18l6-6-6-6" /> <path d="M3 12h17" /> <path stroke-linecap="round" d="M21 12h-1" /> </svg>
                 </a>
             </li>
+            <li>
+                <a asp-area="" asp-controller="Products" asp-action="ProductsByCategory" asp-route-categoryId="2">
+                        UNISEX
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" aria-labelledby="arrowRightIconTitle" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="arrowRightIconTitle">Arrow Right</title> <path d="M15 18l6-6-6-6" /> <path d="M3 12h17" /> <path stroke-linecap="round" d="M21 12h-1" /> </svg>
+                </a>
+            </li>
+
+            <li>
+                <a asp-area="" asp-controller="Products" asp-action="BestSellers">
+                BESTSELLERS</a>
+            </li>
+
             <li>
                 <a asp-controller="Products" asp-action="Index">
-                    <i class="material-icons">dashboard</i>
-                    Products
+                    EXPLORE
                 </a>
             </li>
-            <li>
+
+
+            @* <li>
+                <a asp-controller="Products" asp-action="Index">
+                    Explore
+                </a>
+            </li> *@
+            @* <li>
                 <a asp-controller="Collections" asp-action="Index">
-                    <i class="material-icons">assessment</i>
                     Collections
                 </a>
-            </li>
+            </li> *@
 
 
 
 
 
-
+            @* <li>
+                <a asp-area="" asp-controller="Carts" asp-action="Details">
+                    BASKET
+                </a>
+            </li> *@
             @* Get user info for basket *@
             @if (SignInManager.IsSignedIn(Context.User))
             {
                 var user = await UserManager.GetUserAsync(Context.User);
                 <li>
                     <a asp-area="" asp-controller="Orders" asp-action="Index"
-                       asp-route-userId=@user.Id>Orders</a>
+                       asp-route-userId=@user.Id>
+                       ORDERS
+                   </a>
                 </li>
-                <li>
-                    <a asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId><i class="material-icons">shopping_cart</i> BASKET</a>
-                </li>
-
             }
+                <li>
+                    <a asp-controller="Home" asp-action="About">
+                        ABOUT
+                    </a>
+                </li>
+                
+
             @* If not logged in redirect to login page *@
-            else
-            {
-
-                <li>
-                    <a href="/Identity/Account/Login"><i class="material-icons">shopping_cart</i> BASKET</a>
-                </li>
-            }
+           
 
 
 
@@ -77,11 +98,30 @@
     </div>
     <div class="sidebar-items">
         <ul>
-            <partial name="_LoginPartial.cshtml" />
+        @if (SignInManager.IsSignedIn(Context.User))
+        {
+           
+
+
+            <li class="nav-item">
+                <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+
+        }
+        else
+        {
+            <li class="nav-item">
+                <a asp-area="Identity" asp-page="/Account/Login">
+                    Log in
+                </a>
+            </li>
+        }
         </ul>
     </div>
 
-
+    </div>
 
 
 </aside>

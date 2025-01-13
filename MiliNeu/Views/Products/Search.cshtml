@@ -1,8 +1,11 @@
 ﻿@model List<MiliNeu.Models.Product>
 
+@{
+    ViewData["Title"] = "Search Results";
 
+}
 <div class="page-title">
-    <h1>SEARCH RESULTS</h1>
+    <h1 class="fade-out-left">SEARCH RESULTS</h1>
 
 </div>
 @* <form class="search-page-form" asp-controller="Products" asp-action="Search" method="get">
@@ -24,4 +27,7 @@ else
     @await Html.PartialAsync("_gallery", Model)
 
 }
+@await Html.PartialAsync("_SubscribeSection")
+
 @await Html.PartialAsync("_Socials")
+@await Html.PartialAsync("_Footer")

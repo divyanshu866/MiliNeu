@@ -8,7 +8,11 @@ using MiliNeu.Models;
 using MiliNeu.Models.Services.Interfaces;
 using MiliNeu.Models.ViewModels;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats.Webp;
+using SixLabors.ImageSharp.Processing;
 using Color = MiliNeu.Models.Color;
+using Image = SixLabors.ImageSharp.Image;
 
 namespace MiliNeu.Controllers
 {
@@ -27,7 +31,7 @@ namespace MiliNeu.Controllers
         }
 
 
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 8)
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 12)
         {
 
             PagerVM<Product> viewModel = await _productServicce.GetProductsAsync(pageNumber, pageSize);
@@ -36,7 +40,7 @@ namespace MiliNeu.Controllers
                 return NotFound();
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(viewModel);
         }
@@ -50,12 +54,12 @@ namespace MiliNeu.Controllers
             {
                 return NotFound();
             }
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(products);  // Pass the search results to the view
         }
         [HttpGet]
-        public async Task<IActionResult> BestSellers(int pageNumber = 1, int pageSize = 8)
+        public async Task<IActionResult> BestSellers(int pageNumber = 1, int pageSize = 12)
         {
             /* return await _productServicce.GetBestSellerProductsAsync(count);//gvujguikhk
 
@@ -71,7 +75,7 @@ namespace MiliNeu.Controllers
                 return NotFound();
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(viewModel);
 
@@ -82,12 +86,12 @@ namespace MiliNeu.Controllers
             var viewModel = await _productServicce.GetDicountedProducts(pageNumber, pageSize);
 
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View("Sale", viewModel);
         }
         [HttpGet]
-        public async Task<IActionResult> ProductsByCategory(int categoryId, int pageNumber = 1, int pageSize = 8)
+        public async Task<IActionResult> ProductsByCategory(int categoryId, int pageNumber = 1, int pageSize = 12)
         {
 
             PagerVM<Product> viewModel = await _productServicce.GetProductsByCategoryAsync(categoryId, pageNumber, pageSize);
@@ -95,9 +99,11 @@ namespace MiliNeu.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Title = await _context.Categories.FindAsync(categoryId);
+            Category? category = await _context.Categories.FindAsync(categoryId);
+            ViewBag.Category = category;
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(viewModel);
 
@@ -119,7 +125,7 @@ namespace MiliNeu.Controllers
             {
                 return NotFound();
             }
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:LargeImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(viewModel);
         }
@@ -140,7 +146,7 @@ namespace MiliNeu.Controllers
                 /*return NotFound;*/
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:LargeImageBasePath"];
 
             ViewData["ImageBasePath"] = basepath;
             return PartialView("_ProductPreview", viewModel);
@@ -159,7 +165,7 @@ namespace MiliNeu.Controllers
                 /*return NotFound;*/
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
 
             ViewData["ImageBasePath"] = basepath;
             ViewBag.AvailableColors = ViewBagColors();
@@ -307,8 +313,8 @@ namespace MiliNeu.Controllers
         }
         public void deleteImages(List<VariantImage> images)
         {
-            string productImagePath = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products");
-            string compressedImagePath = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products", "Compressed");
+            string ThumbnailImageBasePath = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products", "Thumbnails");
+            string LargeImageBasePath = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products", "Large");
 
 
 
@@ -318,19 +324,19 @@ namespace MiliNeu.Controllers
                 foreach (var image in images)
                 {
                     //Delete old image
-                    string oldImagePath = Path.Combine(productImagePath, image.Path.Trim());
-                    string compressedOldImagePath = Path.Combine(compressedImagePath, image.Path.Trim());
+                    string ThumbnailImagePath = Path.Combine(ThumbnailImageBasePath, image.Path.Trim());
+                    string LargeImagePath = Path.Combine(LargeImageBasePath, image.Path.Trim());
 
                     //Check if file exists
-                    if (System.IO.File.Exists(oldImagePath))
+                    if (System.IO.File.Exists(ThumbnailImagePath))
                     {
                         //Delete file
-                        System.IO.File.Delete(oldImagePath);
+                        System.IO.File.Delete(ThumbnailImagePath);
                     } //Check if file exists
-                    if (System.IO.File.Exists(compressedOldImagePath))
+                    if (System.IO.File.Exists(LargeImagePath))
                     {
                         //Delete file
-                        System.IO.File.Delete(compressedOldImagePath);
+                        System.IO.File.Delete(LargeImagePath);
                     }
                 }
 
@@ -373,7 +379,7 @@ namespace MiliNeu.Controllers
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name");
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name");
             ViewBag.AvailableColors = ViewBagColors();
-            ViewData["ImageBasePath"] = _configuration["BasePaths:ProductImageBasePath"];
+            ViewData["ImageBasePath"] = _configuration["BasePaths:ThumbnailImageBasePath"];
             return View();
         }
 
@@ -405,13 +411,13 @@ namespace MiliNeu.Controllers
 
 
                 string uniqueFileName;
-                string filePath = _configuration["BasePaths:ProductImageBasePath"];
+                //string filePath = _configuration["BasePaths:ThumbnailImageBasePath"];
 
                 //ProductImage Path list for the product
                 List<VariantImage> variantImages = new List<VariantImage>();
 
 
-                //If New Images Uploaded.
+                //If all required Images are Uploaded.
                 if (model.ProductCreateVM.UploadedImages != null && model.ProductCreateVM.UploadedImages.Count > 0 && model.ProductCreateVM.SizeChartImage != null)
                 {
                     string sizeChartPath = SaveSizeChartImage(model.ProductCreateVM.SizeChartImage);
@@ -421,8 +427,8 @@ namespace MiliNeu.Controllers
                     //
                     foreach (IFormFile image in model.ProductCreateVM.UploadedImages)
                     {
-                        uniqueFileName = SaveProductImage(image);
-
+                        //uniqueFileName = SaveProductImage(image);
+                        uniqueFileName = await CompressSaveImages(image);
                         // Prepare variantImage Path object for Path List
                         VariantImage variantImage = new VariantImage
                         {
@@ -552,7 +558,7 @@ namespace MiliNeu.Controllers
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             return View(addVariantVM);
@@ -580,7 +586,7 @@ namespace MiliNeu.Controllers
 
 
                 string uniqueFileName = null;
-                string filePath = _configuration["BasePaths:ProductImageBasePath"];
+                string filePath = _configuration["BasePaths:ThumbnailImageBasePath"];
 
                 //variantImages Path list for the product
                 List<VariantImage> variantImages = new List<VariantImage>();
@@ -589,7 +595,8 @@ namespace MiliNeu.Controllers
                 {
                     foreach (IFormFile image in model.UploadedImages)
                     {
-                        uniqueFileName = SaveProductImage(image);
+                        //uniqueFileName = SaveProductImage(image);
+                        uniqueFileName = await CompressSaveImages(image);
 
 
                         // Prepare variantImages Path object for Path List
@@ -743,7 +750,7 @@ namespace MiliNeu.Controllers
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             return View(editCombinedVM);
@@ -751,12 +758,12 @@ namespace MiliNeu.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(ProductEditVM model)
+        public async Task<IActionResult> Edit(ProductEditVM viewModel)
         {
 
 
             //Check if model has Id and product table is not null
-            if (model.productId == 0 || _context.Products == null)
+            if (viewModel.productId == 0 || _context.Products == null)
             {
                 return NotFound();
             }
@@ -772,7 +779,7 @@ namespace MiliNeu.Controllers
                         .ThenInclude(i => i.Images)
                         .Include(i => i.Variants)
                         .ThenInclude(i => i.Color)
-                        .SingleOrDefaultAsync(p => p.Id == model.productId);
+                        .SingleOrDefaultAsync(p => p.Id == viewModel.productId);
 
                 if (product == null)
                 {
@@ -780,40 +787,40 @@ namespace MiliNeu.Controllers
                 }
 
                 //Get OG ProductVariant
-                ProductVariant ProductVariant = product.Variants.SingleOrDefault(c => c.Id == model.OriginalProductVariantId);
-                if (model.OriginalColorId != model.SelectedProductVariant.ColorID)
+                ProductVariant ProductVariant = product.Variants.SingleOrDefault(c => c.Id == viewModel.OriginalProductVariantId);
+                if (viewModel.OriginalColorId != viewModel.SelectedProductVariant.ColorID)
                 {
 
-                    ProductVariant.ColorId = (int)model.SelectedProductVariant.ColorID;
+                    ProductVariant.ColorId = (int)viewModel.SelectedProductVariant.ColorID;
 
 
                 }
 
                 //MAP New Price
 
-                ProductVariant.IsDiscontinued = model.SelectedProductVariant.VariantDiscontinued;
+                ProductVariant.IsDiscontinued = viewModel.SelectedProductVariant.VariantDiscontinued;
 
                 _context.ProductVariant.Update(ProductVariant);
 
 
 
-                ProcessUploadedFiles(model, product);
+                await ProcessUploadedFiles(viewModel, product);
 
-                if (model.SizeChartImage != null)
+                if (viewModel.SizeChartImage != null)
                 {
-                    string sizeChartPath = SaveSizeChartImage(model.SizeChartImage);
+                    string sizeChartPath = SaveSizeChartImage(viewModel.SizeChartImage);
                     deleteSizeChartImages(product.SizeChartPath);
                     //SizeChartPath added to product
                     product.SizeChartPath = sizeChartPath;
                 }
                 //Map ViewModel properties to product object in database
-                product.Name = model.Name;
-                product.CollectionId = model.CollectionId;
-                product.Description = model.Description;
-                product.CategoryId = model.CategoryId;
-                product.Price = model.Price;
-                product.DiscountedPrice = model.DiscountedPrice;
-                product.IsDiscontinued = model.IsDiscontinued;
+                product.Name = viewModel.Name;
+                product.CollectionId = viewModel.CollectionId;
+                product.Description = viewModel.Description;
+                product.CategoryId = viewModel.CategoryId;
+                product.Price = viewModel.Price;
+                product.DiscountedPrice = viewModel.DiscountedPrice;
+                product.IsDiscontinued = viewModel.IsDiscontinued;
 
 
 
@@ -826,7 +833,7 @@ namespace MiliNeu.Controllers
 
 
             }
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View();
 
@@ -834,7 +841,7 @@ namespace MiliNeu.Controllers
 
         /*if new images uploaded = delete old from storage and database then add new ones
          * if none uploaded = update main image among existing ones*/
-        private void ProcessUploadedFiles(ProductEditVM model, Product product)
+        private async Task ProcessUploadedFiles(ProductEditVM model, Product product)
         {
             if (model.UploadedImages != null && model.UploadedImages.Count > 0)
             {
@@ -844,15 +851,17 @@ namespace MiliNeu.Controllers
                 List<VariantImage> images = new List<VariantImage>();
 
                 //Saves new files to storage, sets main image returns VariantImage list
-                images = ProcessUploadedFile(model.UploadedImages, model.mainImageName, product);
+                images = await ProcessUploadedFile(model.UploadedImages, model.mainImageName, product);
+
 
                 //Remove All old images
                 foreach (var image in ProductVariant.Images)
                 {
+
                     _context.VariantImages.Remove(image);
                 }
 
-                //Delete images from storage
+                //Delete images from storage    
                 deleteImages(ProductVariant.Images);
 
                 //Overwrite new images to model
@@ -892,13 +901,14 @@ namespace MiliNeu.Controllers
 
 
         //Saves new files to storage, sets main image returns VariantImage list
-        public List<VariantImage> ProcessUploadedFile(List<IFormFile> formFiles, string mainImageName, Product product)
+        public async Task<List<VariantImage>> ProcessUploadedFile(List<IFormFile> formFiles, string mainImageName, Product product)
         {
 
             List<VariantImage> images = new List<VariantImage>();
             foreach (IFormFile image in formFiles)
             {
-                string uniqueFileName = SaveProductImage(image);
+                //string uniqueFileName = SaveProductImage(image);
+                string uniqueFileName = await CompressSaveImages(image);
 
 
                 //Prepare ProductImage object for VariantImages List
@@ -921,12 +931,11 @@ namespace MiliNeu.Controllers
             return images;
         }
 
-        private string SaveProductImage(IFormFile photo)
+        private bool SaveProductImage(IFormFile photo, string fileName)
         {
 
             string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products");
-            string uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+            string filePath = Path.Combine(uploadsFolder, fileName);
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
@@ -935,7 +944,37 @@ namespace MiliNeu.Controllers
             /* CreateLosslessImageVariantsAsync(filePath, uploadsFolder, uniqueFileName);
  */
 
-            return uniqueFileName;
+            return true;
+        }
+        private bool SaveProductImageThumbnail(IFormFile photo, string fileName)
+        {
+
+            string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products", "Thumbnails");
+            string filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                photo.CopyTo(fileStream);
+            }
+            /* CreateLosslessImageVariantsAsync(filePath, uploadsFolder, uniqueFileName);
+ */
+
+            return true;
+        }
+        private bool SaveProductImageLarge(IFormFile photo, string fileName)
+        {
+
+            string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products", "Large");
+            string filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                photo.CopyTo(fileStream);
+            }
+            /* CreateLosslessImageVariantsAsync(filePath, uploadsFolder, uniqueFileName);
+ */
+
+            return true;
         }
         private string SaveSizeChartImage(IFormFile photo)
         {
@@ -954,6 +993,84 @@ namespace MiliNeu.Controllers
             return uniqueFileName;
         }
 
+        public async Task<string> CompressSaveImages(IFormFile originalImageFile)
+        {
+            string fileName = Guid.NewGuid().ToString() + "_" + originalImageFile.FileName;
+
+            double thumbnailSizeThresholdInMB = 0.5;
+            double largeSizeThresholdInMB = 4;
+
+            // Convert to bytes
+            long thumbnailSizeThresholdInBytes = (long)(thumbnailSizeThresholdInMB * 1024 * 1024);
+            long largeSizeThresholdInBytes = (long)(largeSizeThresholdInMB * 1024 * 1024);
+
+            using (var originalImage = await Image.LoadAsync(originalImageFile.OpenReadStream()))
+            {
+                // Automatically apply the correct orientation based on EXIF metadata
+                originalImage.Mutate(context => context.AutoOrient());
+
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "Resources", "Images", "Products");
+                // Define paths for each variant
+                string thumbnailPath, largePath;
+                string ext = Path.GetExtension(originalImageFile.FileName).ToLowerInvariant();
+                if (Path.GetExtension(originalImageFile.FileName).ToLowerInvariant() == ".png")
+                {
+                    thumbnailPath = Path.Combine(uploadsFolder, "Thumbnails", $"{fileName.Replace(".png", ".webp")}");
+                    largePath = Path.Combine(uploadsFolder, "Large", $"{fileName.Replace(".png", ".webp")}");
+                    fileName = fileName.Replace(".png", ".webp");
+                }
+                else /*if (Path.GetExtension(originalImageFile.FileName).ToLowerInvariant() == "jpg")*/
+                {
+                    thumbnailPath = Path.Combine(uploadsFolder, "Thumbnails", $"{fileName.Replace(".jpg", ".webp")}");
+                    largePath = Path.Combine(uploadsFolder, "Large", $"{fileName.Replace(".jpg", ".webp")}");
+                    fileName = fileName.Replace(".jpg", ".webp");
+                }
+
+                if (originalImageFile.Length > thumbnailSizeThresholdInBytes)
+                {
+                    // Create Thumbnail (300px wide) - Lossless PNG
+                    using (var thumbnailImage = originalImage.Clone(context => context.Resize(new ResizeOptions
+                    {
+                        Size = new SixLabors.ImageSharp.Size(500, 700),
+                        Mode = ResizeMode.Crop,
+                        Sampler = KnownResamplers.Lanczos3 // High-quality resize
+                    })))
+                    {
+                        // Save as lossless PNG
+                        //await thumbnailImage.SaveAsync(thumbnailPath, new PngEncoder { CompressionLevel = PngCompressionLevel.BestCompression });
+                        // Save as lossless WebP
+                        await thumbnailImage.SaveAsync(thumbnailPath, new WebpEncoder { FileFormat = WebpFileFormatType.Lossless, Quality = 100 });
+                    }
+                }
+                else
+                {
+                    // Save the original image to the specified path
+                    await originalImage.SaveAsync(thumbnailPath);
+                }
+                // Create Large Size (1000px wide) - Lossless PNG
+                if (originalImageFile.Length > largeSizeThresholdInBytes)
+                {
+                    using (var largeImage = originalImage.Clone(context => context.Resize(new ResizeOptions
+                    {
+                        Size = new SixLabors.ImageSharp.Size(1500, 1800),
+                        Mode = ResizeMode.Crop,
+                        Sampler = KnownResamplers.Lanczos3
+                    })))
+                    {
+                        await largeImage.SaveAsync(largePath, new PngEncoder { CompressionLevel = PngCompressionLevel.BestCompression });
+                    }
+                }
+                else
+                {
+                    // Save the original image to the specified path
+                    await originalImage.SaveAsync(largePath);
+
+
+                }
+                return fileName;
+            }
+
+        }
         private bool ProductExists(int id)
         {
             return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();

@@ -3,7 +3,10 @@
 @using MiliNeu.Models.ViewModels;
 @inject SignInManager<ApplicationUser> SignInManager;
 
+@{
+    ViewData["Title"] = Model.Product.Name;
 
+}
 
 
 <section id="preview">
@@ -14,10 +17,14 @@
 
     @await Html.PartialAsync("_Collections", Model.Collection)
 </section> *@
+
+@await Html.PartialAsync("_SubscribeSection")
+
 <section>
     @await Html.PartialAsync("_Socials")
 </section>
-    
+@await Html.PartialAsync("_Footer")
+
 
 
 

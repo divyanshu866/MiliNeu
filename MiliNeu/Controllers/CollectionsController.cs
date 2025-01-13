@@ -28,7 +28,7 @@ namespace MiliNeu.Controllers
         {
             var viewModel = await _collectionService.getCollectionsPageAsync(pageNumber, pageSize);
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View(viewModel);
         }
@@ -93,7 +93,7 @@ namespace MiliNeu.Controllers
 
 
                 string uniqueFileName = null;
-                string filePath = _configuration["BasePaths:ProductImageBasePath"];
+                string filePath = _configuration["BasePaths:ThumbnailImageBasePath"];
 
                 //ProductImage Path list for the product
                 List<CollectionImage> collectionImages = new List<CollectionImage>();

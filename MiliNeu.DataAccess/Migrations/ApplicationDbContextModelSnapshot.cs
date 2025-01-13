@@ -410,7 +410,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Bloom & Breeze",
                             Price = 50000.34765m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(1757)
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(5922)
                         },
                         new
                         {
@@ -419,7 +419,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Tribal Terra",
                             Price = 65000.7894m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(1762)
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(5926)
                         });
                 });
 
@@ -963,7 +963,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "A-line Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2332),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6501),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -977,7 +977,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Maxi Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2338),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6510),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -991,7 +991,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Sheath Dress",
                             Price = 7000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2343),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6516),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1005,7 +1005,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Shift Dress",
                             Price = 8000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2348),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6521),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1019,7 +1019,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Wrap Dress",
                             Price = 4800.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2353),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6527),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1033,7 +1033,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Bodycon Dress",
                             Price = 4000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2357),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6532),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1047,7 +1047,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Peplum Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2362),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6536),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1061,7 +1061,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Empire Waist Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2366),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6542),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1075,7 +1075,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Fit and Flare Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2371),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6546),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1089,7 +1089,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Tunic Dress",
                             Price = 9000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 10, 22, 28, 17, 477, DateTimeKind.Local).AddTicks(2377),
+                            ReleaseDate = new DateTime(2025, 1, 12, 16, 39, 21, 353, DateTimeKind.Local).AddTicks(6553),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         });
@@ -1230,6 +1230,29 @@ namespace MiliNeu.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MiliNeu.Models.Subscriber", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("SubscribedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribers");
+                });
+
             modelBuilder.Entity("MiliNeu.Models.VariantImage", b =>
                 {
                     b.Property<int>("Id")
@@ -1259,169 +1282,211 @@ namespace MiliNeu.DataAccess.Migrations
                         {
                             Id = 1,
                             IsMain = true,
-                            Path = "1.JPG",
+                            Path = "1.webp",
                             ProductVariantId = 1
                         },
                         new
                         {
                             Id = 2,
                             IsMain = true,
-                            Path = "2.JPG",
+                            Path = "2.webp",
                             ProductVariantId = 2
                         },
                         new
                         {
                             Id = 3,
                             IsMain = true,
-                            Path = "3.WEBP",
+                            Path = "3.webp",
                             ProductVariantId = 3
                         },
                         new
                         {
                             Id = 4,
                             IsMain = true,
-                            Path = "4.JPG",
+                            Path = "4.webp",
                             ProductVariantId = 4
                         },
                         new
                         {
                             Id = 5,
                             IsMain = true,
-                            Path = "5.JPG",
+                            Path = "5.webp",
                             ProductVariantId = 5
                         },
                         new
                         {
                             Id = 6,
                             IsMain = true,
-                            Path = "6.JPG",
+                            Path = "6.webp",
                             ProductVariantId = 6
                         },
                         new
                         {
                             Id = 7,
                             IsMain = true,
-                            Path = "7.JPG",
+                            Path = "7.webp",
                             ProductVariantId = 7
                         },
                         new
                         {
                             Id = 8,
                             IsMain = true,
-                            Path = "8.JPG",
+                            Path = "8.webp",
                             ProductVariantId = 8
                         },
                         new
                         {
                             Id = 9,
                             IsMain = true,
-                            Path = "9.JPG",
+                            Path = "9.webp",
                             ProductVariantId = 9
                         },
                         new
                         {
                             Id = 10,
                             IsMain = true,
-                            Path = "10.WEBP",
+                            Path = "10.webp",
                             ProductVariantId = 10
                         },
                         new
                         {
                             Id = 11,
                             IsMain = true,
-                            Path = "11.JPG",
+                            Path = "11.webp",
                             ProductVariantId = 11
                         },
                         new
                         {
                             Id = 12,
                             IsMain = true,
-                            Path = "12.JPG",
+                            Path = "12.webp",
                             ProductVariantId = 12
                         },
                         new
                         {
                             Id = 13,
                             IsMain = true,
-                            Path = "13.JPG",
+                            Path = "13.webp",
                             ProductVariantId = 13
                         },
                         new
                         {
                             Id = 14,
                             IsMain = false,
-                            Path = "14.JPG",
+                            Path = "14.webp",
                             ProductVariantId = 1
                         },
                         new
                         {
                             Id = 15,
                             IsMain = false,
-                            Path = "15.JPG",
+                            Path = "15.webp",
                             ProductVariantId = 2
                         },
                         new
                         {
                             Id = 16,
                             IsMain = false,
-                            Path = "16.JPG",
+                            Path = "16.webp",
                             ProductVariantId = 3
                         },
                         new
                         {
                             Id = 17,
                             IsMain = false,
-                            Path = "17.JPG",
+                            Path = "17.webp",
                             ProductVariantId = 4
                         },
                         new
                         {
                             Id = 18,
                             IsMain = false,
-                            Path = "18.JPG",
+                            Path = "18.webp",
                             ProductVariantId = 5
                         },
                         new
                         {
                             Id = 19,
                             IsMain = false,
-                            Path = "19.JPG",
+                            Path = "19.webp",
                             ProductVariantId = 6
                         },
                         new
                         {
                             Id = 20,
                             IsMain = false,
-                            Path = "20.JPG",
+                            Path = "20.webp",
                             ProductVariantId = 7
                         },
                         new
                         {
                             Id = 21,
                             IsMain = false,
-                            Path = "21.JPG",
+                            Path = "21.webp",
                             ProductVariantId = 8
                         },
                         new
                         {
                             Id = 22,
                             IsMain = false,
-                            Path = "22.JPG",
+                            Path = "22.webp",
                             ProductVariantId = 9
                         },
                         new
                         {
                             Id = 23,
                             IsMain = false,
-                            Path = "23.JPG",
+                            Path = "23.webp",
                             ProductVariantId = 10
                         },
                         new
                         {
                             Id = 24,
                             IsMain = false,
-                            Path = "24.JPG",
+                            Path = "24.webp",
                             ProductVariantId = 11
+                        },
+                        new
+                        {
+                            Id = 25,
+                            IsMain = false,
+                            Path = "25.webp",
+                            ProductVariantId = 12
+                        },
+                        new
+                        {
+                            Id = 26,
+                            IsMain = false,
+                            Path = "26.jpg",
+                            ProductVariantId = 13
+                        },
+                        new
+                        {
+                            Id = 27,
+                            IsMain = false,
+                            Path = "27.JPG",
+                            ProductVariantId = 1
+                        },
+                        new
+                        {
+                            Id = 28,
+                            IsMain = false,
+                            Path = "28.JPG",
+                            ProductVariantId = 2
+                        },
+                        new
+                        {
+                            Id = 29,
+                            IsMain = false,
+                            Path = "29.JPG",
+                            ProductVariantId = 3
+                        },
+                        new
+                        {
+                            Id = 30,
+                            IsMain = false,
+                            Path = "30.JPG",
+                            ProductVariantId = 4
                         });
                 });
 

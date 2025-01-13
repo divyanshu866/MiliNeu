@@ -37,7 +37,7 @@ nav .menu{
 #navbar.hidden {
     top: -108px; /* Move navbar out of view */
 }
-nav .content ul:nth-child(3) li:nth-child(2) {
+nav .content ul:nth-child(3) .nav-item-orders {
     display: none;
 }
 .nav-top {
@@ -273,7 +273,6 @@ nav .search-toggle i {
     }
 .nav-manage .content ul:nth-child(4) .nav-item-orders,
 .nav-manage .content ul:nth-child(4) .nav-item-search {
-    /*background: red;*/
     display: none;
 }
 .nav-manage .content ul:nth-child(4) li a svg,
@@ -336,12 +335,15 @@ nav .search-toggle i {
         padding: 0rem;
         height: 80px;
     }
-    nav .content ul:nth-child(3), nav .content ul .account {
-        display: none;
-    }
-        nav .content ul .orders {
-            display: none;
-        }
+nav .content ul:nth-child(3),
+nav .content ul .account,
+nav .content ul .nav-item-orders {
+    display: none;
+
+}
+nav .content ul .orders {
+    display: none;
+}
 
     nav .logo {
         display: flex;

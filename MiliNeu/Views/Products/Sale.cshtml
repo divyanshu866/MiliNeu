@@ -1,11 +1,12 @@
 ﻿@model MiliNeu.Models.ViewModels.PagerVM<Product>
 
 @{
+    ViewData["Title"] = "Sale";
 
     string imageBasePath = ViewData["ImageBasePath"].ToString();
 }
 <div class="page-title">
-    <h1>SALE</h1>
+    <h1 class="fade-out-left">SALE</h1>
 
 </div>
 
@@ -15,11 +16,20 @@
 
 
 
+
 <div class="pagination">
     @if (Model.CurrentPage > 1)
     {
-        <a asp-action="Sale" asp-route-pageNumber="1">First</a>
-        <a asp-action="Sale" asp-route-pageNumber="@(Model.CurrentPage - 1)">Previous</a>
+        <a asp-action="Sale" asp-route-pageNumber="@(Model.CurrentPage - 1)">
+            <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="chevronLeftIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronLeftIconTitle">Chevron Left</title> <polyline points="14 18 8 12 14 6 14 6" /> </svg>
+        </a>
+    }
+    else
+    {
+        <strong>
+            <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="chevronLeftIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronLeftIconTitle">Chevron Left</title> <polyline points="14 18 8 12 14 6 14 6" /> </svg>
+
+        </strong>
     }
 
     @for (int i = 1; i <= Model.TotalPages; i++)
@@ -36,8 +46,20 @@
 
     @if (Model.CurrentPage < Model.TotalPages)
     {
-        <a asp-action="Sale" asp-route-pageNumber="@(Model.CurrentPage + 1)">Next</a>
-        <a asp-action="Sale" asp-route-pageNumber="@Model.TotalPages">Last</a>
+        <a asp-action="Sale" asp-route-pageNumber="@(Model.CurrentPage + 1)">
+            <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="chevronRightIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronRightIconTitle">Chevron Right</title> <polyline points="10 6 16 12 10 18 10 18" /> </svg>
+        </a>
+    }
+    else
+    {
+        <strong>
+            <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="chevronRightIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronRightIconTitle">Chevron Right</title> <polyline points="10 6 16 12 10 18 10 18" /> </svg>
+
+        </strong>
+
     }
 </div>
+@await Html.PartialAsync("_SubscribeSection")
+
 @await Html.PartialAsync("_Socials")
+@await Html.PartialAsync("_Footer")

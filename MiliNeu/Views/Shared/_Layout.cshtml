@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="~/css/SizeChart.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MiliNeu.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
+    <link href="/Resources/favicon/favicon.png" rel="icon" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -55,6 +55,12 @@
 
 
 
+        <div id="cookie-consent-popup" class="cookie-consent-popup">
+            <div class="cookie-consent-content">
+                <p>We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies. <a href="#">Learn more</a></p>
+                <button id="accept-cookies-btn" class="accept-cookies-btn">Accept</button>
+            </div>
+        </div>
 
 
    
@@ -63,7 +69,6 @@
     <main role="main">
         @RenderBody()
     </main>
-    @* @await Html.PartialAsync("_Footer") *@
 
    
 

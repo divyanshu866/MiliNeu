@@ -1,37 +1,11 @@
 ﻿@model MiliNeu.Models.ViewModels.HomeViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Home";
     string imageBasePath = ViewData["ImageBasePath"].ToString();
 }
 
 
-@*
-<div class="loading">
-    <div class="loading-text">
-        <span class="loading-text-words">M</span>
-        <span class="loading-text-words">i</span>
-        <span class="loading-text-words">l</span>
-        <span class="loading-text-words">i</span>
-        <span class="loading-text-words">N</span>
-        <span class="loading-text-words">e</span>
-        <span class="loading-text-words">u</span>
-
-        <span class="loading-text-words"></span>
-        <span class="loading-text-words">c</span>
-        <span class="loading-text-words">o</span>
-        <span class="loading-text-words">l</span>
-        <span class="loading-text-words">l</span>
-        <span class="loading-text-words">e</span>
-        <span class="loading-text-words">c</span>
-        <span class="loading-text-words">t</span>
-        <span class="loading-text-words">i</span>
-        <span class="loading-text-words">o</span>
-        <span class="loading-text-words">n</span>
-        <span class="loading-text-words">s</span>
-
-    </div>
- *@
 
 
 
@@ -39,10 +13,7 @@
 
 
 
-
-
-
-<section class="carousel fade-out">
+<section class="carousel">
 
     <div class="carousel-images">
         @if (Model.HeroSections==null|| !Model.HeroSections.Any(c=>c.IsActive))
@@ -107,7 +78,7 @@
 
 
 <section>
-    <p class="section-heading">BESTSELLERS</p>
+    <p class="section-heading fade-out-left">BESTSELLERS</p>
     @await Html.PartialAsync("_gallery", Model.BestSellers)
 
     <div class="cta-product-all">
@@ -122,6 +93,7 @@
     @await Html.PartialAsync("_CategorySelection")
 </section>
 
+@await Html.PartialAsync("_SubscribeSection")
 
 
 <section>
@@ -129,7 +101,7 @@
 </section>
 
 
-
+@await Html.PartialAsync("_Footer")
 
 
 

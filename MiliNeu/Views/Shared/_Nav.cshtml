@@ -34,7 +34,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Products" asp-action="Index">Shop</a>
+                <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Explore</a>
             </li>
             @if (SignInManager.IsSignedIn(Context.User))
             {
@@ -45,14 +45,17 @@
                     <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index" asp-route-userId=@user.Id>Orders</a>
                 </li>
             }
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a class="nav-link" asp-controller="Products" asp-action="Sale">Sale</a>
+            </li> *@
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Products" asp-action="BestSellers">BestSellers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Products" asp-action="BestSellers">BestSellers</a>
+                <a class="nav-link" asp-area="" asp-controller="Collections" asp-action="Index">Collections</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Collections" asp-action="Index">Collections</a>
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a>
             </li>
             
         </ul>
@@ -97,12 +100,7 @@
                         <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#ffffff"> <title id="searchIconTitle">Search</title> <path color="white" d="M14.4121122,14.4121122 L20,20" /> <circle cx="10" cy="10" r="6" /> </svg>
                     </label>
                 </li>
-                @* <li class="nav-item nav-item-cart">
-                    <a class="nav-link" asp-area="" asp-controller="Carts" asp-action="Details" asp-route-id=@user.CartId>
-                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 24 24" aria-labelledby="bagIconTitle" stroke="#000000" stroke-width="1.5PX" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="bagIconTitle">Bag</title> <rect width="14" height="12" x="5" y="7" /> <path d="M8 7a4 4 0 1 1 8 0" /> </svg>
-                    </a>
-
-                </li> *@
+               
               
                  
                   

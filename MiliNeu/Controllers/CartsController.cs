@@ -178,7 +178,7 @@ namespace MiliNeu.Controllers
             }
 
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             return View(cart);

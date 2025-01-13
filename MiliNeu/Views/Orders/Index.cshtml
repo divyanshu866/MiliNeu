@@ -2,220 +2,103 @@
 @model IEnumerable<MiliNeu.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Your Orders";
     string imageBasePath = ViewData["ImageBasePath"].ToString();
 
 }
 
-<p class="page-title">Your Orders</p>
+<p class="page-title fade-out-left">YOUR ORDERS</p>
 
 
-<div class="orders-container">
 
-    <div class="orders-list">
-        @foreach (var orderItem in Model)
-        {
-            <!-- Order Card -->
-            <div class="order-card">
-                <div class="order-card-header">
-                    <div>
-                        <span class="order-date">Order Placed</span>
-                        <span>@orderItem.CreatedAt.ToString("dd, MMM, yyyy")</span>
-                    </div>
-                    <div>
-                        <span class="order-date">Total</span>
-                        <span>@("INR "+orderItem.Amount)</span>
-                    </div>
-                    <div>
-                        <span class="order-date">Deliver To</span>
-                        <span>@(orderItem.ShippingAddress.FirstName + " " + orderItem.ShippingAddress.LastName)</span>
-                    </div>
-                    <div>
+    @if (Model.Count()<1)
+    {
+        <div class="empty-cta">
+            <p>You don't have any orders yet</p>
+            <a asp-controller="Products" asp-action="Index">START SHOPPING</a>
+        </div>
 
-                        <span class="order-id">Order #@orderItem.Id</span>
-                    </div>
-                    
-                </div>
-                <div class="order-card-body">
-                    <div class="order-image">
-                        <div class="order-image-carousel">
-                            @foreach (var item in orderItem.Items)
-                            {
-                                <img src="@($"{imageBasePath}{item.ProductVariant.Images.SingleOrDefault(c=>c.IsMain).Path}")" alt="@item.Product.Name" class="product-thumbnail" title="@item.Product.Name" />
-                            }
-
+    }
+    else
+    {
+    <div class="orders-container">
+        <div class="orders-list">
+            @foreach (var orderItem in Model)
+            {
+                <!-- Order Card -->
+                <div class="order-card">
+                    <div class="order-card-header">
+                        <div>
+                            <span class="order-date">Order Placed</span>
+                            <span>@orderItem.CreatedAt.ToString("dd, MMM, yyyy")</span>
                         </div>
-                    </div>
-                    
-                    <div class="order-summary">
-                        <strong>Total</strong>
-                        <span>@("INR " + orderItem.Amount)</span>
+                        <div>
+                            <span class="order-date">Total</span>
+                            <span>@("INR " + orderItem.Amount)</span>
+                        </div>
+                        <div>
+                            <span class="order-date">Deliver To</span>
+                            <span>@(orderItem.ShippingAddress.FirstName + " " + orderItem.ShippingAddress.LastName)</span>
+                        </div>
+                        <div>
 
-                    </div>@* 
+                            <span class="order-id">Order #@orderItem.Id</span>
+                        </div>
+
+                    </div>
+                    <div class="order-card-body">
+                        <div class="order-image">
+                            <div class="order-image-carousel">
+                                @foreach (var item in orderItem.Items)
+                                {
+                                    <img src="@($"{imageBasePath}{item.ProductVariant.Images.SingleOrDefault(c=>c.IsMain).Path}")" alt="@item.Product.Name" class="product-thumbnail" title="@item.Product.Name" />
+                                }
+
+                            </div>
+                        </div>
+
+                        <div class="order-summary">
+                            <strong>Total</strong>
+                            <span>@("INR " + orderItem.Amount)</span>
+
+                        </div>@* 
                     <div class="order-status">
                         <span>Delivery Status:</span>
                         <strong>@orderItem.DeliveryStatus.ToString()</strong>
                     </div> *@
-                    <div class="order-quantity">
-                        <span>@(orderItem.Items.Count()+" Items")</span>
-                    </div>
-                    <div class="order-payment-status">
-                        @if (orderItem.PaymentStatus == PaymentStatus.Confirmed || orderItem.PaymentStatus == PaymentStatus.Refunded)
-                        {
-                            <span style="color:forestgreen">@("Payment " + orderItem.PaymentStatus.ToString())</span>
-                        }
-                        else
-                        {
-                            <span style="color:red">@("Payment " + orderItem.PaymentStatus.ToString())</span>
-                        }
+                        <div class="order-quantity">
+                            <span>@(orderItem.Items.Count() + " Items")</span>
+                        </div>
+                        <div class="order-payment-status">
+                            @if (orderItem.PaymentStatus == PaymentStatus.Confirmed || orderItem.PaymentStatus == PaymentStatus.Refunded)
+                            {
+                                <span style="color:forestgreen">@("Payment " + orderItem.PaymentStatus.ToString())</span>
+                            }
+                            else
+                            {
+                                <span style="color:red">@("Payment " + orderItem.PaymentStatus.ToString())</span>
+                            }
 
                         </div>
-                    <div class="order-actions">
-                        @* <button class="btn btn-details">View Details</button> *@
-                        <a class="btn-track" asp-action="Details" asp-controller="Orders" asp-route-orderId="@orderItem.Id">Track Order</a>
+                        <div class="order-actions">
+                            @* <button class="btn btn-details">View Details</button> *@
+                            <a class="btn-track" asp-action="Details" asp-controller="Orders" asp-route-orderId="@orderItem.Id">Track Order</a>
+                        </div>
                     </div>
+
                 </div>
-                
-            </div>
-            <!-- End of Order Card -->
-        }
-        
-    </div>
-</div>
+                <!-- End of Order Card -->
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@* 
-
-<div class="orders-wrapper">
-   
-    
-    @if (Model.Count() < 1)
-    {
-        <h2>No Orders Yet &#x1F614</h2>
-    }
-    else{
-        <div class="orders-headings">
-           
-            <p>
-                Items
-            </p>
-            <p>
-                Order Id
-            </p>
-            <p>
-                Order Date
-            </p>
-            <p>
-                Total
-            </p>
-
-            <p>
-                Payment status
-            </p>
         </div>
-        @foreach (var order in Model)
-        {
-            <a class="box" asp-action="Details" asp-controller="Orders" asp-route-orderId="@order.Id">
-                <div class="box">
-
-
-                    <div class="orders-data">
-                        <div class="collage">
-                            <div class="image-grid">
-                                @for (int i = 0; i < 4; i++)
-                                {
-                                    if (i < order.Items.Count && order.Items[i]?.ProductVariant.Images.FirstOrDefault(i => i.IsMain).Path != null)
-                                    {
-                                        var mainImage = order.Items[i].ProductVariant.Images.FirstOrDefault(i => i.IsMain);
-
-                                        if (mainImage != null)
-                                        {
-
-                                            <img src="@($"{imageBasePath}{mainImage.Path}")" alt="Product Image">
-                                        }
-                                        else
-                                        {
-
-                                            <img src="https://cdn.vectorstock.com/i/1000x1000/75/90/default-placeholder-businesswoman-half-length-por-vector-20847590.webp" alt="No Image Available">
-                                        }
-                                    }
-                                    
-                                        <img src="https://cdn.vectorstock.com/i/1000x1000/75/90/default-placeholder-businesswoman-half-length-por-vector-20847590.webp" alt="No Image Available">
-                                    }
-                                }
-                            </div>
-                        </div>
-
-                        <p>
-                            #@order.Id
-                        </p>
-                        <p>
-                            @order.CreatedAt
-                        </p>
-                        <p>
-                            @order.Amount
-                        </p>
-                        <p>
-                            @order.PaymentStatus
-                        </p>
-                    </div>
-
-                </div>
-            </a>
-            <hr />
-        }
-
-
+    </div>
 
     }
-
     
-</div>
 
- *@
+
+
+@await Html.PartialAsync("_SubscribeSection")
+
+@await Html.PartialAsync("_Socials")
+@await Html.PartialAsync("_Footer")

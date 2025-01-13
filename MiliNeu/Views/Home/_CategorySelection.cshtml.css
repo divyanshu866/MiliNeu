@@ -2,7 +2,7 @@
 .category-container {
     display: flex;
     max-width: 1240px;
-    margin: 5rem auto 1rem auto;
+    margin: 5rem auto 4rem auto;
     overflow: hidden;
 
 }
@@ -22,13 +22,13 @@
         .category-container .category img {
             width: 100%;
             aspect-ratio: 11/16;
-            transition-duration: 0.3s;
             object-fit: cover;
+            transition: transform 1s cubic-bezier(0, 0, 0.21, 0.99);
         }
 
 .category:hover img {
-    transition-duration: 0.5s;
-    transform: scale(1.02); /* Zoom in effect */
+    transform: scale(1.05); /* Zoom in effect */
+    transition: transform 1s cubic-bezier(0, 0, 0.21, 0.99);
 }
 
 .category-container .category label {

@@ -1,0 +1,47 @@
+﻿<section class="signup-section fade-out-left">
+    <div class="signup-container">
+        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 24 24" aria-labelledby="envelopeAltIconTitle" stroke="#000000" stroke-width="0.75" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#000000"> <title id="envelopeAltIconTitle">Envelope</title> <rect width="20" height="14" x="2" y="5" /> <path stroke-linecap="round" d="M2 5l10 9 10-9" /> </svg>
+        <h2>SIGN UP</h2>
+        <p>Sign up to stay in the know about upcoming drops and other news.</p>
+
+        <form id="subscribe-form" class="signup-form" asp-controller="Home" asp-action="Subscribe" method="POST">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="message"></div>
+
+    </div>
+</section>
+
+    <script>
+                      document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+            .then(response => response.json()) // Parse the JSON response
+            .then(result => {
+                const messageDiv = document.getElementById("message");
+                if (result.success) {
+                    // Display success message
+                    messageDiv.innerHTML = `<p class="message message-success">${result.message}</p>`;
+                    form.reset(); // Clear the form
+                } else {
+                    // Display error message
+                    messageDiv.innerHTML = `<p class="message message-danger">${result.message}</p>`;
+                }
+            })
+            .catch(error => {
+                // Handle unexpected errors
+                document.getElementById("message").innerHTML = `
+                    <p class="message message-danger">An unexpected error occurred. Please try again later.</p>
+                `;
+            });
+        });
+
+    </script>

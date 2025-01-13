@@ -9,7 +9,9 @@ namespace MiliNeu.DataAccess.Data
             : base(options)
         {
         }
+
         public DbSet<Product>? Products { get; set; }
+        public DbSet<Subscriber>? Subscribers { get; set; }
         public DbSet<Category>? Categories { get; set; }
         public DbSet<HeroSection>? HeroSections { get; set; }
         public DbSet<HeroSectionImage>? HeroSectionImages { get; set; }
@@ -205,30 +207,36 @@ namespace MiliNeu.DataAccess.Data
             );
 
             modelBuilder.Entity<VariantImage>().HasData(
-               new VariantImage { Id = 1, Path = "1.JPG", ProductVariantId = 1, IsMain = true },
-               new VariantImage { Id = 2, Path = "2.JPG", ProductVariantId = 2, IsMain = true },
-               new VariantImage { Id = 3, Path = "3.WEBP", ProductVariantId = 3, IsMain = true },
-               new VariantImage { Id = 4, Path = "4.JPG", ProductVariantId = 4, IsMain = true },
-               new VariantImage { Id = 5, Path = "5.JPG", ProductVariantId = 5, IsMain = true },
-               new VariantImage { Id = 6, Path = "6.JPG", ProductVariantId = 6, IsMain = true },
-               new VariantImage { Id = 7, Path = "7.JPG", ProductVariantId = 7, IsMain = true },
-               new VariantImage { Id = 8, Path = "8.JPG", ProductVariantId = 8, IsMain = true },
-               new VariantImage { Id = 9, Path = "9.JPG", ProductVariantId = 9, IsMain = true },
-               new VariantImage { Id = 10, Path = "10.WEBP", ProductVariantId = 10, IsMain = true },
-               new VariantImage { Id = 11, Path = "11.JPG", ProductVariantId = 11, IsMain = true },
-               new VariantImage { Id = 12, Path = "12.JPG", ProductVariantId = 12, IsMain = true },
-               new VariantImage { Id = 13, Path = "13.JPG", ProductVariantId = 13, IsMain = true },
-               new VariantImage { Id = 14, Path = "14.JPG", ProductVariantId = 1, IsMain = false },
-               new VariantImage { Id = 15, Path = "15.JPG", ProductVariantId = 2, IsMain = false },
-               new VariantImage { Id = 16, Path = "16.JPG", ProductVariantId = 3, IsMain = false },
-               new VariantImage { Id = 17, Path = "17.JPG", ProductVariantId = 4, IsMain = false },
-               new VariantImage { Id = 18, Path = "18.JPG", ProductVariantId = 5, IsMain = false },
-               new VariantImage { Id = 19, Path = "19.JPG", ProductVariantId = 6, IsMain = false },
-               new VariantImage { Id = 20, Path = "20.JPG", ProductVariantId = 7, IsMain = false },
-               new VariantImage { Id = 21, Path = "21.JPG", ProductVariantId = 8, IsMain = false },
-               new VariantImage { Id = 22, Path = "22.JPG", ProductVariantId = 9, IsMain = false },
-               new VariantImage { Id = 23, Path = "23.JPG", ProductVariantId = 10, IsMain = false },
-               new VariantImage { Id = 24, Path = "24.JPG", ProductVariantId = 11, IsMain = false }
+               new VariantImage { Id = 1, Path = "1.webp", ProductVariantId = 1, IsMain = true },
+               new VariantImage { Id = 2, Path = "2.webp", ProductVariantId = 2, IsMain = true },
+               new VariantImage { Id = 3, Path = "3.webp", ProductVariantId = 3, IsMain = true },
+               new VariantImage { Id = 4, Path = "4.webp", ProductVariantId = 4, IsMain = true },
+               new VariantImage { Id = 5, Path = "5.webp", ProductVariantId = 5, IsMain = true },
+               new VariantImage { Id = 6, Path = "6.webp", ProductVariantId = 6, IsMain = true },
+               new VariantImage { Id = 7, Path = "7.webp", ProductVariantId = 7, IsMain = true },
+               new VariantImage { Id = 8, Path = "8.webp", ProductVariantId = 8, IsMain = true },
+               new VariantImage { Id = 9, Path = "9.webp", ProductVariantId = 9, IsMain = true },
+               new VariantImage { Id = 10, Path = "10.webp", ProductVariantId = 10, IsMain = true },
+               new VariantImage { Id = 11, Path = "11.webp", ProductVariantId = 11, IsMain = true },
+               new VariantImage { Id = 12, Path = "12.webp", ProductVariantId = 12, IsMain = true },
+               new VariantImage { Id = 13, Path = "13.webp", ProductVariantId = 13, IsMain = true },
+               new VariantImage { Id = 14, Path = "14.webp", ProductVariantId = 1, IsMain = false },
+               new VariantImage { Id = 15, Path = "15.webp", ProductVariantId = 2, IsMain = false },
+               new VariantImage { Id = 16, Path = "16.webp", ProductVariantId = 3, IsMain = false },
+               new VariantImage { Id = 17, Path = "17.webp", ProductVariantId = 4, IsMain = false },
+               new VariantImage { Id = 18, Path = "18.webp", ProductVariantId = 5, IsMain = false },
+               new VariantImage { Id = 19, Path = "19.webp", ProductVariantId = 6, IsMain = false },
+               new VariantImage { Id = 20, Path = "20.webp", ProductVariantId = 7, IsMain = false },
+               new VariantImage { Id = 21, Path = "21.webp", ProductVariantId = 8, IsMain = false },
+               new VariantImage { Id = 22, Path = "22.webp", ProductVariantId = 9, IsMain = false },
+               new VariantImage { Id = 23, Path = "23.webp", ProductVariantId = 10, IsMain = false },
+               new VariantImage { Id = 24, Path = "24.webp", ProductVariantId = 11, IsMain = false },
+               new VariantImage { Id = 25, Path = "25.webp", ProductVariantId = 12, IsMain = false },
+               new VariantImage { Id = 26, Path = "26.jpg", ProductVariantId = 13, IsMain = false },
+               new VariantImage { Id = 27, Path = "27.JPG", ProductVariantId = 1, IsMain = false },
+               new VariantImage { Id = 28, Path = "28.JPG", ProductVariantId = 2, IsMain = false },
+               new VariantImage { Id = 29, Path = "29.JPG", ProductVariantId = 3, IsMain = false },
+               new VariantImage { Id = 30, Path = "30.JPG", ProductVariantId = 4, IsMain = false }
 
             );
 

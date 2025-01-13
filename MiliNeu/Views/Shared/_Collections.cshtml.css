@@ -74,6 +74,7 @@
     height: 100%;
     max-width: 1240px;
     margin: 2rem auto 3rem auto;
+    z-index:95;
 }
 
 .collections-container .media-scroller {
@@ -158,6 +159,7 @@
     transition: all 0.3s ease-in-out; /* Smooth hover effects */
     margin: 0.5rem; /* Margin around the pill tag */
     cursor: pointer; /* Pointer cursor to make it feel interactive */
+    z-index:91;
 }
 
     .collections-container .sale-tag p {
@@ -168,8 +170,9 @@
     position: relative;
     width: 100%;
     /*border-radius: 3px;*/
-    aspect-ratio: 1280 / 1919; /* Set an aspect ratio (3:2 in this case, adjust as needed) */
+    aspect-ratio: 9 / 13; /* Set an aspect ratio (3:2 in this case, adjust as needed) */
     overflow: hidden; /* Ensures that images don't overflow the container */
+    z-index:90;
 }
 
 .collections-container .card-wrapper .image-wrapper .item-image,

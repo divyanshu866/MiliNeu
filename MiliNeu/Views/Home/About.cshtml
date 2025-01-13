@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "About";
+    string imageBasePath = ViewData["ImageBasePath"].ToString();
+}
+
+<div class="page-title">
+    <h1 class="fade-out-left">ABOUT BRAND</h1>
+
+</div>
+<div class="about-content">
+    <p class="fade-out-left">
+        Milineu is built on the principles of community, culture, and comfort. We believe in offering affordable luxury that transcends fleeting trends, focusing instead on timeless pieces that are true wardrobe investments. Our mission is simple: to create clothing that’s both innovative and effortlessly wearable, while championing local talent and craftsmanship at every step.
+    <p>
+    <p class="fade-out-left">
+        A strong sense of community shapes the brand’s approach to design. With comfort at the heart of every piece, the brand strives to become a go-to favorite in your wardrobe with its effortlessly wearable styles. By reimagining traditional silhouettes and forms, the label strikes a perfect balance—timeless and classic, yet undeniably modern.
+    </p>
+</div>
+
+@await Html.PartialAsync("_SubscribeSection")
+@await Html.PartialAsync("_Socials")
+@await Html.PartialAsync("_Footer")

@@ -1,5 +1,49 @@
-<footer class="bg-dark text-center text-muted py-3 mt-auto">
-    <div class="container">
-        <p>&copy; 2024 Milineu.in</p>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="footer-container">
+        <!-- Column 1: About Us -->
+        <!-- Column 2: Links -->
+        <div class="footer-column">
+            <ul>
+                <h4>Shop by Category</h4>
+
+                <li><a asp-controller="Products" asp-action="ProductsByCategory" asp-route-categoryId=1>Women</a></li>
+                <li><a asp-controller="Products" asp-action="ProductsByCategory" asp-route-categoryId=2>Unisex</a></li>
+                <li><a asp-controller="Products" asp-action="Index">Explore</a></li>
+                <li><a asp-controller="Products" asp-action="BestSellers">Best Sellers</a></li>
+                <li><a asp-controller="Collections" asp-action="Index">Collections</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Links -->
+        <div class="footer-column">
+            <ul>
+                <h4>Information</h4>
+
+                <li><a asp-controller="Home" asp-action="About">About Us</a></li>
+                <li><a asp-controller="Products" asp-action="Index">Shop</a></li>
+                <li><a href="mailto:shubhra.sharma5886@gmail.com">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Social Media -->
+        <div class="footer-column">
+            <ul class="social-media">
+                <h4>Connect With Us</h4>
+
+                <li><a href="https://www.instagram.com/studiomilineu/" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/studiomilineu/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.instagram.com/studiomilineu/" target="_blank">Twitter</a></li>
+                <li><a href="https://www.instagram.com/studiomilineu/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Milineu. All Rights Reserved.</p>
     </div>
 </footer>

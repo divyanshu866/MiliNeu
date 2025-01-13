@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementsByTagName('nav')[0];
     if (window.location.pathname.includes("/Login") || window.location.pathname.includes("/Register")) {
         navbar.style.display = "none";
-        console.log("nav-none");
+        //console.log("nav-none");
     }
     else {
         if (window.location.pathname == "/" || window.location.pathname == "/Home/Index" || window.location.pathname == "/Home/") { // Adjust as necessary for your routing
@@ -67,15 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
             navbar.classList.remove("nav-top");
             navbar.classList.remove("nav-scrolled");
             navbar.classList.remove("nav");
-            console.log("/Identity :" + window.location.pathname.includes("/Identity"));
-            console.log("/Orders :" + window.location.pathname.includes("/Orders"));
-            console.log("PathName :" + window.location.pathname);
+            //console.log("/Identity :" + window.location.pathname.includes("/Identity"));
+            //console.log("/Orders :" + window.location.pathname.includes("/Orders"));
+            //console.log("PathName :" + window.location.pathname);
 
         }
         else {
             navbar.classList.remove("nav-manage");
-            console.log(`Esledcnsnd`);
-            console.log("PathName :" + window.location.pathname);
+            //console.log(`Esledcnsnd`);
+            //console.log("PathName :" + window.location.pathname);
 
         }
 

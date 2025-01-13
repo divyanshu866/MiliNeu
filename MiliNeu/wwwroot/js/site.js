@@ -13,6 +13,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
+
+
+
+    // Define the cookie expiration time (e.g., 30 days)
+    const cookieExpirationDays = 1;
+
+    // Check if the user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+    const cookieTimestamp = localStorage.getItem("cookiesTimestamp");
+
+    // If cookies are not accepted or if the consent has expired, show the popup
+    if (!cookiesAccepted || (new Date().getTime() - cookieTimestamp > cookieExpirationDays * 24 * 60 * 60 * 1000)) {
+        document.documentElement.style.overflow = "hidden";
+        document.getElementsByClassName("overlay")[0].style.display = "initial";
+        document.getElementById("cookie-consent-popup").style.display = "block";
+    }
+
+    // Handle the click event when user accepts cookies
+    document.getElementById("accept-cookies-btn").addEventListener("click", function () {
+        //Enable Scrolling and remove overlay
+        document.documentElement.style.overflow = "";
+        document.getElementsByClassName("overlay")[0].style.display = "none";
+
+        // Hide the popup
+        document.getElementById("cookie-consent-popup").style.display = "none";
+
+        // Set a flag in local storage to remember the user's decision
+        localStorage.setItem("cookiesAccepted", "true");
+
+        // Store the timestamp when the user accepted cookies
+        localStorage.setItem("cookiesTimestamp", new Date().getTime().toString());
+    });
+
 });
 
 
@@ -40,9 +74,6 @@ function throttle(cb, delay = 1000) {
         setTimeout(timeoutFunc, delay)
     }
 }
-
-
-
 
 
 

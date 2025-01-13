@@ -67,6 +67,10 @@
 
 
                         </div>
+                            @if (product.DiscountedPrice > 0)
+                            {
+                                <div class="sale-tag"><P>SALE</P></div>
+                            }
                             <div class="card-info">
                                 <div class="name-wrapper">
                                     <p>@product.Name</p>

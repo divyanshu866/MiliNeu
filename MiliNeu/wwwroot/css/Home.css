@@ -34,9 +34,19 @@
     text-align:center;
 }
 
-
+@media (max-width: 1279px) {
+    section .gallery :nth-child(4){
+        display:none !important;
+    }
+}
+@media (max-width: 1023px) {
+    section .gallery :nth-child(4) {
+        display: flex !important;
+    }
+}
 @media (max-width: 768px) {
     .category-container {
         flex-direction: column;
     }
 }
+

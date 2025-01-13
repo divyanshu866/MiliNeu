@@ -40,7 +40,7 @@ namespace MiliNeu.Controllers
             /*Collections collection = new Collections();*/
 
             List<HeroSection> HeroSections = await _context.HeroSections
-                .Include(c => c.Image).ToListAsync();
+                .Include(c => c.Image).Where(c => c.IsActive == true).ToListAsync();
 
             List<Collection> AllCollections = await _context.Collections
                 .IgnoreQueryFilters()
@@ -72,12 +72,83 @@ namespace MiliNeu.Controllers
                 TopCollections = TopCollections,
                 BestSellers = BestSellers,
             };
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
 
             return View(homeViewModel);
 
+        }
+        public async Task<IActionResult> About()
+        {
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
+            ViewData["ImageBasePath"] = basepath;
+
+            return View();
+
+        }
+        [HttpPost]
+        public async Task<JsonResult> Subscribe(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return Json(new { success = false, message = "An error occurred. Please try again later." });
+
+            }
+
+
+            try
+            {
+                Subscriber? subscriber = await _context.Subscribers.SingleOrDefaultAsync(s => s.Email == email);
+
+                if (subscriber == null)
+                {
+                    subscriber = new Subscriber()
+                    {
+                        Email = email,
+                        SubscribedAt = DateTime.Now,
+                        IsActive = true
+                    };
+                    _context.Subscribers.Add(subscriber);
+                }
+                else
+                {
+                    subscriber.IsActive = true;
+                }
+                await _context.SaveChangesAsync();
+                // Return success response
+                return Json(new { success = true, message = "Thank you for subscribing!" });
+
+            }
+            catch (Exception)
+            {
+
+                // Return error response
+                return Json(new { success = false, message = "An error occurred. Please try again later." });
+
+            }
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> UnSubscribe(string email)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            Subscriber? subscriber = await _context.Subscribers.SingleOrDefaultAsync(c => c.Email == email.Trim());
+            if (subscriber != null)
+            {
+                subscriber.IsActive = false;
+                await _context.SaveChangesAsync();
+            }
+
+            return View();
         }
         public async Task<IActionResult> Dashboard()
         {

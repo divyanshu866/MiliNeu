@@ -21,6 +21,7 @@
     transition: all 0.3s ease-in-out; /* Smooth hover effects */
     margin: 0.5rem; /* Margin around the pill tag */
     cursor: pointer; /* Pointer cursor to make it feel interactive */
+    z-index:91;
 }
 
     .gallery .sale-tag p {
@@ -63,10 +64,10 @@
         .gallery .card-wrapper .image-wrapper {
             position: relative;
             width: 100%;
-            /*border-radius: 3px;*/
-/*            aspect-ratio: 1280 / 1919; */
+
             aspect-ratio: 9 / 13; 
             overflow: hidden; /* Ensures that images don't overflow the container */
+            z-index:90;
         }
 
             .gallery .card-wrapper .image-wrapper .item-image,

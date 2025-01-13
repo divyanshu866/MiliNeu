@@ -108,7 +108,7 @@ namespace Milineu.Controllers
             CheckoutVM checkoutVM = await _orderService.GetCheckoutDataAsync();
             if (checkoutVM == null) return NotFound();
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             ViewData["HideNavbarLinks"] = true; // Hide navbar links for this page
             ViewData["NavGrid"] = "grid-template-columns:1fr 1fr";
@@ -125,7 +125,7 @@ namespace Milineu.Controllers
                 return NotFound();
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             // Redirect to a confirmation page or another action
@@ -145,7 +145,7 @@ namespace Milineu.Controllers
             }
 
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             return View("PayNow", paymentVM);
@@ -240,7 +240,7 @@ namespace Milineu.Controllers
                 return NotFound();
             }
 
-            string basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
             return View("Index", orders);
         }
@@ -258,7 +258,7 @@ namespace Milineu.Controllers
             }
 
             // Pass order details to the view
-            string? basepath = _configuration["BasePaths:ProductImageBasePath"];
+            string? basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;
 
             return View(viewModel);
