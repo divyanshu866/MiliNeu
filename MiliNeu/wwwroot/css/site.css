@@ -1369,7 +1369,7 @@ a.buy-btn {
 
     .orders-container .orders-list {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         max-width: 1124px;
         margin:0 auto;
         gap: 4rem;
@@ -1383,7 +1383,6 @@ a.buy-btn {
         flex-direction: column;
         height: 100%;
         overflow: hidden;
-        transition: box-shadow 0.3s ease;
 /*        border-radius:5px;*/
     }
 
@@ -1888,14 +1887,14 @@ a.buy-btn {
         height: 105px;
         /*padding: 1px;*/
         object-fit: cover;
-        border: 2px solid white; 
+        border-bottom: 2px solid white; 
 
         cursor: pointer;
         transition: border 0.3s;
     }
 
         .image-thumbnails .thumbnail:hover {
-            border-color:rgba(0,0,0,0.3);
+            border-color:rgba(0,0,0,1);
         }
 
 .product-preview .active {

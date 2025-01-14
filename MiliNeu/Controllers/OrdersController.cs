@@ -137,8 +137,9 @@ namespace Milineu.Controllers
         public async Task<IActionResult> GetInitiatePayment(int orderId)
         {
             // Generate callback URL
-            string? callbackUrl = Url.Action("VerifyPayment", "Orders", null, Request.Scheme);
-            PaymentVM paymentVM = await _orderService.GetPaymentDetailsAsync(orderId, callbackUrl);
+            PaymentVM paymentVM = await _orderService.GetPaymentDetailsAsync(orderId);
+
+            paymentVM.CallbackUrl = Url.Action("ThankYou", "Orders", null, Request.Scheme); ;
             if (paymentVM == null)
             {
                 return NotFound();
@@ -151,65 +152,12 @@ namespace Milineu.Controllers
             return View("PayNow", paymentVM);
         }
         // Action for successful payment
-        public IActionResult Success()
+
+
+        public async Task<IActionResult> ThankYou()
         {
+
             return View();
-        }
-
-        // Action for failed payment
-        public IActionResult Failure()
-        {
-            return View();
-        }
-        public IActionResult PaymentIncomplete()
-        {
-            return View();
-        }
-
-
-        public async Task<IActionResult> VerifyPayment(string razorpay_payment_id, string razorpay_order_id, string razorpay_signature)
-        {
-            // Check if any required parameter is null
-            if (string.IsNullOrWhiteSpace(razorpay_payment_id) ||
-                string.IsNullOrWhiteSpace(razorpay_order_id) ||
-                string.IsNullOrWhiteSpace(razorpay_signature))
-            {
-                return RedirectToAction("Failure");
-            }
-
-            // Verify the payment signature
-            bool payment = _razorpayPaymentService.VerifyPaymentSignature(razorpay_payment_id, razorpay_order_id, razorpay_signature);
-
-            // Retrieve the order
-            Order? order = await _context.Orders.SingleOrDefaultAsync(c => c.RazorOrderId == razorpay_order_id);
-
-            // Check if the order exists
-            if (order == null)
-            {
-                return RedirectToAction("Failure");
-            }
-
-            // Update order status based on payment verification
-            order.DeliveryStatus = payment ? DeliveryStatus.OrderPlaced : DeliveryStatus.Canceled;
-
-            if (payment)
-            {
-                order.DeliveryStatus = DeliveryStatus.OrderPlaced;
-                order.PaymentStatus = PaymentStatus.Confirmed;
-                order.RazorPaymentId = razorpay_payment_id;
-                order.RazorPaymentSignature = razorpay_signature;
-                await updateUserConversion();
-            }
-            else
-            {
-                order.PaymentStatus = PaymentStatus.Pending;
-            }
-            // Save changes to the database
-            await _context.SaveChangesAsync();
-
-            // Redirect to success or failure action
-            return payment ? RedirectToAction("Success") : RedirectToAction("Failure");
-
         }
 
 
@@ -233,7 +181,7 @@ namespace Milineu.Controllers
         // GET: OrdersController
         public async Task<IActionResult> Index(string userId)
         {
-            List<Order>? orders = await _orderService.GetUserOrdersAsync(userId);
+            IQueryable<Order>? orders = await _orderService.GetUserOrdersAsync(userId);
 
             if (orders == null)
             {

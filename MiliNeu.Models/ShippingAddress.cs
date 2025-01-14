@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
-    public class OrderAddress
+    public class ShippingAddress
     {
         public int Id { get; set; }
 

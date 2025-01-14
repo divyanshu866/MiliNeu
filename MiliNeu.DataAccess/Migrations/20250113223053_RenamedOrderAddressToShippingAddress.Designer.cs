@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiliNeu.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using MiliNeu.DataAccess.Data;
 namespace MiliNeu.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250113223053_RenamedOrderAddressToShippingAddress")]
+    partial class RenamedOrderAddressToShippingAddress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -292,47 +295,6 @@ namespace MiliNeu.DataAccess.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("MiliNeu.Models.BillingAddress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Line2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VATNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BillingAddresses");
-                });
-
             modelBuilder.Entity("MiliNeu.Models.Cart", b =>
                 {
                     b.Property<int>("Id")
@@ -451,7 +413,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Bloom & Breeze",
                             Price = 50000.34765m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(3481)
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5077)
                         },
                         new
                         {
@@ -460,7 +422,7 @@ namespace MiliNeu.DataAccess.Migrations
                             Description = "Description",
                             Name = "Tribal Terra",
                             Price = 65000.7894m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(3485)
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5082)
                         });
                 });
 
@@ -689,9 +651,6 @@ namespace MiliNeu.DataAccess.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("BillingAddressId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -758,8 +717,6 @@ namespace MiliNeu.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BillingAddressId");
 
                     b.HasIndex("ShippingAddressId");
 
@@ -947,7 +904,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "A-line Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(3996),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5593),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -961,7 +918,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Maxi Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4001),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5598),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -975,7 +932,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Sheath Dress",
                             Price = 7000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4007),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5604),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -989,7 +946,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Shift Dress",
                             Price = 8000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4011),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5608),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1003,7 +960,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Wrap Dress",
                             Price = 4800.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4015),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5612),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1017,7 +974,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Bodycon Dress",
                             Price = 4000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4019),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5620),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1031,7 +988,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Peplum Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4023),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5624),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1045,7 +1002,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Empire Waist Dress",
                             Price = 5000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4028),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5628),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1059,7 +1016,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Fit and Flare Dress",
                             Price = 2000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4032),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5632),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         },
@@ -1073,7 +1030,7 @@ namespace MiliNeu.DataAccess.Migrations
                             IsDiscontinued = false,
                             Name = "Tunic Dress",
                             Price = 9000.00m,
-                            ReleaseDate = new DateTime(2025, 1, 13, 22, 39, 55, 143, DateTimeKind.Local).AddTicks(4037),
+                            ReleaseDate = new DateTime(2025, 1, 13, 22, 30, 51, 144, DateTimeKind.Local).AddTicks(5637),
                             SalesCount = 0,
                             SizeChartPath = "SizeChart1.JPG"
                         });
@@ -1693,10 +1650,6 @@ namespace MiliNeu.DataAccess.Migrations
 
             modelBuilder.Entity("MiliNeu.Models.Order", b =>
                 {
-                    b.HasOne("MiliNeu.Models.BillingAddress", "BillingAddress")
-                        .WithMany()
-                        .HasForeignKey("BillingAddressId");
-
                     b.HasOne("MiliNeu.Models.ShippingAddress", "ShippingAddress")
                         .WithMany()
                         .HasForeignKey("ShippingAddressId")
@@ -1708,8 +1661,6 @@ namespace MiliNeu.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("BillingAddress");
 
                     b.Navigation("ShippingAddress");
 

@@ -20,7 +20,7 @@ namespace MiliNeu.Controllers
         {
             _logger = logger;
             _context = context;
-            this._SendGridService = sendGridService;
+            _SendGridService = sendGridService;
             _configuration = configuration;
         }
 
@@ -110,12 +110,15 @@ namespace MiliNeu.Controllers
                         IsActive = true
                     };
                     _context.Subscribers.Add(subscriber);
+
                 }
                 else
                 {
                     subscriber.IsActive = true;
                 }
+
                 await _context.SaveChangesAsync();
+                await _SendGridService.SendEmailAsync("Milineu Customer", email, "Subscribed to Milineu news updates", "Thanks For Subscribing!");
                 // Return success response
                 return Json(new { success = true, message = "Thank you for subscribing!" });
 

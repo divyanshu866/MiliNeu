@@ -41,7 +41,7 @@ namespace MiliNeu.Models.Services.Implementations
                                          o.RazorOrderId.Contains(searchTerm) ||
                                          o.RazorPaymentId.Contains(searchTerm));
             }
-            query = query.OrderByDescending(o => o.Id);
+            //query = query.OrderByDescending(o => o.Id);
 
             int totalOrders = await query.CountAsync();
             var orders = await query
@@ -200,7 +200,7 @@ namespace MiliNeu.Models.Services.Implementations
             {
                 return null;
             }
-            OrderAddress? orderAddress;
+            ShippingAddress? orderAddress;
             // Create the new order
             if (checkoutVM.AddressVM.SelectedAddressId > 0)
             {
@@ -217,7 +217,7 @@ namespace MiliNeu.Models.Services.Implementations
             }
             else
             {
-                orderAddress = new OrderAddress
+                orderAddress = new ShippingAddress
                 {
                     FirstName = checkoutVM.AddressVM.NewAddress.FirstName,
                     LastName = checkoutVM.AddressVM.NewAddress.LastName,
@@ -285,8 +285,8 @@ namespace MiliNeu.Models.Services.Implementations
             order.RazorReceiptId = receiptId;
 
 
-            //order.RazorOrderId = "RazorOrderId 4543dfvd";
-            //order.RazorReceiptId = "RazorReceiptId 76543fdvf";
+            /*order.RazorOrderId = "RazorOrderId 4543dfvd";
+            order.RazorReceiptId = "RazorReceiptId 76543fdvf";*/
 
 
             user.UserOrders.Add(order);         // Add the order to user's orders and clear the cart
@@ -298,7 +298,7 @@ namespace MiliNeu.Models.Services.Implementations
 
         }
 
-        public async Task<PaymentVM> GetPaymentDetailsAsync(int orderId, string callbackUrl)
+        public async Task<PaymentVM> GetPaymentDetailsAsync(int orderId)
         {
 
 
@@ -327,34 +327,31 @@ namespace MiliNeu.Models.Services.Implementations
                 UserName = order.User.UserName,
                 RazorOrderId = order.RazorOrderId,
                 RazorpayKey = _razorpayPaymentService.GetKey(),
-                /*CallbackUrl = Passed from Controller*/
             };
 
 
 
             return paymentVM;
         }
-        public async Task<List<Order>> GetUserOrdersAsync(string userId)
+        public async Task<IQueryable<Order>> GetUserOrdersAsync(string userId)
         {
             if (userId == null || userId != _httpcontextAccessor.HttpContext.User?.FindFirstValue(ClaimTypes.NameIdentifier))
             {
                 return null;
             }
 
-            ApplicationUser? user = await _context.Users
+            IQueryable<Order>? query = _context.Orders
                     .IgnoreQueryFilters()
-                .Include(o => o.UserOrders)
-                .ThenInclude(c => c.ShippingAddress)
-                .Include(o => o.UserOrders)
-                .ThenInclude(i => i.Items)
+                .Include(c => c.ShippingAddress)
+                .Include(c => c.BillingAddress)
+                .Include(i => i.Items)
                 .ThenInclude(p => p.Product)
                   .ThenInclude(i => i.Variants)
                 .ThenInclude(i => i.Images)
-                .SingleAsync(u => u.Id == userId);
+                .Where(c => c.User.Id == userId).OrderByDescending(c => c.CreatedAt);
 
 
-
-            return user.UserOrders;
+            return query;
         }
 
         public async Task<OrderDisplayVM> GetUserOrderDetailsAsync(int orderId)
@@ -430,9 +427,9 @@ namespace MiliNeu.Models.Services.Implementations
             return viewModel;
         }
 
-        public OrderAddress MapToOrderAddress(Address address)
+        public ShippingAddress MapToOrderAddress(Address address)
         {
-            return new OrderAddress
+            return new ShippingAddress
             {
                 FirstName = address.FirstName,
                 LastName = address.LastName,

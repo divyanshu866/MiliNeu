@@ -27,7 +27,8 @@ namespace MiliNeu.DataAccess.Data
         public DbSet<Order>? Orders { get; set; }
         public DbSet<OrderIssue>? OrderIssues { get; set; }
         public DbSet<Address>? Address { get; set; }
-        public DbSet<OrderAddress>? OrderAddress { get; set; }
+        public DbSet<ShippingAddress>? ShippingAddresses { get; set; }
+        public DbSet<BillingAddress>? BillingAddresses { get; set; }
         public DbSet<OrderItem>? OrderItems { get; set; }
         public DbSet<VisitorLog> VisitorLogs { get; set; }
         public DbSet<PaymentStatusAudit> PaymentStatusAudits { get; set; }

@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // If cookies are not accepted or if the consent has expired, show the popup
     if (!cookiesAccepted || (new Date().getTime() - cookieTimestamp > cookieExpirationDays * 24 * 60 * 60 * 1000)) {
         document.documentElement.style.overflow = "hidden";
-        document.getElementsByClassName("overlay")[0].style.display = "initial";
+        document.getElementsByClassName("overlay")[0].style.display = "block";
+        document.getElementsByClassName("overlay")[0].style.pointerEvents = "all";
         document.getElementById("cookie-consent-popup").style.display = "block";
     }
 
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         //Enable Scrolling and remove overlay
         document.documentElement.style.overflow = "";
         document.getElementsByClassName("overlay")[0].style.display = "none";
+        document.getElementsByClassName("overlay")[0].style.pointerEvents = "none";
 
         // Hide the popup
         document.getElementById("cookie-consent-popup").style.display = "none";

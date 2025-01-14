@@ -30,8 +30,8 @@ namespace PaymentGateway
                     { "amount", (amount * 100) }, // Amount in paise (1 INR = 100 paise)
                     { "currency", currency },
                     { "receipt", receiptId }, // Use "receipt" instead of "receiptId"
-                    { "payment_capture", "1" }, // Auto capture the payment
-                    { "expires_at", expiresAt }, // Expiry time for the order
+                    { "payment_capture", "1" } // Auto capture the payment
+                    //{ "expires_at", expiresAt }, 
                 };
 
             // Create and return the order

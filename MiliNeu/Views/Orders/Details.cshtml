@@ -102,7 +102,10 @@
 
                 <div class="order-functions">
                     <a href="#">Contact Support</a>
-                    <button class="btn-address-modal">Change Address</button>
+                    @if (Model.DeliveryStatus==DeliveryStatus.OrderPlaced || Model.DeliveryStatus == DeliveryStatus.Processing)
+                    {
+                        <button class="btn-address-modal">Change Address</button>
+                    }
                     @if (Model.DeliveryStatus==DeliveryStatus.Delivered)
                     {
                         <button id="helpLink">Report Issue</button>

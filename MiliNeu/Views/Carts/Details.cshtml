@@ -15,7 +15,7 @@
     <h1 class="fade-out-left">Your basket</h1>
 
 </div>
-<div class="cart-wrapper fade-out-left">
+<div class="cart-wrapper">
 
 
     @if (Model.Items.Count == 0)
@@ -50,7 +50,7 @@
                 <tbody>
                     @foreach (var cartitem in Model.Items)
                     {
-                        <tr class="cart-row" data-product-id="@cartitem.Product.Id" data-cartitem-size="@cartitem.SelectedSize" data-cart-id="@Model.Id">
+                        <tr class="cart-row fade-out-left" data-product-id="@cartitem.Product.Id" data-cartitem-size="@cartitem.SelectedSize" data-cart-id="@Model.Id">
                             <!-- Image Column -->
                             <td class="product-image">
                                 <a asp-controller="Products" asp-action="details" asp-route-id="@cartitem.Product.Id" asp-route-selectedColor="@cartitem.ProductVariant.Id" asp-route-size="@cartitem.SelectedSize">

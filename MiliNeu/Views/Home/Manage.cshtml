@@ -6,11 +6,13 @@
     .link-container {
         display: grid;
         grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-        justify-items: center;
+        grid-template-rows:1fr;
+
+        justify-items: start;
         background-color: #f2f2f2;
         padding: 15px;
-        border-radius: 5px;
-        font-size: 1.3rem;
+        border-radius: 0px;
+        font-size: 1rem;
     }
 
         .link-container a {
@@ -25,6 +27,9 @@
             .link-container a:hover {
                 background-color: #ddd;
             }
+
+
+         
 </style>
 
 
@@ -50,5 +55,17 @@
         
         
        
+    </div>
+    <div class="link-container">
+        
+        <div>
+            <a asp-action="AuditLog" asp-controller="Orders">Audit Log</a>
+        </div>
+        <div>
+            <a asp-action="CreateEmail" asp-controller="Updates">Email Subscribers</a>
+        </div>
+
+
+
     </div>
 }

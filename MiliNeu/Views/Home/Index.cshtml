@@ -81,7 +81,7 @@
     <p class="section-heading fade-out-left">BESTSELLERS</p>
     @await Html.PartialAsync("_gallery", Model.BestSellers)
 
-    <div class="cta-product-all">
+    <div class="cta-product-all fade-out-bottom">
         <a href="/Products">VIEW ALL</a>
     </div>
 </section>
@@ -89,16 +89,13 @@
 
 
 
-<section>
-    @await Html.PartialAsync("_CategorySelection")
-</section>
+@await Html.PartialAsync("_CategorySelection")
+
 
 @await Html.PartialAsync("_SubscribeSection")
 
 
-<section>
-    @await Html.PartialAsync("_Socials")
-</section>
+@await Html.PartialAsync("_Socials")
 
 
 @await Html.PartialAsync("_Footer")

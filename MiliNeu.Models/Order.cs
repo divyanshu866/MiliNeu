@@ -1,5 +1,6 @@
 ﻿using MiliNeu.Models.enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiliNeu.Models
 {
@@ -45,11 +46,11 @@ namespace MiliNeu.Models
 
         //Address Information
         public int ShippingAddressId { get; set; }
-        public OrderAddress ShippingAddress { get; set; }
-
-        //public int? BillingAddressId { get; set; }
-        //public OrderAddress? BillingAddress { get; set; }
-
+        [ForeignKey("ShippingAddressId")]
+        public ShippingAddress ShippingAddress { get; set; }
+        public int? BillingAddressId { get; set; }
+        [ForeignKey("BillingAddressId")]
+        public BillingAddress? BillingAddress { get; set; }
 
         // Order and Shipping Information
         public string? TrackingNumber { get; set; }

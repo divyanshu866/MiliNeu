@@ -36,6 +36,8 @@
     border: none;
     background-color: transparent;
     text-decoration: underline;
+    text-underline-offset:0.2rem;
+    color:black;
 
 }
 .size-header button:hover {

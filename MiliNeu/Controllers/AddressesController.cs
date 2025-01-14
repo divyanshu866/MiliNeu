@@ -141,7 +141,7 @@ namespace MiliNeu.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateOrderAddress(OrderAddress orderAddress)
+        public async Task<IActionResult> UpdateOrderAddress(ShippingAddress orderAddress)
         {
             string? userId = HttpContext.User?.FindFirstValue(ClaimTypes.NameIdentifier);
 

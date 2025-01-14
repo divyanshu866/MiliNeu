@@ -24,8 +24,8 @@ namespace MiliNeu.Models.ViewModels
         public string EstimatedDeliveryDate { get; set; }
 
         public DateTime OrderDate { get; set; }
-        public OrderAddress ShippingAddress { get; set; }
-        public OrderAddress? BillingAddress { get; set; }
+        public ShippingAddress ShippingAddress { get; set; }
+        public ShippingAddress? BillingAddress { get; set; }
         public string TrackingNumber { get; set; }
 
         public IEnumerable<OrderIssue> OrderIssues { get; set; }

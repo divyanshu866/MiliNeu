@@ -150,7 +150,7 @@
     display: inline-block; /* Inline-block for wrapping text */
     background-color: darkblue; /* Background color */
     color: #fff; /* Text color */
-    padding: 0.2rem 0.4rem; /* Space inside (use rem for scaling) */
+    padding: 0.1rem 0.5rem; /* Space inside (use rem for scaling) */
     border-radius: 0px; /* Full rounded corners for pill shape */
     font-size: 0.7rem; /* Base font size for accessibility */
     font-weight: 600; /* Slightly bold text */
