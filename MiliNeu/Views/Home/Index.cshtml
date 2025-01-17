@@ -23,8 +23,8 @@
                 <div class="item-carousel">
                     <img loading="lazy" src="/Resources/Images/Collections/@(collection.Images.FirstOrDefault(i=>i.IsMain).Path)" alt="Image 1">
                     <div class="cta">
-                        <p>BESTSELLERS</p>
-                        <a href="/Products/BestSellers">SHOP NOW</a>
+                        <p class="fade-out-bottom">BESTSELLERS</p>
+                        <a class="fade-out-bottom" href="/Products/BestSellers">SHOP NOW</a>
                     </div>
                     
                 </div>
@@ -43,8 +43,8 @@
                     <div class="item-carousel">
                         <img loading="lazy" src="/Resources/Images/HeroSection/@(heroSection.Image.Path)" alt="@(heroSection.Image.Path)">
                         <div class="cta">
-                            <p>@heroSection.Title</p>
-                            <a href="@heroSection.Link">SHOP NOW</a>
+                            <p class="fade-out-bottom">@heroSection.Title</p>
+                            <a class="fade-out-bottom" href="@heroSection.Link">SHOP NOW</a>
                         </div>
                     </div>
                 }

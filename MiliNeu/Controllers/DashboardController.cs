@@ -74,7 +74,7 @@ namespace MiliNeu.Controllers
             model.TrafficToday = await GetTrafficTodayAsync();
             model.OrderTable = orderTable;
             // Average Order Value
-            var totalOrders = _context.Orders.Count();
+            var totalOrders = await _context.Orders.CountAsync();
             model.AverageOrderValue = totalOrders > 0 ? Math.Round(model.TotalSales / totalOrders, 2) : 0;
 
             return View(model);

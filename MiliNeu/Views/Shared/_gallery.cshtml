@@ -1,4 +1,4 @@
-﻿@model List<MiliNeu.Models.Product>
+﻿@model IEnumerable<MiliNeu.Models.Product>
 
 @{
 
@@ -12,7 +12,7 @@
             <div class="image-wrapper">
                 <a href="/products/Details/@product.Id">
                     <!-- Default Image -->
-                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain).Path != null)
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images?.FirstOrDefault(i => i.IsMain).Path != null)
                     {
                         <img class="item-image" decoding="async" loading="lazy"
                              src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i=>i.isMain).Images.FirstOrDefault(i=>i.IsMain).Path}")"
@@ -26,10 +26,10 @@
                              alt="@product.Name">
                     }
                    
-                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path!=null)
+                    @if (product.Variants.SingleOrDefault(i => i.isMain).Images?.FirstOrDefault(i => i.IsMain == false)?.Path!=null)
                     {
                         <img class="item-image_secondary" decoding="async" loading="lazy"
-                              src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images.FirstOrDefault(i => i.IsMain == false)?.Path}")"
+                              src="@($"{imageBasePath}{product.Variants.SingleOrDefault(i => i.isMain).Images?.FirstOrDefault(i => i.IsMain == false)?.Path}")"
                               alt="@product.Name">
                     }
                     else

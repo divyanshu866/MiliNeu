@@ -56,21 +56,20 @@ namespace MiliNeu.Controllers
                 .Take(2).ToList(); // Fetch top 'count' best sellers
 
 
-            List<Product> BestSellers = await _context.Products
+            IQueryable<Product> BestSellers = _context.Products
                 .IgnoreQueryFilters()
                 .Include(c => c.Collection)
                 .Include(c => c.Variants)
                 .ThenInclude(c => c.Images)
                          .OrderByDescending(p => p.SalesCount)
-                         .Take(4)
-                         .ToListAsync();
+                         .Take(4);
 
             HomeViewModel homeViewModel = new HomeViewModel
             {
                 HeroSections = HeroSections,
                 AllCollections = AllCollections,
                 TopCollections = TopCollections,
-                BestSellers = BestSellers,
+                BestSellers = await BestSellers.ToListAsync(),
             };
             string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
             ViewData["ImageBasePath"] = basepath;

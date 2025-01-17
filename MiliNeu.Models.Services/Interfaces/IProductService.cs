@@ -7,7 +7,7 @@ namespace MiliNeu.Models.Services.Interfaces
         public Task<PagerVM<Product>> GetProductsAsync(int pageNumber, int pageSize);
         public Task<PagerVM<Product>> GetProductsByCategoryAsync(int categoryId, int pageNumber, int pageSize);
 
-        public Task<List<Product>> SearchAsync(string searchTerm);
+        public Task<IEnumerable<Product>> SearchAsync(string searchTerm);
         public Task<PagerVM<Product>> GetBestSellerProductsAsync(int pageNumber, int pageSize);
 
         public Task<PagerVM<Product>> GetDicountedProducts(int pageNumber, int pageSize);

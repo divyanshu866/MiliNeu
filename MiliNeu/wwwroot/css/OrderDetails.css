@@ -12,7 +12,7 @@
     .order-details .order-details-left {
         flex: 1;
         width: 100%;
-        padding: 115px 100px 0 100px;
+        padding: 115px 80px 0 80px;
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -24,7 +24,7 @@
         flex-direction: column;
         gap: 1rem;
         width: 100%;
-        max-width: 500px;
+        max-width: 530px;
     }
     .order-details .order-details-left .order-container {
         display: none;
@@ -107,7 +107,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size:1rem;
     flex: 1;
+}
+.order-details .stepper-item .step-name{
+    text-align:center;
 }
 @media (max-width: 768px) {
     .order-details .stepper-item {
@@ -120,7 +124,7 @@
     content: "";
     border-bottom: 2px solid #ccc;
     width: 100%;
-    top: 20px;
+    top: 12px;
     left: -50%;
     z-index: 2;
 }
@@ -130,7 +134,7 @@
     content: "";
     border-bottom: 2px solid #ccc;
     width: 100%;
-    top: 20px;
+    top: 12px;
     left: 50%;
     z-index: 2;
 }
@@ -141,10 +145,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background: #ccc;
+    border:1px solid #ccc;
+    background: white;
     margin-bottom: 6px;
 }
 
@@ -158,24 +163,31 @@
     background-color: #4bb543;
     color: transparent;
 }
+.order-details .stepper-item.failed .step-counter {
+    background-color: red;
+    color: transparent;
+}
 
+.order-details .stepper-item.failed .step-name {
+    color: red;
+}
 .order-details .stepper-item.completed::after {
     position: absolute;
     content: "";
     border-bottom: 2px solid #4bb543;
     width: 100%;
-    top: 20px;
+    top: 12px;
     left: 50%;
     z-index: 3;
 }
 .order-details .stepper-item.completed .step-counter::after {
     position: absolute;
     content: "\2713";
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: white;
-    top: 11px;
-    left: 36%;
+    top: 4px;
+    left: 31%;
     z-index: 100;
 }
 .order-details .stepper-item:first-child::before {
@@ -218,7 +230,7 @@
 .order-details .order-details-right {
     flex: 1;
     width: 100%;
-    padding: 115px 100px 0 100px;
+    padding: 115px 80px 0 80px;
     background-color: #fafafa;
     border-left: 1px solid #e1e1e1;
     overflow-y: auto;
@@ -414,6 +426,7 @@
         .order-details .order-details-left .order-container {
             display: flex;
             max-width: 100%;
+            padding:0;
         }
 
         .order-details .order-details-left .order-summary {

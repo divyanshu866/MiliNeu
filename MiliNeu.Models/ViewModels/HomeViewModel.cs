@@ -6,6 +6,6 @@
 
         public List<Collection> AllCollections { get; set; }
         public List<Collection> TopCollections { get; set; }
-        public List<Product> BestSellers { get; set; }
+        public IEnumerable<Product> BestSellers { get; set; }
     }
 }

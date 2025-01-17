@@ -41,15 +41,16 @@ nav .content ul:nth-child(3) .nav-item-orders {
     display: none;
 }
 .nav-top {
-    height: 90px;
-    width:100%;
+    /*    height: 90px;*/
+    width: 100%;
     max-width: 100vw;
     background-color: transparent;
-    /*    margin-top:1rem;*/
+    border-bottom: 1px solid transparent;
+    margin-top: 1rem;
     transition: top 0.3s, background-color 0.3s ease, margin 0.3s,height 0.3s, padding 0.3s; /* Smooth transition for sliding */
 }
 .nav-scrolled {
-    width:100%;
+    width: 100%;
     max-width: 100vw;
     background-color: rgb(255 255 255 / 100%); /* Semi-transparent white */
     margin-top: 0rem;
@@ -165,6 +166,10 @@ nav .logo {
 }
 nav .logo a {
    text-decoration:none;
+   height:100%;
+   display:flex;
+   justify-content:left;
+   align-items:center;
 }
     nav .logo img {
         height: 100%;
@@ -172,6 +177,27 @@ nav .logo a {
         object-fit: contain;
         padding-left: 5rem;
     }
+/*Svg*/
+
+nav .logo svg {
+    height: 100%;
+    width: auto;
+    stroke-width: 1px;
+    padding: 1.5rem 0;
+    padding-left: 5rem;
+    transition-delay: 0.3s;
+}
+.nav-top .logo svg {
+    height: 100%;
+    width: auto;
+    opacity: 0.8;
+    padding: 1.2rem 0;
+    padding-left: 5rem;
+    transition: all 0.3s;
+}
+/*Svg*/
+
+
 nav .logo label {
     font-size:1.3rem;
     color:black;
@@ -253,6 +279,10 @@ nav .search-toggle i {
 .nav-manage .logo img {
     padding: 1.8rem 3rem 1.8rem 2rem;
 }
+    /*Svg*/
+.nav-manage .logo svg {
+    padding: 1.8rem 3rem 1.8rem 2rem;
+}
 .nav-manage .content ul:nth-child(4) .nav-item-settings {
     display: initial;
 }
@@ -296,6 +326,23 @@ nav .search-toggle i {
     nav .content ul:nth-child(3) li a{
         font-size:1rem;
     }
+
+    /*Svg*/
+    nav .logo svg {
+        height: 100%;
+        width: auto;
+        padding: 1.5rem 0;
+        padding-left: 5rem;
+    }
+
+    .nav-top .logo svg {
+        height: 100%;
+        width: auto;
+        padding: 1.4rem 0;
+        padding-left: 5rem;
+        transition: all 0.3s;
+    }
+    /*Svg*/
 }
 @media screen and (max-width:1050px) {
     nav .content ul:nth-child(3) {
@@ -316,9 +363,19 @@ nav .search-toggle i {
     nav .content .logo img {
         padding:2rem 0;
     }
+    /*Svg*/
+    nav .content .logo svg {
+        padding:1.5rem 0;
+    }
+    .nav-scrolled .content .logo svg {
+        padding: 1.6rem 0;
+    }
+    /*Svg*/
+
     .nav-scrolled .content .logo img {
         padding: 1.7rem 0;
     }
+
     nav .logo a {
         text-decoration: none;
         display: flex;
@@ -338,6 +395,15 @@ nav .search-toggle i {
     nav .content .logo img {
         padding: 2rem 0;
     }
+    /*Svg*/
+    nav .content .logo svg {
+        padding: 1.6rem 0;
+    }
+
+    .nav-scrolled .content .logo svg {
+        padding: 1.8rem 0;
+    }
+    /*Svg*/
 
 }
 @media screen and (max-width:600px) {
@@ -376,12 +442,25 @@ nav .content ul .orders {
         padding: 2.3rem 0;
         
     }
+    /*Svg*/
+    nav .content .logo svg {
+        padding: 1.8rem 0;
+    }
+
+    .nav-scrolled .content .logo svg {
+        padding: 1.9rem 0;
+    }
+    /*Svg*/
     .nav-scrolled .content .logo img {
         padding: 2rem 0;
     }
-
+    
     nav .content .logo img {
         transform:scale(1.1);
+    }
+    /*Svg*/
+    nav .content .logo svg {
+/*        transform:scale(1.1);*/
     }
     nav .menu label {
         

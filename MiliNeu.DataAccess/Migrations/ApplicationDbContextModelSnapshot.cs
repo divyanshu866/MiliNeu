@@ -218,7 +218,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Address");
+                    b.ToTable("Address", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.ApplicationUser", b =>
@@ -330,7 +330,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BillingAddresses");
+                    b.ToTable("BillingAddresses", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.Cart", b =>
@@ -346,7 +346,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.CartItem", b =>
@@ -381,7 +381,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("ProductVariantId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.Category", b =>
@@ -398,7 +398,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -441,7 +441,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Collections");
+                    b.ToTable("Collections", (string)null);
 
                     b.HasData(
                         new
@@ -486,7 +486,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("CollectionId");
 
-                    b.ToTable("CollectionImages");
+                    b.ToTable("CollectionImages", (string)null);
 
                     b.HasData(
                         new
@@ -523,7 +523,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
 
                     b.HasData(
                         new
@@ -615,7 +615,7 @@ namespace MiliNeu.DataAccess.Migrations
                     b.HasIndex("HeroSectionImageId")
                         .IsUnique();
 
-                    b.ToTable("HeroSections");
+                    b.ToTable("HeroSections", (string)null);
 
                     b.HasData(
                         new
@@ -658,7 +658,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HeroSectionImages");
+                    b.ToTable("HeroSectionImages", (string)null);
 
                     b.HasData(
                         new
@@ -765,7 +765,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.OrderIssue", b =>
@@ -809,7 +809,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("OrderIssues");
+                    b.ToTable("OrderIssues", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.OrderItem", b =>
@@ -853,7 +853,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("ProductVariantId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.PaymentStatusAudit", b =>
@@ -884,7 +884,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("PaymentStatusAudits");
+                    b.ToTable("PaymentStatusAudits", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.Product", b =>
@@ -934,7 +934,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("CollectionId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
 
                     b.HasData(
                         new
@@ -1105,7 +1105,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductVariant");
+                    b.ToTable("ProductVariant", (string)null);
 
                     b.HasData(
                         new
@@ -1273,7 +1273,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ShippingAddresses");
+                    b.ToTable("ShippingAddresses", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.Subscriber", b =>
@@ -1296,7 +1296,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subscribers");
+                    b.ToTable("Subscribers", (string)null);
                 });
 
             modelBuilder.Entity("MiliNeu.Models.VariantImage", b =>
@@ -1321,7 +1321,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasIndex("ProductVariantId");
 
-                    b.ToTable("VariantImages");
+                    b.ToTable("VariantImages", (string)null);
 
                     b.HasData(
                         new
@@ -1566,7 +1566,7 @@ namespace MiliNeu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("VisitorLogs");
+                    b.ToTable("VisitorLogs", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

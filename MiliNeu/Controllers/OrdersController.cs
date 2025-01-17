@@ -27,7 +27,7 @@ namespace Milineu.Controllers
         }
         // GET: Manage/Orders
         // Action to list all orders
-        public async Task<IActionResult> Manage(string filter = "All", string searchTerm = "", int pageNumber = 1, int pageSize = 5)
+        public async Task<IActionResult> Manage(string filter = "All", string searchTerm = "", int pageNumber = 1, int pageSize = 50)
         {
             PagerVM<Order> viewModel = await _orderService.GetFilteredOrdersAsync(filter, searchTerm, pageNumber, pageSize);
 
@@ -181,7 +181,7 @@ namespace Milineu.Controllers
         // GET: OrdersController
         public async Task<IActionResult> Index(string userId)
         {
-            IQueryable<Order>? orders = await _orderService.GetUserOrdersAsync(userId);
+            IEnumerable<Order>? orders = await _orderService.GetUserOrdersAsync(userId);
 
             if (orders == null)
             {

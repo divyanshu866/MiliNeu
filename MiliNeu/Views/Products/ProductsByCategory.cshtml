@@ -9,7 +9,7 @@
     <h1 class="fade-out-left">@ViewBag.Category.Name</h1>
 
 </div>
-@if (Model.Items.Count()<1)
+@if (Model.Items?.Count() < 1 || Model.Items == null)
 {
     <div class="page-Banner">
         <h2>Comming soon..</h2>

@@ -49,7 +49,7 @@ namespace MiliNeu.Controllers
         public async Task<IActionResult> Search(string searchTerm)
         {
             // Query to search products by name, description, or other criteria
-            List<Product>? products = await _productServicce.SearchAsync(searchTerm);
+            IEnumerable<Product>? products = await _productServicce.SearchAsync(searchTerm);
             if (products == null)
             {
                 return NotFound();
@@ -168,7 +168,7 @@ namespace MiliNeu.Controllers
             string basepath = _configuration["BasePaths:ThumbnailImageBasePath"];
 
             ViewData["ImageBasePath"] = basepath;
-            ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.AvailableColors = await ViewBagColors();
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", viewModel.CategoryId);
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", viewModel.CollectionId);
             return PartialView("_ProductEditPreview", viewModel);
@@ -298,7 +298,7 @@ namespace MiliNeu.Controllers
 
                 //delete images from storage
                 deleteImages(variant.Images);
-                var c = _context.ProductVariant.Count();
+                var c = await _context.ProductVariant.CountAsync();
                 _context.ProductVariant.Remove(variant);
 
                 if (product.Variants.Count == 1)
@@ -378,7 +378,7 @@ namespace MiliNeu.Controllers
 
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name");
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name");
-            ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.AvailableColors = await ViewBagColors();
             ViewData["ImageBasePath"] = _configuration["BasePaths:ThumbnailImageBasePath"];
             return View();
         }
@@ -554,7 +554,7 @@ namespace MiliNeu.Controllers
 
 
 
-            ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.AvailableColors = await ViewBagColors();
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
 
@@ -746,7 +746,7 @@ namespace MiliNeu.Controllers
 
 
 
-            ViewBag.AvailableColors = ViewBagColors();
+            ViewBag.AvailableColors = await ViewBagColors();
             ViewBag.CollectionId = new SelectList(_context.Collections, "Id", "Name", product.Collection.Id);
             ViewBag.CategoryId = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
 
@@ -889,14 +889,14 @@ namespace MiliNeu.Controllers
             }
         }
 
-        public List<SelectListItem> ViewBagColors()
+        public async Task<List<SelectListItem>> ViewBagColors()
         {
-            var colors = _context.Colors.Select(c => new SelectListItem
+            IQueryable<SelectListItem> colors = _context.Colors.Select(c => new SelectListItem
             {
                 Value = c.Id.ToString(),
                 Text = c.Name + " (" + c.HexCode + ")"
-            }).ToList();
-            return colors;
+            });
+            return await colors.ToListAsync();
         }
 
 

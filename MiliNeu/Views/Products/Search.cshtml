@@ -1,4 +1,4 @@
-﻿@model List<MiliNeu.Models.Product>
+﻿@model IEnumerable<MiliNeu.Models.Product>
 
 @{
     ViewData["Title"] = "Search Results";
@@ -12,7 +12,7 @@
     <input class="search-input" type="search" name="searchTerm" placeholder="Search products" aria-label="Search">
     <button class="search-btn" type="submit"><i class="material-icons">search</i></button>
 </form>  *@
-@if (Model.Count == 0)
+@if (Model.Count() == 0)
 {
 
     <div class="page-Banner">

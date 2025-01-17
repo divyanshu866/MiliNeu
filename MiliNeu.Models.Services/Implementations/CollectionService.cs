@@ -26,7 +26,7 @@ namespace MiliNeu.Models.Services.Implementations
         }
         public async Task<PagerVM<Collection>> getCollectionsPageAsync(int pageNumber, int pageSize)
         {
-            IEnumerable<Collection> collections = _context.Collections
+            IQueryable<Collection> collections = _context.Collections
                 .IgnoreQueryFilters()
                 .Include(i => i.Images)
                 .Include(p => p.Products)
@@ -35,11 +35,11 @@ namespace MiliNeu.Models.Services.Implementations
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize);
 
-            var totalCollections = _context.Collections.Count();
+            var totalCollections = await _context.Collections.CountAsync();
 
             PagerVM<Collection> viewModel = new PagerVM<Collection>
             {
-                Items = collections,
+                Items = await collections.ToListAsync(),
                 CurrentPage = pageNumber,
                 TotalPages = (int)Math.Ceiling((double)totalCollections / pageSize)
             };

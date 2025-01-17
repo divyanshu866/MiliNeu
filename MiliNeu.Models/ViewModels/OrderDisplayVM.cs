@@ -10,7 +10,7 @@ namespace MiliNeu.Models.ViewModels
         public decimal TotalDiscount { get; set; }
         public decimal Shipping { get; set; }
         public decimal AmountCharged { get; set; }
-        public string PaymentStatus { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
         public string PaymentMethod { get; set; }
         public DeliveryStatus DeliveryStatus { get; set; }
         public ReturnStatus? ReturnStatus { get; set; }

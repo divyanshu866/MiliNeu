@@ -25,7 +25,7 @@ namespace MiliNeu.Models.Services.Implementations
         }
         public async Task<PagerVM<Product>> GetProductsAsync(int pageNumber, int pageSize)
         {
-            var AllProducts = await _context.Products
+            IQueryable<Product> AllProducts = _context.Products
                 .IgnoreQueryFilters()
                 .Include(c => c.Collection)
                 .Include(c => c.Variants)
@@ -34,14 +34,13 @@ namespace MiliNeu.Models.Services.Implementations
                 .ThenInclude(c => c.Color)
                 .OrderBy(p => p.Name) // You can order by any property
                 .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+                .Take(pageSize);
 
-            var totalProducts = _context.Products.Count();
+            var totalProducts = await _context.Products.CountAsync();
 
             PagerVM<Product> viewModel = new PagerVM<Product>
             {
-                Items = AllProducts,
+                Items = await AllProducts.ToListAsync(),
                 CurrentPage = pageNumber,
                 TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
             };
@@ -52,7 +51,7 @@ namespace MiliNeu.Models.Services.Implementations
         }
         public async Task<PagerVM<Product>> GetProductsByCategoryAsync(int categoryId, int pageNumber, int pageSize)
         {
-            var AllProducts = await _context.Products
+            IQueryable<Product> AllProducts = _context.Products
                 .IgnoreQueryFilters()
                 .Include(c => c.Collection)
                 .Include(c => c.Variants)
@@ -62,17 +61,16 @@ namespace MiliNeu.Models.Services.Implementations
                 .Where(c => c.CategoryId == categoryId)
                 .OrderBy(p => p.Name) // You can order by any property
                 .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+                .Take(pageSize);
 
-            var totalProducts = _context.Products.Where(c => c.CategoryId == categoryId).Count();
+            var totalProducts = await _context.Products.Where(c => c.CategoryId == categoryId).CountAsync();
 
             PagerVM<Product> viewModel;
             if (totalProducts > 0)
             {
                 viewModel = new PagerVM<Product>
                 {
-                    Items = AllProducts,
+                    Items = await AllProducts.ToListAsync(),
                     CurrentPage = pageNumber,
                     TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
                 };
@@ -90,7 +88,7 @@ namespace MiliNeu.Models.Services.Implementations
 
             return viewModel;
         }
-        public async Task<List<Product>> SearchAsync(string searchTerm)
+        public async Task<IEnumerable<Product>> SearchAsync(string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm))
             {
@@ -98,25 +96,20 @@ namespace MiliNeu.Models.Services.Implementations
             }
 
             // Query to search products by name, description, or other criteria
-            List<Product> products = await _context.Products
+            IQueryable<Product> products = _context.Products
                 .IgnoreQueryFilters()
                 .Include(p => p.Variants)
                 .ThenInclude(p => p.Images)
-                .Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm))
-                .ToListAsync();
+                .Where(p => p.Name.Contains(searchTerm) || p.Description.Contains(searchTerm));
 
-            return products;  // Pass the search results to the view
+            return await products.ToListAsync();  // Pass the search results to the view
         }
         public async Task<PagerVM<Product>> GetBestSellerProductsAsync(int pageNumber, int pageSize)
         {
-            /* return await _context.Products
-                 .Include(p => p.Variants)
-                 .OrderByDescending(p => p.SalesCount) // Sort by sales
-                 .Take(count) // Fetch top 'count' best sellers
-                 .ToListAsync();*/
 
 
-            var AllBestSellers = await _context.Products
+
+            IQueryable<Product> AllBestSellers = _context.Products
                .IgnoreQueryFilters()
                .Include(c => c.Collection)
                .Include(c => c.Variants)
@@ -125,14 +118,13 @@ namespace MiliNeu.Models.Services.Implementations
                .ThenInclude(c => c.Color)
                .OrderByDescending(p => p.SalesCount) // Sort by SalesCount
                .Skip((pageNumber - 1) * pageSize)
-               .Take(pageSize)
-               .ToListAsync();
-
-            var totalProducts = _context.Products.Count();
+               .Take(pageSize);
+            var p = await AllBestSellers.ToListAsync();
+            var totalProducts = await _context.Products.CountAsync();
 
             PagerVM<Product> viewModel = new PagerVM<Product>
             {
-                Items = AllBestSellers,
+                Items = await AllBestSellers.ToListAsync(),
                 CurrentPage = pageNumber,
                 TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
             };
@@ -144,23 +136,22 @@ namespace MiliNeu.Models.Services.Implementations
         }
         public async Task<PagerVM<Product>> GetDicountedProducts(int pageNumber, int pageSize)
         {
-            var AllSaleProducts = await _context.Products
+            IQueryable<Product> AllSaleProducts = _context.Products
                 .IgnoreQueryFilters()
                 .Include(c => c.Collection)
                 .Include(c => c.Variants)
                 .ThenInclude(c => c.Images)
                 .Include(c => c.Variants)
                 .ThenInclude(c => c.Color)
-                .OrderBy(p => p.Name).Where(c => c.DiscountedPrice > 0) // You can order by any property
+                .Where(c => c.DiscountedPrice > 0) // You can order by any property
                 .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+                .Take(pageSize);
 
-            var totalProducts = _context.Products.Count();
+            int? totalProducts = await _context.Products.CountAsync();
 
             return new PagerVM<Product>
             {
-                Items = AllSaleProducts,
+                Items = await AllSaleProducts.ToListAsync(),
                 CurrentPage = pageNumber,
                 TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
             };
@@ -169,12 +160,12 @@ namespace MiliNeu.Models.Services.Implementations
         }
         public async Task<List<Product>> GetAllProductsAsync()
         {
-            var products = await _context.Products
+            IQueryable<Product> products = _context.Products
                 .IgnoreQueryFilters()
                 .Include(p => p.Collection)
                 .Include(p => p.Variants)
-                        .ThenInclude(i => i.Images).ToListAsync();
-            return products;
+                        .ThenInclude(i => i.Images);
+            return await products.ToListAsync();
         }
         public async Task<ProductDetailsViewModel> GetProductDetails(int? id, int? selectedColor, string? size)
         {
@@ -183,19 +174,18 @@ namespace MiliNeu.Models.Services.Implementations
                 return null;
             }
 
-            var product = await _context.Products
+            Product? product = await _context.Products
                     .IgnoreQueryFilters()
                     .Include(p => p.Collection)
-                    .ThenInclude(p => p.Products)
-                    .ThenInclude(p => p.Variants)
+                    .Include(p => p.Variants)
                     .ThenInclude(p => p.Images)
                     .Include(p => p.Variants) // Include the ProductVariant collection (ProductVariants)
                     .ThenInclude(pc => pc.Color) // Include the Color property in ProductVariant
-                    .Include(p => p.Variants) // Include the ProductVariant collection (Images)
-                    .ThenInclude(pc => pc.Images) // Include the VariantImages in ProductVariant
-                    .Include(p => p.Collection) // Include the Collections navigation property
                     .FirstOrDefaultAsync(m => m.Id == id);
-
+            if (product == null)
+            {
+                return null;
+            }
             ProductDetailsViewModel viewModel = new ProductDetailsViewModel();
             viewModel.Product = product;
             List<Collection> col = new List<Collection>();

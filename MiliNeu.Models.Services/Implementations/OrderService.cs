@@ -44,15 +44,14 @@ namespace MiliNeu.Models.Services.Implementations
             //query = query.OrderByDescending(o => o.Id);
 
             int totalOrders = await query.CountAsync();
-            var orders = await query
+            var orders = query
                 .OrderByDescending(o => o.CreatedAt)
                 .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+                .Take(pageSize);
 
             return new PagerVM<Order>
             {
-                Items = orders,
+                Items = await orders.ToListAsync(),
                 CurrentPage = pageNumber,
                 TotalPages = (int)Math.Ceiling((double)totalOrders / pageSize)
             };
@@ -285,8 +284,8 @@ namespace MiliNeu.Models.Services.Implementations
             order.RazorReceiptId = receiptId;
 
 
-            /*order.RazorOrderId = "RazorOrderId 4543dfvd";
-            order.RazorReceiptId = "RazorReceiptId 76543fdvf";*/
+            /* order.RazorOrderId = "RazorOrderId 4543dfvd";
+             order.RazorReceiptId = "RazorReceiptId 76543fdvf";*/
 
 
             user.UserOrders.Add(order);         // Add the order to user's orders and clear the cart
@@ -333,7 +332,7 @@ namespace MiliNeu.Models.Services.Implementations
 
             return paymentVM;
         }
-        public async Task<IQueryable<Order>> GetUserOrdersAsync(string userId)
+        public async Task<IEnumerable<Order>> GetUserOrdersAsync(string userId)
         {
             if (userId == null || userId != _httpcontextAccessor.HttpContext.User?.FindFirstValue(ClaimTypes.NameIdentifier))
             {
@@ -351,7 +350,7 @@ namespace MiliNeu.Models.Services.Implementations
                 .Where(c => c.User.Id == userId).OrderByDescending(c => c.CreatedAt);
 
 
-            return query;
+            return await query.ToListAsync();
         }
 
         public async Task<OrderDisplayVM> GetUserOrderDetailsAsync(int orderId)
@@ -377,7 +376,7 @@ namespace MiliNeu.Models.Services.Implementations
                 .ThenInclude(i => i.Variants)
                 .ThenInclude(i => i.Color)
 
-           .SingleAsync(o => o.Id == orderId);
+           .SingleOrDefaultAsync(o => o.Id == orderId);
 
             if (order == null || order.User.Id != _httpcontextAccessor.HttpContext.User?.FindFirstValue(ClaimTypes.NameIdentifier))
             {
@@ -387,14 +386,14 @@ namespace MiliNeu.Models.Services.Implementations
             OrderDisplayVM viewModel = new OrderDisplayVM
             {
                 OrderId = orderId,
-                TrackingNumber = "1900020",
+                TrackingNumber = "DUM1900020",
                 BillingAddress = order.ShippingAddress,
                 EstimatedDeliveryDate = order.EstimatedDeliveryBy.ToString("dddd, dd MMMM, yyyy"),
                 DeliveryStatus = order.DeliveryStatus,
                 ReturnStatus = order.ReturnStatus,
                 ReturnInitiatedDate = order.ReturnInitiatedDate,
                 OrderDate = order.CreatedAt,
-                PaymentStatus = order.PaymentStatus.ToString(),
+                PaymentStatus = order.PaymentStatus,
                 Shipping = 500,
                 AddressVM = new AddressVM { Addresses = order.User.Addresses, SelectedAddressSnapshot = order.ShippingAddress },
                 ShippingAddress = order.ShippingAddress,

@@ -12,7 +12,7 @@ namespace MiliNeu.Models.Services.Interfaces
         public Task<CheckoutVM> GetCheckoutDataAsync();
         public Task<Order> CreateOrderAsync(CheckoutVM checkoutVM);
         public Task<PaymentVM> GetPaymentDetailsAsync(int orderId);
-        public Task<IQueryable<Order>> GetUserOrdersAsync(string userId);
+        public Task<IEnumerable<Order>> GetUserOrdersAsync(string userId);
         public Task<OrderDisplayVM> GetUserOrderDetailsAsync(int orderId);
 
     }
